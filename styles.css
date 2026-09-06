@@ -306,9 +306,11 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
     background: var(--azul-oscuro); color: var(--blanco);
     border-radius: var(--radio); padding: 1.6rem;
     box-shadow: var(--sombra-fuerte); border-left: 8px solid var(--dorado);
-    display: grid; gap: 1.2rem;
+    display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.2rem;
 }
+.music__card > * { min-width: 0; }
 .music__now { display: flex; align-items: center; gap: 1.2rem; }
+.music__meta { min-width: 0; overflow-wrap: anywhere; }
 .music__cover {
     flex: none; width: 88px; height: 88px; border-radius: var(--radio-sm);
     background: linear-gradient(135deg, var(--cochinilla), var(--dorado) 60%, var(--tierra));
