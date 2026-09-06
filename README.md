@@ -11,19 +11,22 @@ Una página web moderna, limpia y completamente responsiva dedicada a **San Pedr
 - Colores inspirados en la cultura andina (tonos tierra, azules y acentos vivos)
 
 ### Secciones Incluidas
-1. **Inicio (Hero)** - Presentación principal atractiva
-2. **Nosotros** - Información sobre tradiciones textiles y mate burilado
-3. **Galería** - Espacio para mostrar artesanías
-4. **Paisajes** - Vistas y naturaleza de la región
-5. **Nuestra Gente** - Historias de la comunidad
-6. **Contacto** - Formulario de contacto y información
-7. **Radio en Vivo** - Reproductor de audio integrado
-8. **Espacio Publicitario** - Listo para widgets de Google AdSense
+1. **Inicio (Hero)** - Presentación principal con Radio San Pedro en vivo
+2. **Noticias** - Actualidad del pueblo en tarjetas (una destacada + secundarias), fácil de actualizar
+3. **Nosotros** - Historia, tradición textil y datos del distrito
+4. **Turismo** - Qué ver y hacer, cómo llegar y recomendaciones
+5. **Hospedajes** - Alojamientos y turismo vivencial
+6. **Galería** - Espacio para mostrar artesanías, con la subsección **Música Personal** (reproductor + lista de temas propios)
+7. **Paisajes** - Vistas y naturaleza de la región
+8. **Nuestra Gente** - Historias de la comunidad
+9. **Contacto** - Formulario de contacto e información
+10. **Publicidad** - Dos espacios para Google AdSense (superior e inferior) y tres espacios privados (300×250) para patrocinadores
 
 ### Funcionalidades
-✅ Menú de navegación responsivo (hamburguesa en móvil)  
+✅ Menú de navegación responsivo (hamburguesa en móvil, solo CSS, sin JavaScript)  
 ✅ Reproductor de audio en vivo integrado  
-✅ Formulario de contacto con validación  
+✅ Reproductor de música personal con lista de temas, buscador y avance automático  
+✅ Formulario de contacto con validación nativa HTML5  
 ✅ Scroll suave entre secciones  
 ✅ Animaciones de carga de elementos  
 ✅ Transiciones y hover effects  
@@ -35,7 +38,6 @@ Una página web moderna, limpia y completamente responsiva dedicada a **San Pedr
 san-pedro-de-cajas/
 ├── index.html          # Archivo principal HTML5
 ├── styles.css          # Estilos CSS3 responsivos
-├── script.js           # Funcionalidades JavaScript
 └── README.md           # Este archivo
 ```
 
@@ -43,12 +45,12 @@ san-pedro-de-cajas/
 
 | Color | Código | Uso |
 |-------|--------|-----|
-| Azul Andino | `#1B4D5C` | Header, secciones principales |
-| Tierra | `#8B4513` | Acentos, títulos |
-| Acento Rojo | `#E74C3C` | Botones, énfasis |
-| Acento Dorado | `#F39C12` | Detalles decorativos |
-| Verde Andino | `#27AE60` | Paisajes |
-| Fondo Crema | `#F5F3EF` | Fondo general |
+| Azul de puna | `#1B4D5C` / `#0F2F3A` | Header, hero, pie de página |
+| Tierra | `#8B4A2B` | Acentos, etiquetas de sección |
+| Rojo cochinilla | `#B7322C` | Botón principal, radio en vivo |
+| Dorado de ichu | `#D9A441` | Detalles decorativos, cifras |
+| Verde valle | `#4F7A3A` | Paisajes, franja tejida |
+| Crema de lana | `#F6F1E7` / `#FFFDF8` | Fondos |
 
 ## 📱 Responsividad
 
@@ -64,6 +66,39 @@ La página está optimizada para:
 - Reproductor HTML5 nativo
 - Controles completos (play, pause, volumen)
 - Responsive y adaptable
+
+## 📰 Noticias
+
+La sección `#noticias` va justo después del hero y el anuncio superior. Para publicar una noticia, copia un `<article class="news">` dentro de `.news-grid` y colócalo **primero**:
+
+```html
+<article class="news">
+    <div class="news__media"><img src="imagenes/noticia.jpg" alt="Descripción de la foto"></div>
+    <div class="news__body">
+        <div class="news__meta">
+            <span class="news__tag">Comunidad</span>
+            <time datetime="2026-09-10">10 de septiembre de 2026</time>
+        </div>
+        <h3>Título de la noticia</h3>
+        <p>Resumen breve de la noticia.</p>
+        <a href="#" class="news__link">Leer más →</a>
+    </div>
+</article>
+```
+
+Añade `news--destacada` al artículo principal para que ocupe el doble de ancho. Si no hay foto, usa `news__media--1`, `--2` o `--3` para un fondo con degradado andino.
+
+### Música Personal (dentro de Galería)
+
+La lista de canciones vive en `index.html` dentro de `<ol id="music-list">`. Para añadir un tema (la estructura admite 200 o más), copia un `<li>`:
+
+```html
+<li class="playlist__item" data-src="musica/tema-06.mp3" data-title="Nombre del tema" data-artist="Intérprete">
+    <button type="button"><span class="playlist__num">6</span><span class="playlist__info"><strong>Nombre del tema</strong><small>Intérprete</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
+</li>
+```
+
+Guarda los archivos de audio (mp3/ogg) en una carpeta `musica/`. La lista tiene scroll propio y un buscador por título o intérprete; al terminar una canción se reproduce la siguiente. Un pequeño script al final de `index.html` gestiona la reproducción.
 
 ## 💬 Formulario de Contacto
 
@@ -89,16 +124,14 @@ Incluye:
    - Añade tus imágenes reemplazando los placeholders
 
 4. **Integrar publicidad**
-   - Reemplaza el código de Google AdSense en la sección `.ads-container`
-   - O añade otros widgets publicitarios
+   - Pega el código de Google AdSense dentro de los bloques `.ad__slot` con `data-ad="adsense-top"` y `data-ad="adsense-bottom"`
+   - Coloca banners de patrocinadores en los bloques `data-ad="private-1..3"` (300×250)
 
 ## 📊 Secciones de Publicidad
 
-Hay un espacio reservado en la sección `#ads-container` listo para:
-- Google AdSense
-- Banners publicitarios
-- Widgets de terceros
-- Patrocinadores
+- `data-ad="adsense-top"`: leaderboard 728×90 / responsive debajo del hero
+- `data-ad="adsense-bottom"`: bloque responsive antes del pie de página
+- `data-ad="private-1"`, `private-2`, `private-3`: anuncios privados de patrocinadores locales
 
 ## 🔧 Personalización
 
@@ -106,9 +139,10 @@ Hay un espacio reservado en la sección `#ads-container` listo para:
 Edita las variables CSS en `styles.css`:
 ```css
 :root {
-    --color-tierra: #8B4513;
-    --color-azul-andino: #1B4D5C;
-    --color-acento-vivo: #E74C3C;
+    --tierra: #8B4A2B;
+    --azul: #1B4D5C;
+    --cochinilla: #B7322C;
+    --dorado: #D9A441;
     /* ... más colores */
 }
 ```
@@ -121,12 +155,12 @@ Modifica el contenido en `index.html`:
 ```
 
 ### Añadir Imágenes
-Reemplaza los `gallery-placeholder` con etiquetas `<img>`:
+Reemplaza el fondo de cada `gallery__item` con una etiqueta `<img>`:
 ```html
-<div class="gallery-item">
+<figure class="gallery__item">
     <img src="tu-imagen.jpg" alt="Descripción">
-    <p>Título</p>
-</div>
+    <figcaption>Título</figcaption>
+</figure>
 ```
 
 ## 🌐 Navegadores Compatibles
@@ -185,5 +219,5 @@ Libre para uso y distribución.
 **Hecho con ❤️ para San Pedro de Cajas**
 
 Para más información, contacta a:
-- 📧 Email: info@sanpedrodecanjas.pe
+- 📧 Email: support@spcserver.net
 - 📍 Ubicación: Tarma, Junín, Perú
