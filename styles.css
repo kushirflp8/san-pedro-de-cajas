@@ -270,6 +270,65 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
 .g5 { background: linear-gradient(135deg, var(--azul-oscuro), var(--verde)); }
 .g6 { background: linear-gradient(135deg, var(--dorado), var(--tierra)); }
 
+/* Música Personal */
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.music { margin-top: 4rem; padding-top: 3rem; border-top: 1px solid var(--crema-oscuro); }
+.section__head--sub { margin-bottom: 2rem; }
+.music__title { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+.music__card {
+    max-width: 860px; margin: 0 auto;
+    background: var(--azul-oscuro); color: var(--blanco);
+    border-radius: var(--radio); padding: 1.6rem;
+    box-shadow: var(--sombra-fuerte); border-left: 8px solid var(--dorado);
+    display: grid; gap: 1.2rem;
+}
+.music__now { display: flex; align-items: center; gap: 1.2rem; }
+.music__cover {
+    flex: none; width: 88px; height: 88px; border-radius: var(--radio-sm);
+    background: linear-gradient(135deg, var(--cochinilla), var(--dorado) 60%, var(--tierra));
+    display: grid; place-items: center; position: relative; overflow: hidden;
+}
+.music__cover::after { content: ''; position: absolute; inset: 0; background: var(--franja); opacity: 0.25; mix-blend-mode: multiply; }
+.music__note { position: relative; font-size: 2.4rem; font-weight: 700; color: var(--blanco); }
+.is-playing .music__note { animation: latido 1.2s ease-in-out infinite; }
+@keyframes latido { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.18); } }
+.music__tag { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--dorado); }
+.music__track { font-size: 1.35rem; margin: 0.2rem 0 0.1rem; color: var(--blanco); }
+.music__artist { color: rgba(255, 255, 255, 0.75); font-size: 0.95rem; }
+.music__player { width: 100%; height: 44px; border-radius: var(--radio-sm); }
+.music__controls { display: flex; gap: 0.7rem; flex-wrap: wrap; }
+.btn--ghost-dark { background: transparent; color: var(--blanco); border: 2px solid rgba(255, 255, 255, 0.5); }
+.btn--ghost-dark:hover { background: rgba(255, 255, 255, 0.12); color: var(--blanco); }
+
+.playlist { background: var(--lana); color: var(--texto); border-radius: var(--radio-sm); padding: 1rem; }
+.playlist__head { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem; }
+.playlist__search {
+    flex: 1; padding: 0.6rem 0.9rem; border: 1px solid var(--crema-oscuro); border-radius: var(--radio-sm);
+    font: inherit; font-size: 0.95rem; background: var(--crema); color: var(--texto);
+}
+.playlist__search:focus { outline: 2px solid var(--azul-claro); outline-offset: 1px; }
+.playlist__count { font-size: 0.8rem; color: var(--texto-suave); white-space: nowrap; }
+.playlist__list {
+    list-style: none; margin: 0; padding: 0;
+    max-height: 340px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--dorado) var(--crema);
+}
+.playlist__item + .playlist__item { border-top: 1px solid var(--crema-oscuro); }
+.playlist__item button {
+    width: 100%; display: flex; align-items: center; gap: 0.9rem; text-align: left;
+    padding: 0.65rem 0.7rem; background: none; border: 0; border-radius: var(--radio-sm);
+    font: inherit; color: inherit; cursor: pointer; transition: background var(--transicion);
+}
+.playlist__item button:hover { background: var(--crema); }
+.playlist__num { flex: none; width: 2rem; font-size: 0.85rem; font-weight: 700; color: var(--texto-suave); text-align: right; }
+.playlist__info { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+.playlist__info strong { font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.playlist__info small { font-size: 0.8rem; color: var(--texto-suave); }
+.playlist__play { flex: none; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font-size: 0.75rem; background: var(--crema-oscuro); color: var(--azul); }
+.playlist__item.is-active button { background: var(--azul); color: var(--blanco); }
+.playlist__item.is-active .playlist__num, .playlist__item.is-active .playlist__info small { color: rgba(255, 255, 255, 0.75); }
+.playlist__item.is-active .playlist__play { background: var(--dorado); color: var(--texto); }
+.playlist__empty { text-align: center; color: var(--texto-suave); padding: 1rem; font-size: 0.9rem; }
+
 /* Paisajes */
 .landscape { text-align: center; }
 .landscape__media { height: 220px; border-radius: var(--radio); margin-bottom: 1rem; box-shadow: var(--sombra); position: relative; overflow: hidden; }

@@ -257,6 +257,66 @@
                     <figure class="gallery__item g5"><figcaption>Detalle de tejido</figcaption></figure>
                     <figure class="gallery__item gallery__item--wide g6"><figcaption>Feria artesanal</figcaption></figure>
                 </div>
+
+                <!-- ---- Música Personal ---- -->
+                <div id="musica" class="music">
+                    <header class="section__head section__head--sub">
+                        <p class="section__eyebrow">Música Personal</p>
+                        <h3 class="music__title">Melodías que nacen en la puna</h3>
+                        <p class="section__lead">Huaynos, mulizas y composiciones propias grabadas en San Pedro de Cajas. Elige un tema y disfruta.</p>
+                    </header>
+
+                    <div class="music__card">
+                        <div class="music__now">
+                            <div class="music__cover" aria-hidden="true">
+                                <span class="music__note">♪</span>
+                            </div>
+                            <div class="music__meta">
+                                <span class="music__tag">Reproduciendo</span>
+                                <h4 id="music-title" class="music__track">Selecciona un tema</h4>
+                                <p id="music-artist" class="music__artist">Colección San Pedro de Cajas</p>
+                            </div>
+                        </div>
+                        <audio id="music-player" class="music__player" controls preload="none"></audio>
+                        <div class="music__controls">
+                            <button type="button" class="btn btn--small btn--ghost-dark" data-music="prev" aria-label="Tema anterior">‹ Anterior</button>
+                            <button type="button" class="btn btn--small btn--primary" data-music="next" aria-label="Siguiente tema">Siguiente ›</button>
+                        </div>
+
+                        <div class="playlist">
+                            <div class="playlist__head">
+                                <label for="music-search" class="visually-hidden">Buscar canción</label>
+                                <input id="music-search" class="playlist__search" type="search" placeholder="Buscar entre los temas…" autocomplete="off">
+                                <span id="music-count" class="playlist__count"></span>
+                            </div>
+                            <!--
+                                Para añadir canciones (hasta 200 o más), copia un <li> y cambia:
+                                  data-src   → ruta/URL del archivo de audio (mp3/ogg)
+                                  data-title → nombre del tema
+                                  data-artist→ intérprete
+                                Recomendado: guardar los archivos en la carpeta /musica/
+                            -->
+                            <ol id="music-list" class="playlist__list">
+                                <li class="playlist__item" data-src="musica/tema-01.mp3" data-title="Amanecer en Cajas" data-artist="Conjunto San Pedro">
+                                    <button type="button"><span class="playlist__num">1</span><span class="playlist__info"><strong>Amanecer en Cajas</strong><small>Conjunto San Pedro</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
+                                </li>
+                                <li class="playlist__item" data-src="musica/tema-02.mp3" data-title="Muliza del Tejedor" data-artist="Los Hijos de Tarma">
+                                    <button type="button"><span class="playlist__num">2</span><span class="playlist__info"><strong>Muliza del Tejedor</strong><small>Los Hijos de Tarma</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
+                                </li>
+                                <li class="playlist__item" data-src="musica/tema-03.mp3" data-title="Huayno de la Laguna" data-artist="Voces de la Puna">
+                                    <button type="button"><span class="playlist__num">3</span><span class="playlist__info"><strong>Huayno de la Laguna</strong><small>Voces de la Puna</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
+                                </li>
+                                <li class="playlist__item" data-src="musica/tema-04.mp3" data-title="Fiesta de San Pedro" data-artist="Banda Municipal">
+                                    <button type="button"><span class="playlist__num">4</span><span class="playlist__info"><strong>Fiesta de San Pedro</strong><small>Banda Municipal</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
+                                </li>
+                                <li class="playlist__item" data-src="musica/tema-05.mp3" data-title="Cielo de Junín" data-artist="Dúo Andino">
+                                    <button type="button"><span class="playlist__num">5</span><span class="playlist__info"><strong>Cielo de Junín</strong><small>Dúo Andino</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
+                                </li>
+                            </ol>
+                            <p class="playlist__empty" hidden>No se encontraron temas con ese nombre.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -444,5 +504,71 @@
         </div>
     </footer>
 
+<script>
+    (function () {
+        var player = document.getElementById('music-player');
+        var list = document.getElementById('music-list');
+        if (!player || !list) return;
+        var items = Array.prototype.slice.call(list.querySelectorAll('.playlist__item'));
+        var title = document.getElementById('music-title');
+        var artist = document.getElementById('music-artist');
+        var search = document.getElementById('music-search');
+        var count = document.getElementById('music-count');
+        var empty = document.querySelector('.playlist__empty');
+        var card = document.querySelector('.music__card');
+        var current = -1;
+
+        function updateCount(visible) {
+            count.textContent = visible + ' / ' + items.length + ' temas';
+        }
+
+        function play(index, autoplay) {
+            if (index < 0 || index >= items.length) return;
+            var li = items[index];
+            current = index;
+            items.forEach(function (el) { el.classList.remove('is-active'); });
+            li.classList.add('is-active');
+            player.src = li.getAttribute('data-src');
+            title.textContent = li.getAttribute('data-title');
+            artist.textContent = li.getAttribute('data-artist') || '';
+            card.classList.add('is-playing');
+            if (autoplay) player.play().catch(function () {});
+        }
+
+        list.addEventListener('click', function (e) {
+            var li = e.target.closest('.playlist__item');
+            if (li) play(items.indexOf(li), true);
+        });
+
+        document.querySelectorAll('[data-music]').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                if (!items.length) return;
+                var step = btn.getAttribute('data-music') === 'next' ? 1 : -1;
+                play((current + step + items.length) % items.length, true);
+            });
+        });
+
+        player.addEventListener('ended', function () {
+            if (current < items.length - 1) play(current + 1, true);
+        });
+        player.addEventListener('pause', function () { card.classList.remove('is-playing'); });
+        player.addEventListener('play', function () { card.classList.add('is-playing'); });
+
+        search.addEventListener('input', function () {
+            var q = search.value.trim().toLowerCase();
+            var visible = 0;
+            items.forEach(function (li) {
+                var text = (li.getAttribute('data-title') + ' ' + li.getAttribute('data-artist')).toLowerCase();
+                var match = !q || text.indexOf(q) !== -1;
+                li.hidden = !match;
+                if (match) visible++;
+            });
+            empty.hidden = visible !== 0;
+            updateCount(visible);
+        });
+
+        updateCount(items.length);
+    })();
+</script>
 </body>
 </html>

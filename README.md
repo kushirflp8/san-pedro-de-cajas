@@ -15,7 +15,7 @@ Una página web moderna, limpia y completamente responsiva dedicada a **San Pedr
 2. **Nosotros** - Historia, tradición textil y datos del distrito
 3. **Turismo** - Qué ver y hacer, cómo llegar y recomendaciones
 4. **Hospedajes** - Alojamientos y turismo vivencial
-5. **Galería** - Espacio para mostrar artesanías
+5. **Galería** - Espacio para mostrar artesanías, con la subsección **Música Personal** (reproductor + lista de temas propios)
 6. **Paisajes** - Vistas y naturaleza de la región
 7. **Nuestra Gente** - Historias de la comunidad
 8. **Contacto** - Formulario de contacto e información
@@ -24,6 +24,7 @@ Una página web moderna, limpia y completamente responsiva dedicada a **San Pedr
 ### Funcionalidades
 ✅ Menú de navegación responsivo (hamburguesa en móvil, solo CSS, sin JavaScript)  
 ✅ Reproductor de audio en vivo integrado  
+✅ Reproductor de música personal con lista de temas, buscador y avance automático  
 ✅ Formulario de contacto con validación nativa HTML5  
 ✅ Scroll suave entre secciones  
 ✅ Animaciones de carga de elementos  
@@ -64,6 +65,18 @@ La página está optimizada para:
 - Reproductor HTML5 nativo
 - Controles completos (play, pause, volumen)
 - Responsive y adaptable
+
+### Música Personal (dentro de Galería)
+
+La lista de canciones vive en `index.html` dentro de `<ol id="music-list">`. Para añadir un tema (la estructura admite 200 o más), copia un `<li>`:
+
+```html
+<li class="playlist__item" data-src="musica/tema-06.mp3" data-title="Nombre del tema" data-artist="Intérprete">
+    <button type="button"><span class="playlist__num">6</span><span class="playlist__info"><strong>Nombre del tema</strong><small>Intérprete</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
+</li>
+```
+
+Guarda los archivos de audio (mp3/ogg) en una carpeta `musica/`. La lista tiene scroll propio y un buscador por título o intérprete; al terminar una canción se reproduce la siguiente. Un pequeño script al final de `index.html` gestiona la reproducción.
 
 ## 💬 Formulario de Contacto
 
