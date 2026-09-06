@@ -38,6 +38,7 @@ Una página web moderna, limpia y completamente responsiva dedicada a **San Pedr
 san-pedro-de-cajas/
 ├── index.html          # Archivo principal HTML5
 ├── styles.css          # Estilos CSS3 responsivos
+├── imagenes/           # Fotografías reales del sitio antiguo
 └── README.md           # Este archivo
 ```
 
@@ -86,7 +87,11 @@ La sección `#noticias` va justo después del hero y el anuncio superior. Para p
 </article>
 ```
 
-Añade `news--destacada` al artículo principal para que ocupe el doble de ancho. Si no hay foto, usa `news__media--1`, `--2` o `--3` para un fondo con degradado andino.
+Añade `news--destacada` al artículo principal para que ocupe el doble de ancho. Las noticias enlazan a publicaciones públicas de Facebook.
+
+## 🛏️ Hospedajes
+
+La lista oficial de alojamientos está pendiente de datos reales. La sección conserva un formulario de contacto para registrar hospedajes con fotos, precios y contacto.
 
 ### Música Personal (dentro de Galería)
 
@@ -121,10 +126,11 @@ Incluye:
 3. **Personalizar contenido**
    - Edita los textos en `index.html`
    - Modifica los colores en las variables CSS en `styles.css`
-   - Añade tus imágenes reemplazando los placeholders
+   - Las fotografías reales se encuentran en `imagenes/`
 
 4. **Integrar publicidad**
-   - Pega el código de Google AdSense dentro de los bloques `.ad__slot` con `data-ad="adsense-top"` y `data-ad="adsense-bottom"`
+   - El bloque superior de Google AdSense está integrado con el publisher del sitio antiguo (`ca-pub-6914749946758407`)
+   - El bloque inferior queda reservado para publicidad responsive
    - Coloca banners de patrocinadores en los bloques `data-ad="private-1..3"` (300×250)
 
 ## 📊 Secciones de Publicidad
@@ -155,7 +161,7 @@ Modifica el contenido en `index.html`:
 ```
 
 ### Añadir Imágenes
-Reemplaza el fondo de cada `gallery__item` con una etiqueta `<img>`:
+Las fotografías del sitio están en `imagenes/`. Para añadir otra imagen, usa una etiqueta `<img>`:
 ```html
 <figure class="gallery__item">
     <img src="tu-imagen.jpg" alt="Descripción">
