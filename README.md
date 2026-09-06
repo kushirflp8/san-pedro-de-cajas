@@ -184,5 +184,5 @@ Libre para uso y distribución.
 **Hecho con ❤️ para San Pedro de Cajas**
 
 Para más información, contacta a:
-- 📧 Email: contacto@sanpedrodecajas.com
+- 📧 Email: support@spcserver.net
 - 📍 Ubicación: Tarma, Junín, Perú
