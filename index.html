@@ -38,6 +38,7 @@
             <nav id="nav-principal" class="nav" aria-label="Navegación principal">
                 <ul>
                     <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#noticias">Noticias</a></li>
                     <li><a href="#nosotros">Nosotros</a></li>
                     <li><a href="#turismo">Turismo</a></li>
                     <li><a href="#hospedajes">Hospedajes</a></li>
@@ -91,6 +92,65 @@
                 </div>
             </aside>
         </div>
+
+        <!-- ============ NOTICIAS ============ -->
+        <section id="noticias" class="section section--alt">
+            <div class="container">
+                <header class="section__head">
+                    <p class="section__eyebrow">Noticias</p>
+                    <h2>Lo último en San Pedro de Cajas</h2>
+                    <p class="section__lead">Actualidad del pueblo: fiestas, obras, avisos comunales y logros de nuestra gente.</p>
+                </header>
+
+                <!--
+                    Para publicar una noticia, copia un <article class="news"> y ponlo PRIMERO en la lista.
+                    - <time datetime="AAAA-MM-DD">: fecha de publicación
+                    - .news__tag: categoría (Comunidad, Cultura, Obras, Radio, Aviso...)
+                    - .news__media: reemplaza por <img src="..." alt="..."> cuando tengas foto
+                    Añade class="news--destacada" al artículo más importante para que ocupe el doble de ancho.
+                -->
+                <div class="news-grid">
+                    <article class="news news--destacada">
+                        <div class="news__media news__media--1" aria-hidden="true"></div>
+                        <div class="news__body">
+                            <div class="news__meta">
+                                <span class="news__tag">Cultura</span>
+                                <time datetime="2026-09-01">1 de septiembre de 2026</time>
+                            </div>
+                            <h3>Se anuncia la Feria Artesanal de Primavera</h3>
+                            <p>Los talleres de tapices abrirán sus puertas durante tres días con demostraciones de hilado, tintes naturales y venta directa de los maestros tejedores.</p>
+                            <a href="#contacto" class="news__link">Leer más →</a>
+                        </div>
+                    </article>
+                    <article class="news">
+                        <div class="news__media news__media--2" aria-hidden="true"></div>
+                        <div class="news__body">
+                            <div class="news__meta">
+                                <span class="news__tag">Obras</span>
+                                <time datetime="2026-08-24">24 de agosto de 2026</time>
+                            </div>
+                            <h3>Avanza el mejoramiento de la carretera desde Tarma</h3>
+                            <p>La vía de acceso al distrito recibe trabajos de asfaltado que reducirán el tiempo de viaje para visitantes y comerciantes.</p>
+                            <a href="#contacto" class="news__link">Leer más →</a>
+                        </div>
+                    </article>
+                    <article class="news">
+                        <div class="news__media news__media--3" aria-hidden="true"></div>
+                        <div class="news__body">
+                            <div class="news__meta">
+                                <span class="news__tag">Radio</span>
+                                <time datetime="2026-08-15">15 de agosto de 2026</time>
+                            </div>
+                            <h3>Radio San Pedro estrena programación comunitaria</h3>
+                            <p>Nuevos espacios de música andina, entrevistas a artesanos y avisos comunales, todas las mañanas desde las 6:00.</p>
+                            <a href="#radio" class="news__link">Escuchar →</a>
+                        </div>
+                    </article>
+                </div>
+
+                <p class="note">¿Tienes una noticia del pueblo? <a href="#contacto">Envíanosla</a> y la publicamos aquí.</p>
+            </div>
+        </section>
 
         <!-- ============ NOSOTROS ============ -->
         <section id="nosotros" class="section">
@@ -474,6 +534,7 @@
             <div>
                 <h4>Secciones</h4>
                 <ul>
+                    <li><a href="#noticias">Noticias</a></li>
                     <li><a href="#nosotros">Nosotros</a></li>
                     <li><a href="#turismo">Turismo</a></li>
                     <li><a href="#hospedajes">Hospedajes</a></li>

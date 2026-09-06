@@ -12,14 +12,15 @@ Una página web moderna, limpia y completamente responsiva dedicada a **San Pedr
 
 ### Secciones Incluidas
 1. **Inicio (Hero)** - Presentación principal con Radio San Pedro en vivo
-2. **Nosotros** - Historia, tradición textil y datos del distrito
-3. **Turismo** - Qué ver y hacer, cómo llegar y recomendaciones
-4. **Hospedajes** - Alojamientos y turismo vivencial
-5. **Galería** - Espacio para mostrar artesanías, con la subsección **Música Personal** (reproductor + lista de temas propios)
-6. **Paisajes** - Vistas y naturaleza de la región
-7. **Nuestra Gente** - Historias de la comunidad
-8. **Contacto** - Formulario de contacto e información
-9. **Publicidad** - Dos espacios para Google AdSense (superior e inferior) y tres espacios privados (300×250) para patrocinadores
+2. **Noticias** - Actualidad del pueblo en tarjetas (una destacada + secundarias), fácil de actualizar
+3. **Nosotros** - Historia, tradición textil y datos del distrito
+4. **Turismo** - Qué ver y hacer, cómo llegar y recomendaciones
+5. **Hospedajes** - Alojamientos y turismo vivencial
+6. **Galería** - Espacio para mostrar artesanías, con la subsección **Música Personal** (reproductor + lista de temas propios)
+7. **Paisajes** - Vistas y naturaleza de la región
+8. **Nuestra Gente** - Historias de la comunidad
+9. **Contacto** - Formulario de contacto e información
+10. **Publicidad** - Dos espacios para Google AdSense (superior e inferior) y tres espacios privados (300×250) para patrocinadores
 
 ### Funcionalidades
 ✅ Menú de navegación responsivo (hamburguesa en móvil, solo CSS, sin JavaScript)  
@@ -65,6 +66,27 @@ La página está optimizada para:
 - Reproductor HTML5 nativo
 - Controles completos (play, pause, volumen)
 - Responsive y adaptable
+
+## 📰 Noticias
+
+La sección `#noticias` va justo después del hero y el anuncio superior. Para publicar una noticia, copia un `<article class="news">` dentro de `.news-grid` y colócalo **primero**:
+
+```html
+<article class="news">
+    <div class="news__media"><img src="imagenes/noticia.jpg" alt="Descripción de la foto"></div>
+    <div class="news__body">
+        <div class="news__meta">
+            <span class="news__tag">Comunidad</span>
+            <time datetime="2026-09-10">10 de septiembre de 2026</time>
+        </div>
+        <h3>Título de la noticia</h3>
+        <p>Resumen breve de la noticia.</p>
+        <a href="#" class="news__link">Leer más →</a>
+    </div>
+</article>
+```
+
+Añade `news--destacada` al artículo principal para que ocupe el doble de ancho. Si no hay foto, usa `news__media--1`, `--2` o `--3` para un fondo con degradado andino.
 
 ### Música Personal (dentro de Galería)
 
