@@ -3,219 +3,446 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>San Pedro de Cajas - Tierra de Artesanos</title>
-    <meta name="description" content="San Pedro de Cajas tierra de artesanos es uno de los nueve distritos de la provincia de Tarma de la Región Junín, Perú.">
+    <title>San Pedro de Cajas - Tierra de Artesanos | Tarma, Junín, Perú</title>
+    <meta name="description" content="San Pedro de Cajas, tierra de artesanos: turismo, hospedajes, galería, paisajes, nuestra gente y Radio San Pedro en vivo. Distrito de la provincia de Tarma, Región Junín, Perú.">
+    <meta name="keywords" content="San Pedro de Cajas, Tarma, Junín, Perú, artesanos, tapices, turismo, hospedajes, radio en vivo">
+    <meta name="theme-color" content="#1B4D5C">
+    <meta property="og:title" content="San Pedro de Cajas - Tierra de Artesanos">
+    <meta property="og:description" content="Turismo, cultura, hospedajes y Radio San Pedro en vivo desde los Andes de Tarma.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- Cabecera / Menú de Navegación -->
+    <a class="skip-link" href="#inicio">Saltar al contenido</a>
+
+    <!-- ============ CABECERA ============ -->
     <header class="header">
-        <div class="logo">
-            <h1>🏔️ San Pedro de Cajas</h1>
-            <p class="subtitle">Tierra de Artesanos</p>
+        <div class="container header__inner">
+            <a href="#inicio" class="logo" aria-label="San Pedro de Cajas - Inicio">
+                <span class="logo__mark" aria-hidden="true"></span>
+                <span class="logo__text">
+                    <strong>San Pedro de Cajas</strong>
+                    <small>Tierra de Artesanos</small>
+                </span>
+            </a>
+
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
+            <label for="menu-toggle" class="menu-btn" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </label>
+
+            <nav class="nav" aria-label="Navegación principal">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#turismo">Turismo</a></li>
+                    <li><a href="#hospedajes">Hospedajes</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#paisajes">Paisajes</a></li>
+                    <li><a href="#gente">Nuestra Gente</a></li>
+                    <li><a href="#contacto" class="nav__cta">Contacto</a></li>
+                </ul>
+            </nav>
         </div>
-        <button class="menu-toggle" id="menuToggle">☰</button>
-        <nav class="nav" id="nav">
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#galeria">Galería</a></li>
-                <li><a href="#paisajes">Paisajes</a></li>
-                <li><a href="#gente">Nuestra Gente</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <!-- Reproductor de Radio en Vivo -->
-    <section class="radio-container">
-        <h3>🎙️ Radio San Pedro en Vivo</h3>
-        <p>Escucha la voz de nuestra comunidad</p>
-        <audio controls>
-            <source src="http://stream.zenolive.com/g9gc78mmn3quv" type="audio/mpeg">
-            Tu navegador no soporta el reproductor de audio.
-        </audio>
-    </section>
-
-    <!-- Contenido Principal -->
     <main>
-        <!-- Sección Hero -->
+        <!-- ============ INICIO / HERO ============ -->
         <section id="inicio" class="hero">
-            <h2>Cuna del Arte Textil y el Mate Burilado</h2>
-            <p>Bienvenidos a la tierra de artesanos en la provincia de Tarma, Junín</p>
-            <a href="#galeria" class="btn">Explorar</a>
-        </section>
+            <div class="hero__pattern" aria-hidden="true"></div>
+            <div class="container hero__content">
+                <p class="hero__eyebrow">Tarma · Junín · Perú · 4 014 m s. n. m.</p>
+                <h1>Bienvenidos a San Pedro de Cajas</h1>
+                <p class="hero__lead">Cuna de los tapices más finos de los Andes, de paisajes de puna y de una comunidad que teje su historia con orgullo.</p>
+                <div class="hero__actions">
+                    <a href="#turismo" class="btn btn--primary">Descubre el destino</a>
+                    <a href="#radio" class="btn btn--ghost">Escucha la radio</a>
+                </div>
+            </div>
 
-        <!-- Sección Nosotros -->
-        <section id="nosotros" class="nosotros">
+            <!-- Reproductor de radio en vivo -->
             <div class="container">
-                <h2>Nosotros</h2>
-                <div class="content-grid">
-                    <div class="content-card">
-                        <h3>🧵 Tradición Textil</h3>
-                        <p>San Pedro de Cajas es famoso por sus textiles artesanales, elaborados con técnicas ancestrales transmitidas de generación en generación. Nuestros tejedores crean piezas únicas que reflejan la identidad cultural de nuestro pueblo.</p>
+                <div id="radio" class="radio">
+                    <div class="radio__info">
+                        <span class="radio__live"><span class="radio__dot" aria-hidden="true"></span> EN VIVO</span>
+                        <h2>Radio San Pedro</h2>
+                        <p>La voz de nuestra comunidad, las 24 horas.</p>
                     </div>
-                    <div class="content-card">
-                        <h3>🎨 Mate Burilado</h3>
-                        <p>El mate burilado es una expresión artística única de nuestra región. Cada pieza cuenta una historia, decorada con grabados intrincados que representan la flora, fauna y cosmovisión andina.</p>
-                    </div>
-                    <div class="content-card">
-                        <h3>🏞️ Historia Viva</h3>
-                        <p>Ubicados en la provincia de Tarma, a 3,200 metros sobre el nivel del mar, San Pedro de Cajas mantiene vivas las tradiciones ancestrales de los Andes, siendo uno de los nueve distritos más importantes de la región.</p>
-                    </div>
+                    <audio controls preload="none" class="radio__player">
+                        <source src="http://stream.zenolive.com/g9gc78mmn3quv" type="audio/mpeg">
+                        Tu navegador no soporta el reproductor de audio.
+                        <a href="http://stream.zenolive.com/g9gc78mmn3quv">Abrir la transmisión</a>
+                    </audio>
                 </div>
             </div>
         </section>
 
-        <!-- Sección Galería -->
-        <section id="galeria" class="galeria">
+        <!-- Anuncio superior (Google AdSense - leaderboard) -->
+        <div class="container">
+            <aside class="ad ad--leaderboard" aria-label="Publicidad">
+                <span class="ad__label">Publicidad</span>
+                <div class="ad__slot" data-ad="adsense-top">
+                    <!-- Pega aquí el código de Google AdSense (728x90 / responsive) -->
+                    <p>Espacio Google AdSense · 728 × 90</p>
+                </div>
+            </aside>
+        </div>
+
+        <!-- ============ NOSOTROS ============ -->
+        <section id="nosotros" class="section">
             <div class="container">
-                <h2>Galería</h2>
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <div class="gallery-placeholder">Textiles Tradicionales</div>
-                        <p>Obras maestras del telar</p>
-                    </div>
-                    <div class="gallery-item">
-                        <div class="gallery-placeholder">Mates Burilados</div>
-                        <p>Arte decorativo andino</p>
-                    </div>
-                    <div class="gallery-item">
-                        <div class="gallery-placeholder">Artesanía Local</div>
-                        <p>Creaciones únicas</p>
-                    </div>
-                    <div class="gallery-item">
-                        <div class="gallery-placeholder">Productos Típicos</div>
-                        <p>Elaboración tradicional</p>
-                    </div>
-                    <div class="gallery-item">
-                        <div class="gallery-placeholder">Tejidos de Colores</div>
-                        <p>Paleta andina</p>
-                    </div>
-                    <div class="gallery-item">
-                        <div class="gallery-placeholder">Detalles Artísticos</div>
-                        <p>Precisión y belleza</p>
-                    </div>
+                <header class="section__head">
+                    <p class="section__eyebrow">Nosotros</p>
+                    <h2>Un pueblo que teje su identidad</h2>
+                    <p class="section__lead">San Pedro de Cajas es uno de los nueve distritos de la provincia de Tarma, en la Región Junín. Reconocido en todo el Perú por sus tapices de lana elaborados con la técnica del "hilado a mano", es un lugar donde la tradición sigue viva en cada telar.</p>
+                </header>
+
+                <div class="grid grid--3">
+                    <article class="card">
+                        <div class="card__icon card__icon--tierra" aria-hidden="true">✦</div>
+                        <h3>Tradición textil</h3>
+                        <p>Los tapices sampedranos se tejen con lana de oveja teñida con tintes naturales, representando paisajes, costumbres y la cosmovisión andina.</p>
+                    </article>
+                    <article class="card">
+                        <div class="card__icon card__icon--azul" aria-hidden="true">✦</div>
+                        <h3>Historia viva</h3>
+                        <p>Fundado como distrito en 1857, el pueblo conserva su plaza, su iglesia colonial y fiestas patronales que reúnen a sampedranos de todo el mundo.</p>
+                    </article>
+                    <article class="card">
+                        <div class="card__icon card__icon--dorado" aria-hidden="true">✦</div>
+                        <h3>Comunidad orgullosa</h3>
+                        <p>Artesanos, ganaderos y agricultores comparten una misma raíz: el amor por su tierra y el compromiso de transmitirla a las nuevas generaciones.</p>
+                    </article>
+                </div>
+
+                <div class="stats">
+                    <div class="stat"><strong>4 014 m</strong><span>de altitud</span></div>
+                    <div class="stat"><strong>1857</strong><span>creación del distrito</span></div>
+                    <div class="stat"><strong>+500</strong><span>familias artesanas</span></div>
+                    <div class="stat"><strong>40 km</strong><span>desde Tarma</span></div>
                 </div>
             </div>
         </section>
 
-        <!-- Sección Paisajes -->
-        <section id="paisajes" class="paisajes">
+        <!-- ============ TURISMO ============ -->
+        <section id="turismo" class="section section--alt">
             <div class="container">
-                <h2>Paisajes</h2>
-                <div class="landscape-grid">
-                    <div class="landscape-item">
-                        <div class="landscape-placeholder">Montañas Andinas</div>
-                        <p>Cordilleras majestuosas que rodean nuestro pueblo</p>
-                    </div>
-                    <div class="landscape-item">
-                        <div class="landscape-placeholder">Valles Verdes</div>
-                        <p>Naturaleza exuberante en cada rincón</p>
-                    </div>
-                    <div class="landscape-item">
-                        <div class="landscape-placeholder">Atardeceres</div>
-                        <p>Colores del cielo en el horizonte andino</p>
-                    </div>
+                <header class="section__head">
+                    <p class="section__eyebrow">Turismo</p>
+                    <h2>Qué ver y hacer</h2>
+                    <p class="section__lead">Naturaleza de altura, cultura ancestral y experiencias que solo se viven en los Andes de Tarma.</p>
+                </header>
+
+                <div class="grid grid--2">
+                    <article class="feature">
+                        <div class="feature__media feature__media--tapices" role="img" aria-label="Talleres de tapices"></div>
+                        <div class="feature__body">
+                            <h3>Talleres de tapices</h3>
+                            <p>Visita los talleres familiares, conoce el proceso del hilado, teñido y tejido, y lleva a casa una pieza única hecha a mano.</p>
+                        </div>
+                    </article>
+                    <article class="feature">
+                        <div class="feature__media feature__media--lagunas" role="img" aria-label="Lagunas y puna"></div>
+                        <div class="feature__body">
+                            <h3>Lagunas y puna</h3>
+                            <p>Caminatas hacia las lagunas altoandinas, avistamiento de vicuñas y paisajes de ichu que cambian de color con el sol.</p>
+                        </div>
+                    </article>
+                    <article class="feature">
+                        <div class="feature__media feature__media--fiestas" role="img" aria-label="Fiestas patronales"></div>
+                        <div class="feature__body">
+                            <h3>Fiestas patronales</h3>
+                            <p>En junio, la fiesta de San Pedro y San Pablo llena las calles de música, danzas tradicionales y gastronomía local.</p>
+                        </div>
+                    </article>
+                    <article class="feature">
+                        <div class="feature__media feature__media--gastronomia" role="img" aria-label="Gastronomía andina"></div>
+                        <div class="feature__body">
+                            <h3>Gastronomía andina</h3>
+                            <p>Pachamanca, trucha fresca, cuy y papas nativas: sabores de la tierra preparados con recetas de generaciones.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="info-strip">
+                    <div><strong>Cómo llegar:</strong> Desde Lima a Tarma (≈ 6 h por la Carretera Central) y luego 40 km hasta San Pedro de Cajas.</div>
+                    <div><strong>Mejor época:</strong> Abril a octubre (temporada seca), con cielos despejados y noches estrelladas.</div>
+                    <div><strong>Recomendación:</strong> Lleva ropa abrigadora y aclimátate un día en Tarma antes de subir.</div>
                 </div>
             </div>
         </section>
 
-        <!-- Sección Nuestra Gente -->
-        <section id="gente" class="gente">
+        <!-- ============ HOSPEDAJES ============ -->
+        <section id="hospedajes" class="section">
             <div class="container">
-                <h2>Nuestra Gente</h2>
-                <p class="intro-text">Los habitantes de San Pedro de Cajas son guardianes de una rica herencia cultural. Con dedicación y orgullo, preservan las tradiciones ancestrales mientras construyen un futuro próspero para las nuevas generaciones.</p>
-                <div class="people-grid">
-                    <div class="person-card">
-                        <div class="person-icon">👨‍🎨</div>
+                <header class="section__head">
+                    <p class="section__eyebrow">Hospedajes</p>
+                    <h2>Dónde quedarse</h2>
+                    <p class="section__lead">Alojamientos familiares y hospedajes acogedores para vivir la experiencia sampedrana de cerca.</p>
+                </header>
+
+                <div class="grid grid--3">
+                    <article class="lodging">
+                        <div class="lodging__media lodging__media--1" role="img" aria-label="Hospedaje familiar"></div>
+                        <div class="lodging__body">
+                            <span class="tag">Familiar</span>
+                            <h3>Casa de Hospedaje</h3>
+                            <p>Habitaciones cómodas junto a la plaza principal, con desayuno típico y atención personalizada.</p>
+                            <ul class="lodging__amenities">
+                                <li>Agua caliente</li><li>Wi-Fi</li><li>Desayuno</li>
+                            </ul>
+                            <a href="#contacto" class="btn btn--small">Consultar</a>
+                        </div>
+                    </article>
+                    <article class="lodging">
+                        <div class="lodging__media lodging__media--2" role="img" aria-label="Hostal artesanal"></div>
+                        <div class="lodging__body">
+                            <span class="tag">Artesanal</span>
+                            <h3>Hostal del Tejedor</h3>
+                            <p>Ambientes decorados con tapices locales y un taller en casa donde puedes ver a los artesanos trabajar.</p>
+                            <ul class="lodging__amenities">
+                                <li>Taller</li><li>Estacionamiento</li><li>Cocina</li>
+                            </ul>
+                            <a href="#contacto" class="btn btn--small">Consultar</a>
+                        </div>
+                    </article>
+                    <article class="lodging">
+                        <div class="lodging__media lodging__media--3" role="img" aria-label="Turismo vivencial"></div>
+                        <div class="lodging__body">
+                            <span class="tag">Vivencial</span>
+                            <h3>Turismo Vivencial</h3>
+                            <p>Convive con una familia sampedrana, participa en las labores del campo y aprende a tejer en telar.</p>
+                            <ul class="lodging__amenities">
+                                <li>Comidas</li><li>Actividades</li><li>Guía local</li>
+                            </ul>
+                            <a href="#contacto" class="btn btn--small">Consultar</a>
+                        </div>
+                    </article>
+                </div>
+
+                <p class="note">¿Tienes un hospedaje en San Pedro de Cajas? <a href="#contacto">Escríbenos</a> para aparecer en esta sección.</p>
+            </div>
+        </section>
+
+        <!-- Anuncios privados (patrocinadores locales) -->
+        <div class="container">
+            <aside class="ad ad--sponsors" aria-label="Patrocinadores">
+                <span class="ad__label">Anuncios de patrocinadores</span>
+                <div class="ad__grid">
+                    <div class="ad__slot ad__slot--private" data-ad="private-1"><p>Espacio privado · 300 × 250</p></div>
+                    <div class="ad__slot ad__slot--private" data-ad="private-2"><p>Espacio privado · 300 × 250</p></div>
+                    <div class="ad__slot ad__slot--private" data-ad="private-3"><p>Espacio privado · 300 × 250</p></div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- ============ GALERÍA ============ -->
+        <section id="galeria" class="section section--alt">
+            <div class="container">
+                <header class="section__head">
+                    <p class="section__eyebrow">Galería</p>
+                    <h2>Arte hecho a mano</h2>
+                    <p class="section__lead">Reemplaza cada bloque por una fotografía: <code>&lt;img src="..." alt="..."&gt;</code></p>
+                </header>
+
+                <div class="gallery">
+                    <figure class="gallery__item gallery__item--wide g1"><figcaption>Tapiz "Cosecha andina"</figcaption></figure>
+                    <figure class="gallery__item g2"><figcaption>Hilado a mano</figcaption></figure>
+                    <figure class="gallery__item g3"><figcaption>Tintes naturales</figcaption></figure>
+                    <figure class="gallery__item g4"><figcaption>Telar tradicional</figcaption></figure>
+                    <figure class="gallery__item g5"><figcaption>Detalle de tejido</figcaption></figure>
+                    <figure class="gallery__item gallery__item--wide g6"><figcaption>Feria artesanal</figcaption></figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ PAISAJES ============ -->
+        <section id="paisajes" class="section">
+            <div class="container">
+                <header class="section__head">
+                    <p class="section__eyebrow">Paisajes</p>
+                    <h2>Los Andes en cada horizonte</h2>
+                </header>
+
+                <div class="grid grid--3">
+                    <article class="landscape">
+                        <div class="landscape__media landscape__media--montanas" role="img" aria-label="Montañas"></div>
+                        <h3>Cordillera</h3>
+                        <p>Cerros tutelares que abrazan el pueblo y se pintan de oro al atardecer.</p>
+                    </article>
+                    <article class="landscape">
+                        <div class="landscape__media landscape__media--pampas" role="img" aria-label="Pampas"></div>
+                        <h3>Pampas y ovejas</h3>
+                        <p>Extensas praderas donde pasta el ganado que da la lana de nuestros tapices.</p>
+                    </article>
+                    <article class="landscape">
+                        <div class="landscape__media landscape__media--cielo" role="img" aria-label="Cielo nocturno"></div>
+                        <h3>Cielo estrellado</h3>
+                        <p>Sin contaminación lumínica, la Vía Láctea se despliega sobre San Pedro cada noche.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ NUESTRA GENTE ============ -->
+        <section id="gente" class="section section--dark">
+            <div class="container">
+                <header class="section__head">
+                    <p class="section__eyebrow">Nuestra Gente</p>
+                    <h2>Guardianes de la tradición</h2>
+                    <p class="section__lead">Los sampedranos, dentro y fuera del pueblo, mantienen viva una herencia cultural única.</p>
+                </header>
+
+                <div class="grid grid--4">
+                    <article class="person">
+                        <div class="person__avatar" aria-hidden="true">A</div>
                         <h3>Artesanos</h3>
-                        <p>Maestros del telar y el buril que dedican su vida al arte</p>
-                    </div>
-                    <div class="person-card">
-                        <div class="person-icon">👩‍🌾</div>
-                        <h3>Agricultores</h3>
-                        <p>Cultivadores de la tierra que alimentan a nuestra comunidad</p>
-                    </div>
-                    <div class="person-card">
-                        <div class="person-icon">👴</div>
-                        <h3>Ancianos Sabios</h3>
-                        <p>Transmisores de conocimiento y tradición ancestral</p>
-                    </div>
-                    <div class="person-card">
-                        <div class="person-icon">👧</div>
-                        <h3>Nuevas Generaciones</h3>
-                        <p>Jóvenes que aprenden y preservan nuestras tradiciones</p>
-                    </div>
+                        <p>Maestros del telar que convierten la lana en obras de arte reconocidas en el mundo.</p>
+                    </article>
+                    <article class="person">
+                        <div class="person__avatar" aria-hidden="true">G</div>
+                        <h3>Ganaderos y agricultores</h3>
+                        <p>Cuidan la tierra y los rebaños que sostienen la vida y la economía del distrito.</p>
+                    </article>
+                    <article class="person">
+                        <div class="person__avatar" aria-hidden="true">M</div>
+                        <h3>Mayores</h3>
+                        <p>Portadores de la memoria, las historias y el saber de nuestros abuelos.</p>
+                    </article>
+                    <article class="person">
+                        <div class="person__avatar" aria-hidden="true">J</div>
+                        <h3>Jóvenes</h3>
+                        <p>Nuevas generaciones que innovan sin olvidar sus raíces, aquí y desde el extranjero.</p>
+                    </article>
                 </div>
+
+                <blockquote class="quote">
+                    "Sampedranos de corazón: donde estemos, llevamos un pedazo de nuestra tierra tejido en el alma."
+                </blockquote>
             </div>
         </section>
 
-        <!-- Sección de Anuncios -->
-        <section class="ads-container">
+        <!-- ============ CONTACTO ============ -->
+        <section id="contacto" class="section">
             <div class="container">
-                <div class="ad-space">
-                    <p>📢 Espacio Publicitario</p>
-                    <p style="font-size: 0.9rem; margin-top: 10px;">Aquí irán widgets de publicidad (Google AdSense, etc.)</p>
-                </div>
-            </div>
-        </section>
+                <header class="section__head">
+                    <p class="section__eyebrow">Contacto</p>
+                    <h2>Escríbenos</h2>
+                    <p class="section__lead">¿Quieres visitarnos, anunciar tu negocio o compartir una historia? Estamos para ayudarte.</p>
+                </header>
 
-        <!-- Sección Contacto -->
-        <section id="contacto" class="contacto">
-            <div class="container">
-                <h2>Contacto</h2>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <h3>Información de Contacto</h3>
-                        <p><strong>📍 Ubicación:</strong> San Pedro de Cajas, Tarma, Junín - Perú</p>
-                        <p><strong>📧 Email:</strong> info@sanpedrodecanjas.pe</p>
-                        <p><strong>📱 Teléfono:</strong> +51 (64) XXX-XXXX</p>
-                        <p><strong>⏰ Horario:</strong> Lunes a Viernes 8:00 AM - 6:00 PM</p>
+                <div class="contact">
+                    <div class="contact__info">
+                        <div class="contact__item">
+                            <strong>Ubicación</strong>
+                            <span>Plaza Principal, San Pedro de Cajas, Tarma, Junín – Perú</span>
+                        </div>
+                        <div class="contact__item">
+                            <strong>Teléfono / WhatsApp</strong>
+                            <span><a href="tel:+51900000000">+51 900 000 000</a></span>
+                        </div>
+                        <div class="contact__item">
+                            <strong>Correo</strong>
+                            <span><a href="mailto:contacto@sanpedrodecajas.com">contacto@sanpedrodecajas.com</a></span>
+                        </div>
+                        <div class="contact__item">
+                            <strong>Redes sociales</strong>
+                            <span class="contact__social">
+                                <a href="#" aria-label="Facebook">Facebook</a>
+                                <a href="#" aria-label="Instagram">Instagram</a>
+                                <a href="#" aria-label="YouTube">YouTube</a>
+                            </span>
+                        </div>
                     </div>
-                    <form class="contact-form">
-                        <input type="text" placeholder="Tu Nombre" required>
-                        <input type="email" placeholder="Tu Email" required>
-                        <textarea placeholder="Tu Mensaje" rows="5" required></textarea>
-                        <button type="submit" class="btn">Enviar Mensaje</button>
+
+                    <form class="form" action="mailto:contacto@sanpedrodecajas.com" method="post" enctype="text/plain">
+                        <div class="form__row">
+                            <label for="nombre">Nombre</label>
+                            <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="form__row">
+                            <label for="email">Correo electrónico</label>
+                            <input id="email" name="email" type="email" placeholder="tu@correo.com" required>
+                        </div>
+                        <div class="form__row">
+                            <label for="asunto">Asunto</label>
+                            <select id="asunto" name="asunto">
+                                <option>Turismo</option>
+                                <option>Hospedajes</option>
+                                <option>Publicidad</option>
+                                <option>Radio San Pedro</option>
+                                <option>Otro</option>
+                            </select>
+                        </div>
+                        <div class="form__row">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntanos en qué podemos ayudarte" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary">Enviar mensaje</button>
                     </form>
                 </div>
             </div>
         </section>
+
+        <!-- Anuncio inferior (Google AdSense - responsive) -->
+        <div class="container">
+            <aside class="ad ad--leaderboard" aria-label="Publicidad">
+                <span class="ad__label">Publicidad</span>
+                <div class="ad__slot" data-ad="adsense-bottom">
+                    <!-- Pega aquí el código de Google AdSense (responsive) -->
+                    <p>Espacio Google AdSense · responsive</p>
+                </div>
+            </aside>
+        </div>
     </main>
 
-    <!-- Pie de página -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>San Pedro de Cajas</h4>
-                    <p>Preservando tradiciones ancestrales para futuras generaciones</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Enlaces Rápidos</h4>
-                    <ul>
-                        <li><a href="#nosotros">Nosotros</a></li>
-                        <li><a href="#galeria">Galería</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Redes Sociales</h4>
-                    <ul>
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">YouTube</a></li>
-                    </ul>
-                </div>
+    <!-- ============ PIE DE PÁGINA ============ -->
+    <footer class="footer">
+        <div class="footer__pattern" aria-hidden="true"></div>
+        <div class="container footer__grid">
+            <div>
+                <a href="#inicio" class="logo logo--footer">
+                    <span class="logo__mark" aria-hidden="true"></span>
+                    <span class="logo__text"><strong>San Pedro de Cajas</strong><small>Tierra de Artesanos</small></span>
+                </a>
+                <p>Portal de la comunidad sampedrana: cultura, turismo y Radio San Pedro en vivo.</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 San Pedro de Cajas. Todos los derechos reservados.</p>
+            <div>
+                <h4>Secciones</h4>
+                <ul>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#turismo">Turismo</a></li>
+                    <li><a href="#hospedajes">Hospedajes</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                </ul>
             </div>
+            <div>
+                <h4>Comunidad</h4>
+                <ul>
+                    <li><a href="#paisajes">Paisajes</a></li>
+                    <li><a href="#gente">Nuestra Gente</a></li>
+                    <li><a href="#radio">Radio San Pedro</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Síguenos</h4>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer__bottom">
+            <p>&copy; 2026 San Pedro de Cajas. Todos los derechos reservados.</p>
+            <a href="#inicio" class="footer__top">Volver arriba ↑</a>
         </div>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
