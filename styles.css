@@ -146,15 +146,22 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
     background-size: 48px 48px;
     background-position: 0 0, 24px 24px;
 }
-.hero__content { position: relative; max-width: 780px; margin-bottom: 3rem; }
-.hero__eyebrow { letter-spacing: 0.18em; text-transform: uppercase; font-size: 0.8rem; color: var(--dorado); font-weight: 700; margin-bottom: 1rem; }
+.hero__content { position: relative; max-width: 780px; margin-bottom: 3rem; animation: hero-in 0.7s ease both; }
+.hero__eyebrow {
+    display: inline-block; letter-spacing: 0.18em; text-transform: uppercase; font-size: 0.8rem;
+    color: var(--dorado); font-weight: 700; margin-bottom: 1rem;
+    background: rgba(217, 164, 65, 0.15); border: 1px solid rgba(217, 164, 65, 0.4);
+    padding: 0.4rem 0.9rem; border-radius: 999px; backdrop-filter: blur(4px);
+}
+@keyframes hero-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
 .hero h1 { color: var(--blanco); font-size: clamp(2.3rem, 5.5vw, 4rem); margin-bottom: 1rem; }
 .hero__lead { font-size: clamp(1.05rem, 1.6vw, 1.3rem); color: rgba(255, 255, 255, 0.88); max-width: 620px; margin-bottom: 2rem; }
 .hero__actions { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+.hero__actions .btn:hover { box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28); }
 
 /* Radio */
 .radio {
-    position: relative;
+    position: relative; z-index: 2; margin-top: -2rem;
     display: grid; grid-template-columns: 1fr minmax(260px, 420px); gap: 1.5rem; align-items: center;
     background: var(--lana); color: var(--texto);
     border-radius: var(--radio); padding: 1.4rem 1.6rem;
@@ -436,7 +443,7 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
     .news--destacada { grid-column: auto; }
     .news--destacada .news__media { height: 200px; }
     .news--destacada h3 { font-size: 1.3rem; }
-    .radio { grid-template-columns: 1fr; }
+    .radio { grid-template-columns: 1fr; margin-top: -1rem; }
     .info-strip { grid-template-columns: 1fr; }
     .ad__grid { grid-template-columns: 1fr; }
     .ad__slot--private { max-width: 340px; margin-inline: auto; width: 100%; }
