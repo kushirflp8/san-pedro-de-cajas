@@ -252,7 +252,8 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
 
 /* Turismo */
 .feature { display: grid; grid-template-columns: 200px 1fr; background: var(--crema); border-radius: var(--radio); overflow: hidden; box-shadow: var(--sombra); }
-.feature__media { min-height: 180px; }
+.feature__media { min-height: 180px; position: relative; overflow: hidden; }
+.feature__media img { width: 100%; height: 100%; object-fit: cover; }
 .feature__body { padding: 1.4rem 1.5rem; }
 .feature__body h3 { margin-bottom: 0.5rem; }
 .feature__body p { color: var(--texto-suave); }
@@ -377,6 +378,7 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
 .landscape { text-align: center; }
 .landscape__media { height: 220px; border-radius: var(--radio); margin-bottom: 1rem; box-shadow: var(--sombra); position: relative; overflow: hidden; }
 .landscape__media::after { content: ""; position: absolute; inset: auto 0 0 0; height: 35%; background: linear-gradient(to top, rgba(0, 0, 0, 0.25), transparent); }
+.landscape__media img { width: 100%; height: 100%; object-fit: cover; }
 .landscape__media--montanas { background: linear-gradient(180deg, #A9C7D6 0%, var(--azul-claro) 45%, var(--tierra) 100%); }
 .landscape__media--pampas { background: linear-gradient(180deg, #CFE2EC 0%, var(--dorado) 50%, var(--verde) 100%); }
 .landscape__media--cielo { background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.35) 0 2px, transparent 3px), radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.35) 0 2px, transparent 3px), linear-gradient(180deg, #08131A, var(--azul-oscuro) 70%, var(--tierra-oscuro)); }
