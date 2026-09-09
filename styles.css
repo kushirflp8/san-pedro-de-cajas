@@ -303,6 +303,15 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
 .g5 { background: linear-gradient(135deg, var(--azul-oscuro), var(--verde)); }
 .g6 { background: linear-gradient(135deg, var(--dorado), var(--tierra)); }
 
+/* Videos (YouTube) */
+.videos { margin-top: 4rem; padding-top: 3rem; border-top: 1px solid var(--crema-oscuro); }
+.videos__title { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+.videos__grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 860px; margin-inline: auto; }
+.video { background: var(--blanco); border-radius: var(--radio); overflow: hidden; box-shadow: var(--sombra); }
+.video__frame { position: relative; aspect-ratio: 16 / 9; background: var(--azul-oscuro); }
+.video__frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video figcaption { padding: 0.9rem 1.1rem; font-weight: 700; color: var(--azul-oscuro); }
+
 /* Música Personal */
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .music { margin-top: 4rem; padding-top: 3rem; border-top: 1px solid var(--crema-oscuro); }
@@ -444,6 +453,7 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
     .news--destacada .news__media { height: 200px; }
     .news--destacada h3 { font-size: 1.3rem; }
     .radio { grid-template-columns: 1fr; margin-top: -1rem; }
+    .videos__grid { grid-template-columns: 1fr; }
     .info-strip { grid-template-columns: 1fr; }
     .ad__grid { grid-template-columns: 1fr; }
     .ad__slot--private { max-width: 340px; margin-inline: auto; width: 100%; }
