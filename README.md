@@ -89,9 +89,9 @@ La sección `#noticias` va justo después del hero y el anuncio superior. Para p
 </article>
 ```
 
-Añade `news--destacada` al artículo principal para que ocupe el doble de ancho. La portada muestra solo las 3 más recientes: al agregar una, quita la tarjeta más antigua.
+Añade `news--destacada` al artículo principal para que ocupe el doble de ancho. La portada muestra las 3 más recientes en grande y las anteriores como ventanitas (`<a class="news-mini">`) en «Noticias anteriores»; al agregar una noticia, la más antigua de las grandes pasa a ventanita.
 
-El texto completo de cada noticia vive en `noticias.html`, que es el archivo permanente. Añade allí un `<article class="article" id="id-de-la-noticia">` (foto, etiqueta, fecha, texto y `article__source` con el enlace a la fuente) arriba de los demás y agrégalo al índice `.news-index`. Sube a cPanel `index.html` y `noticias.html` juntos.
+El texto completo de cada noticia vive en `noticias.html`, que es el archivo permanente. Añade allí un `<article class="article" id="id-de-la-noticia">` (foto, etiqueta, fecha, texto y `article__source` con el enlace a la fuente) arriba de los demás y agrega su ventanita en `.news-minis` («Todas las noticias»). Sube a cPanel `index.html` y `noticias.html` juntos.
 
 ## 🛏️ Hospedajes
 

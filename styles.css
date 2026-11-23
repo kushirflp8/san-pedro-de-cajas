@@ -544,3 +544,20 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
     .article h2 { font-size: 1.3rem; }
     .news-index time { display: block; min-width: 0; }
 }
+
+/* ---------- Ventanitas de noticias ---------- */
+.news-page__sub { font-family: 'Lora', serif; font-size: 1.4rem; color: var(--azul-oscuro); margin: 0.5rem 0 1rem; }
+.news-older__title { font-family: 'Lora', serif; font-size: 1.3rem; color: var(--azul-oscuro); margin: 2.2rem 0 1rem; text-align: center; }
+.news-minis { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 1rem; margin-bottom: 2.2rem; }
+.news-mini { display: flex; flex-direction: column; background: var(--lana); border-radius: var(--radio-sm); overflow: hidden; box-shadow: var(--sombra); border-bottom: 3px solid var(--dorado); color: var(--texto); transition: transform var(--transicion), box-shadow var(--transicion); }
+.news-mini:hover { transform: translateY(-3px); box-shadow: var(--sombra-fuerte); }
+.news-mini:focus-visible { outline: 3px solid var(--azul-oscuro); outline-offset: 3px; }
+.news-mini img { width: 100%; height: 120px; object-fit: cover; display: block; }
+.news-mini__body { display: flex; flex-direction: column; gap: 0.4rem; padding: 0.7rem 0.85rem 0.9rem; }
+.news-mini__meta { font-size: 0.72rem; color: var(--texto-suave); }
+.news-mini__meta .news__tag { font-size: 0.62rem; padding: 0.12rem 0.45rem; }
+.news-mini strong { font-family: 'Lora', serif; font-size: 0.95rem; line-height: 1.3; color: var(--azul-oscuro); }
+@media (max-width: 640px) {
+    .news-minis { grid-template-columns: repeat(2, 1fr); gap: 0.7rem; }
+    .news-mini img { height: 90px; }
+}
