@@ -110,7 +110,7 @@ return [
 ];
 ```
 
-Al publicar, sube `comunidad.html` y la carpeta `comunidad/` junto con `index.html`, `noticias.html`, `region.html`, `circuitos.html`, `sitemap.xml` y `styles.css`.
+Al publicar, sube `comunidad.html` y la carpeta `comunidad/` junto con `index.html`, `noticias.html`, `region.html`, `turismo.html`, `circuitos.html`, `sitemap.xml` y `styles.css`.
 
 ## 🛏️ Hospedajes
 
