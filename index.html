@@ -69,7 +69,6 @@
                 <p class="hero__lead">Cuna de los tapices más finos de los Andes, de paisajes de puna y de una comunidad que teje su historia con orgullo.</p>
                 <div class="hero__actions">
                     <a href="circuitos.html" class="btn btn--primary">Descubre el destino</a>
-                    <a href="#radio" class="btn btn--ghost" data-escuchar>Escucha la radio</a>
                 </div>
             </div>
 
@@ -897,20 +896,6 @@
                 boton.disabled = false;
             })
             .catch(function () { boton.disabled = true; });
-    })();
-</script>
-<script>
-    (function () {
-        var btn = document.querySelector('[data-escuchar]');
-        var radio = document.getElementById('radio');
-        if (!btn || !radio) return;
-        btn.addEventListener('click', function (e) {
-            e.preventDefault();
-            radio.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            var audio = radio.querySelector('audio');
-            if (audio && audio.paused) { audio.play().catch(function () {}); }
-            history.replaceState(null, '', '#radio');
-        });
     })();
 </script>
 </body>
