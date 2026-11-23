@@ -89,24 +89,25 @@ function spc_save_image($tmp, $dest) {
         default: $src = @imagecreatefromwebp($tmp);
     }
     if (!$src) { return false; }
-    if ($info[2] === IMAGETYPE_JPEG && function_exists('exif_read_data')) {
-        $o = (int) ((@exif_read_data($tmp) ?: [])['Orientation'] ?? 1);
-        if (in_array($o, [2, 5, 7], true)) { imageflip($src, IMG_FLIP_HORIZONTAL); }
-        if ($o === 4) { imageflip($src, IMG_FLIP_VERTICAL); }
-        $angle = [3 => 180, 5 => 90, 6 => -90, 7 => -90, 8 => 90][$o] ?? 0;
-        if ($angle) {
-            $rot = imagerotate($src, $angle, 0);
-            if ($rot) { imagedestroy($src); $src = $rot; }
-        }
-    }
     $w = imagesx($src); $h = imagesy($src);
     $scale = min(1, 1600 / max($w, $h));
     $nw = max(1, (int) round($w * $scale)); $nh = max(1, (int) round($h * $scale));
     $out = imagecreatetruecolor($nw, $nh);
     imagefill($out, 0, 0, imagecolorallocate($out, 255, 255, 255));
     imagecopyresampled($out, $src, 0, 0, 0, 0, $nw, $nh, $w, $h);
+    imagedestroy($src);
+    if ($info[2] === IMAGETYPE_JPEG && function_exists('exif_read_data')) {
+        $o = (int) ((@exif_read_data($tmp) ?: [])['Orientation'] ?? 1);
+        if (in_array($o, [2, 5, 7], true)) { imageflip($out, IMG_FLIP_HORIZONTAL); }
+        if ($o === 4) { imageflip($out, IMG_FLIP_VERTICAL); }
+        $angle = [3 => 180, 5 => 90, 6 => -90, 7 => -90, 8 => 90][$o] ?? 0;
+        if ($angle) {
+            $rot = imagerotate($out, $angle, 0);
+            if ($rot) { imagedestroy($out); $out = $rot; }
+        }
+    }
     $ok = imagejpeg($out, $dest, 82);
-    imagedestroy($src); imagedestroy($out);
+    imagedestroy($out);
     return $ok;
 }
 
