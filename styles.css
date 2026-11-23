@@ -497,7 +497,7 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
     .nav__cta { text-align: center; margin-top: 0.4rem; }
     .nav .nav__sub { display: flex; position: static; min-width: 0; padding: 0 0 0 1rem; background: none; border: 0; box-shadow: none; }
     .nav__group > a::after { content: none; }
-    .menu-toggle:checked ~ .nav { max-height: 760px; visibility: visible; transition-delay: 0s; }
+    .menu-toggle:checked ~ .nav { max-height: calc(100vh - var(--header-h) - 12px); overflow-y: auto; visibility: visible; transition-delay: 0s; }
     .menu-toggle:checked ~ .menu-btn span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .menu-toggle:checked ~ .menu-btn span:nth-child(2) { opacity: 0; }
     .menu-toggle:checked ~ .menu-btn span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
