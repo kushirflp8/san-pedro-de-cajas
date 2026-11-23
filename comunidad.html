@@ -99,7 +99,7 @@
                     <label class="form__hp" aria-hidden="true">No llenar<input name="sitio_web" tabindex="-1" autocomplete="off"></label>
                     <input type="hidden" name="t" id="form-t">
                     <label class="form__check"><input type="checkbox" name="acepto" required> Confirmo que la información es verdadera y acepto que se revise antes de publicarse.</label>
-                    <button type="submit" class="btn btn--primary">Enviar noticia</button>
+                    <button type="submit" class="btn btn--primary" id="form-enviar" disabled>Enviar noticia</button>
                 </form>
                 <p class="note"><a href="index.html#noticias">← Volver al inicio</a></p>
             </div>
@@ -205,6 +205,7 @@
         function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
         fetch('comunidad/publicadas.php', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (data) {
             t.value = data.token;
+            document.getElementById('form-enviar').disabled = false;
             var items = data.items;
             lista.innerHTML = '';
             if (!items.length) { lista.appendChild(el('p', 'community-empty', 'Todavía no hay noticias de la comunidad. ¡Sé el primero en enviar una!')); return; }
@@ -225,6 +226,7 @@
         }).catch(function () {
             lista.innerHTML = '';
             lista.appendChild(el('p', 'community-empty', 'No se pudieron cargar las noticias de la comunidad.'));
+            estado.innerHTML = '<p class="community-status community-status--error" role="alert">Por ahora no se puede enviar noticias. Recarga la página en unos minutos.</p>';
         });
     })();
 </script>
