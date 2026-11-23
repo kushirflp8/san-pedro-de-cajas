@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20261123b">
 </head>
 <body>
 
@@ -75,17 +75,31 @@
 
             <!-- Reproductor de radio en vivo -->
             <div class="container">
-                <div id="radio" class="radio">
-                    <div class="radio__info">
-                        <span class="radio__live"><span class="radio__dot" aria-hidden="true"></span> EN VIVO</span>
-                        <h2>Radio San Pedro</h2>
-                        <p>La voz de nuestra comunidad, las 24 horas.</p>
+                <div class="radios" aria-label="Radios de San Pedro de Cajas en vivo">
+                    <div id="radio" class="radio-mini radio-mini--main">
+                        <div class="radio-mini__info">
+                            <span class="radio__live"><span class="radio__dot" aria-hidden="true"></span> EN VIVO</span>
+                            <h3>Radio San Pedro</h3>
+                            <p>La voz de nuestra comunidad, las 24 horas.</p>
+                        </div>
+                        <audio controls preload="none" class="radio__player" src="https://stream.zenolive.com/g9gc78mmn3quv" aria-label="Escuchar Radio San Pedro en vivo"></audio>
                     </div>
-                    <audio controls preload="none" class="radio__player">
-                        <source src="http://stream.zenolive.com/g9gc78mmn3quv" type="audio/mpeg">
-                        Tu navegador no soporta el reproductor de audio.
-                        <a href="http://stream.zenolive.com/g9gc78mmn3quv">Abrir la transmisión</a>
-                    </audio>
+                    <div class="radio-mini">
+                        <div class="radio-mini__info">
+                            <span class="radio__live"><span class="radio__dot" aria-hidden="true"></span> EN VIVO</span>
+                            <h3>Radio Patamarca</h3>
+                            <p>100.7 FM · <a href="https://www.facebook.com/radiopatamarca" target="_blank" rel="noopener">Facebook</a></p>
+                        </div>
+                        <audio controls preload="none" class="radio__player" src="https://radio.transmite.pe/9400/stream" aria-label="Escuchar Radio Patamarca en vivo"></audio>
+                    </div>
+                    <div class="radio-mini">
+                        <div class="radio-mini__info">
+                            <span class="radio__live"><span class="radio__dot" aria-hidden="true"></span> EN VIVO</span>
+                            <h3>Radio Super Studio</h3>
+                            <p>105.5 FM · <a href="https://www.facebook.com/RadioSuperStudioOficialSPC/" target="_blank" rel="noopener">Facebook</a></p>
+                        </div>
+                        <audio controls preload="none" class="radio__player" src="https://conectperu.com/8016/;" aria-label="Escuchar Radio Super Studio en vivo"></audio>
+                    </div>
                 </div>
             </div>
         </section>
@@ -125,6 +139,18 @@
                         </div>
                     </article>
                     <article class="news">
+                        <div class="news__media"><img src="imagenes/comunidad-municipio.jpg" alt="Comuneros reunidos en San Pedro de Cajas (foto referencial)" loading="lazy"></div>
+                        <div class="news__body">
+                            <div class="news__meta">
+                                <span class="news__tag">Comunidad</span>
+                                <time datetime="2026-11-21">21 de noviembre de 2026</time>
+                            </div>
+                            <h3>Cooperativa Comunal San Pedro de Cajas elige a sus delegados</h3>
+                            <p>El sábado 21 de noviembre los socios de la Cooperativa Comunal San Pedro de Cajas votaron en las instalaciones de la cooperativa para elegir a sus delegados. Se presentaron 62 candidatos.</p>
+                            <a href="noticias.html#cooperativa-delegados-2026" class="news__link">Leer noticia →</a>
+                        </div>
+                    </article>
+                    <article class="news">
                         <div class="news__media"><img src="imagenes/arrieros.jpg" alt="Camino de altura en San Pedro de Cajas (foto referencial)" loading="lazy"></div>
                         <div class="news__body">
                             <div class="news__meta">
@@ -136,22 +162,17 @@
                             <a href="noticias.html#carretera-acobamba-san-pedro" class="news__link">Leer noticia →</a>
                         </div>
                     </article>
-                    <article class="news">
-                        <div class="news__media"><img src="imagenes/comunidad-municipio.jpg" alt="Comunidad reunida frente a la municipalidad de San Pedro de Cajas" loading="lazy"></div>
-                        <div class="news__body">
-                            <div class="news__meta">
-                                <span class="news__tag">Elecciones</span>
-                                <time datetime="2026-10-19">19 de octubre de 2026</time>
-                            </div>
-                            <h3>JEE Tarma descarta anular las elecciones municipales en San Pedro de Cajas</h3>
-                            <p>Tras las Elecciones Regionales y Municipales del 4 de octubre de 2026, algunos candidatos presentaron reclamos sobre los resultados en el distrito. El presidente del Jurado Electoral Especial (JEE) de Tarma, Nick Olivera Guerra, descartó cualquier irregularidad.</p>
-                            <a href="noticias.html#elecciones-municipales-2026" class="news__link">Leer noticia →</a>
-                        </div>
-                    </article>
                 </div>
 
                 <h3 class="news-older__title">Noticias anteriores</h3>
                 <div class="news-minis news-minis--home">
+                    <a class="news-mini" href="noticias.html#elecciones-municipales-2026">
+                        <img src="imagenes/comunidad-municipio.jpg" alt="" loading="lazy">
+                        <span class="news-mini__body">
+                            <span class="news-mini__meta"><span class="news__tag">Elecciones</span> <time datetime="2026-10-19">19 de octubre de 2026</time></span>
+                            <strong>JEE Tarma descarta anular las elecciones municipales en San Pedro de Cajas</strong>
+                        </span>
+                    </a>
                     <a class="news-mini" href="noticias.html#remodelacion-plaza-principal">
                         <img src="imagenes/plaza-san-pedro.jpg" alt="" loading="lazy">
                         <span class="news-mini__body">
@@ -206,13 +227,6 @@
                         <span class="news-mini__body">
                             <span class="news-mini__meta"><span class="news__tag">Artesanía</span> <time datetime="2023-09-06">6 de septiembre de 2023</time></span>
                             <strong>Away Wasy: la familia Ulloa mantiene vivo el teñido natural y el tejido a mano</strong>
-                        </span>
-                    </a>
-                    <a class="news-mini" href="noticias.html#fiesta-patronal-2022">
-                        <img src="imagenes/chutos.jpg" alt="" loading="lazy">
-                        <span class="news-mini__body">
-                            <span class="news-mini__meta"><span class="news__tag">Fiesta</span> <time datetime="2022-06-30">30 de junio de 2022</time></span>
-                            <strong>San Pedro de Cajas vuelve a celebrar a su patrón tras dos años</strong>
                         </span>
                     </a>
                 </div>
