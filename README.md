@@ -53,6 +53,7 @@ san-pedro-de-cajas/
 | Verde natural | `#5F7A3B` | Detalles del tejido |
 | Rosa | `#C2455E` | Centro de los rombos |
 | Lana cruda / crema | `#FBF6EC` / `#F2E8D5` | Fondos con textura de trama |
+| Negro de manta | `#1A1614` | Franjas con estrellas (inspiradas en las mantas sampedranas) |
 
 ## 📱 Responsividad
 
