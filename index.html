@@ -656,6 +656,10 @@
                             <label for="mensaje">Mensaje</label>
                             <textarea id="mensaje" name="mensaje" rows="5" maxlength="4000" placeholder="Cuéntanos en qué podemos ayudarte" required></textarea>
                         </div>
+                        <div class="form__row">
+                            <label for="contacto-humano">Verificación: ¿cuánto es <span id="contacto-pregunta">…</span>?</label>
+                            <input id="contacto-humano" name="humano" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="3" required autocomplete="off">
+                        </div>
                         <button type="submit" class="btn btn--primary" id="contacto-enviar" disabled>Enviar mensaje</button>
                     </form>
                 </div>
@@ -840,6 +844,7 @@
         var msgs = {
             ok: ['ok', '¡Gracias! Recibimos tu mensaje y te responderemos a tu correo.'],
             datos: ['error', 'Revisa los datos: nombre, un correo válido y un mensaje de entre 10 y 4000 letras.'],
+            humano: ['error', 'La respuesta de la suma no es correcta. Resuelve la nueva suma y envía otra vez.'],
             rapido: ['error', 'El formulario caducó. Vuelve a escribir tu mensaje y envíalo.'],
             limite: ['error', 'Enviaste demasiados mensajes. Inténtalo de nuevo en una hora.'],
             error: ['error', 'No se pudo enviar el mensaje. Inténtalo más tarde o escríbenos por Facebook.']
@@ -871,7 +876,11 @@
         }
         fetch('comunidad/publicadas.php', { cache: 'no-store' })
             .then(function (r) { return r.json(); })
-            .then(function (d) { document.getElementById('contacto-t').value = d.token; boton.disabled = false; })
+            .then(function (d) {
+                document.getElementById('contacto-t').value = d.token;
+                document.getElementById('contacto-pregunta').textContent = d.pregunta;
+                boton.disabled = false;
+            })
             .catch(function () { boton.disabled = true; });
     })();
 </script>
