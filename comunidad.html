@@ -98,6 +98,7 @@
                     <label>Noticia <small>(mínimo 40 caracteres)</small><textarea name="texto" rows="7" required minlength="40" maxlength="5000"></textarea></label>
                     <label class="form__hp" aria-hidden="true">No llenar<input name="sitio_web" tabindex="-1" autocomplete="off"></label>
                     <input type="hidden" name="t" id="form-t">
+                    <label>Verificación: ¿cuánto es <span id="form-pregunta">…</span>?<input name="humano" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="3" required autocomplete="off"></label>
                     <label class="form__check"><input type="checkbox" name="acepto" required> Confirmo que la información es verdadera y acepto que se revise antes de publicarse.</label>
                     <button type="submit" class="btn btn--primary" id="form-enviar" disabled>Enviar noticia</button>
                 </form>
@@ -178,6 +179,7 @@
             limite: 'Ya enviaste varias noticias. Inténtalo más tarde.',
             foto: 'La foto no es válida o es muy grande. Usa una imagen JPG, PNG o WebP de máximo 8 MB y 40 megapíxeles. Vuelve a elegirla.',
             guardar: 'No se pudo guardar tu noticia. Inténtalo de nuevo más tarde.',
+            humano: 'La respuesta de la suma no es correcta. Resuelve la nueva suma y envía otra vez.',
             metodo: 'No se pudo enviar el formulario.'
         };
         var form = document.querySelector('.community-form');
@@ -208,6 +210,7 @@
         function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
         fetch('comunidad/publicadas.php', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (data) {
             t.value = data.token;
+            document.getElementById('form-pregunta').textContent = data.pregunta;
             document.getElementById('form-enviar').disabled = false;
             var items = data.items;
             lista.innerHTML = '';

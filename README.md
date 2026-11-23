@@ -97,7 +97,7 @@ El texto completo de cada noticia vive en `noticias.html`, que es el archivo per
 
 `comunidad.html` tiene el formulario «Envía tu noticia» y muestra solo las noticias aprobadas. Funciona con PHP en el hosting:
 
-- `comunidad/enviar.php`: recibe el formulario (honeypot, tiempo mínimo de llenado, límite de 5 envíos por hora por IP). Las fotos se vuelven a codificar como JPEG de máximo 1600 px. Avisa por correo a la dirección configurada.
+- `comunidad/enviar.php`: recibe el formulario (honeypot, tiempo mínimo de llenado, suma «¿eres humano?» ligada al token firmado, límite de 5 envíos por hora por IP). Las fotos se vuelven a codificar como JPEG de máximo 1600 px. Avisa por correo a la dirección configurada.
 - `comunidad/panel.php`: panel privado con contraseña para aprobar (con opción de corregir título y texto), rechazar o retirar noticias.
 - `comunidad/publicadas.php`: devuelve en JSON las noticias aprobadas.
 - Los envíos pendientes se guardan fuera de `public_html`, en `~/spc_noticias/`. Ahí está también `config.php` (no va al repositorio):

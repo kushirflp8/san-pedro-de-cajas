@@ -126,15 +126,35 @@ function spc_form_key() {
 }
 
 function spc_form_token() {
-    $t = (string) time();
-    return $t . '.' . hash_hmac('sha256', $t, spc_form_key());
+    $p = time() . '.' . bin2hex(random_bytes(4));
+    return $p . '.' . hash_hmac('sha256', $p, spc_form_key());
+}
+
+function spc_token_parts($token) {
+    $p = explode('.', (string) $token);
+    if (count($p) !== 3 || !ctype_digit($p[0]) || !ctype_xdigit($p[1])
+        || !hash_equals(hash_hmac('sha256', $p[0] . '.' . $p[1], spc_form_key()), $p[2])) { return null; }
+    return $p;
 }
 
 /** Seconds since the server issued the token, or -1 if it is invalid. */
 function spc_form_age($token) {
-    $p = explode('.', (string) $token, 2);
-    if (count($p) !== 2 || !ctype_digit($p[0]) || !hash_equals(hash_hmac('sha256', $p[0], spc_form_key()), $p[1])) { return -1; }
-    return time() - (int) $p[0];
+    $p = spc_token_parts($token);
+    return $p ? time() - (int) $p[0] : -1;
+}
+
+/** The two numbers of the "are you human" sum tied to a token. */
+function spc_human_numbers($token) {
+    $p = spc_token_parts($token);
+    if (!$p) { return null; }
+    $h = hash_hmac('sha256', 'suma|' . $p[0] . '.' . $p[1], spc_form_key());
+    return [2 + hexdec(substr($h, 0, 2)) % 18, 1 + hexdec(substr($h, 2, 2)) % 9];
+}
+
+function spc_human_ok($token, $answer) {
+    $n = spc_human_numbers($token);
+    $answer = trim((string) $answer);
+    return $n && ctype_digit($answer) && (int) $answer === $n[0] + $n[1];
 }
 
 function spc_publicadas() {

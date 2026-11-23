@@ -16,4 +16,6 @@ foreach (spc_publicadas() as $n) {
         'foto' => $n['foto'] ? 'comunidad/fotos/' . $n['id'] . '.jpg' : null,
     ];
 }
-echo json_encode(['token' => spc_form_token(), 'items' => $out], JSON_UNESCAPED_UNICODE);
+$token = spc_form_token();
+$suma = spc_human_numbers($token);
+echo json_encode(['token' => $token, 'pregunta' => $suma[0] . ' + ' . $suma[1], 'items' => $out], JSON_UNESCAPED_UNICODE);
