@@ -561,3 +561,17 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
     .news-minis { grid-template-columns: repeat(2, 1fr); gap: 0.7rem; }
     .news-mini img { height: 90px; }
 }
+
+/* ---------- Noticias de la región ---------- */
+.region-tabs { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 1.2rem; }
+.news-ph { display: flex; align-items: center; justify-content: center; background-color: var(--azul-oscuro); background-image: var(--motivo-tapiz); }
+.news-ph span { font-family: 'Lora', serif; font-weight: 700; color: var(--blanco); background: rgba(27, 38, 67, 0.85); padding: 0.3rem 0.8rem; border-radius: 3px; border-bottom: 2px solid var(--dorado); }
+.news-mini__img.news-ph { height: 120px; }
+.article__img.news-ph { height: 160px; }
+.article__img.news-ph span { font-size: 1.4rem; }
+.news-scope { display: inline-block; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--azul); border: 1px solid var(--azul); padding: 0.08rem 0.4rem; border-radius: 3px; }
+.news-mini__place { font-size: 0.75rem; font-weight: 700; color: var(--cochinilla); }
+[hidden].news-mini, [hidden].article { display: none; }
+@media (max-width: 640px) {
+    .news-mini__img.news-ph { height: 90px; }
+}

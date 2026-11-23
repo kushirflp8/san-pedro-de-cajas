@@ -233,3 +233,7 @@ Libre para uso y distribución.
 Para más información, contacta a:
 - 📧 Email: support@spcserver.net
 - 📍 Ubicación: Tarma, Junín, Perú
+
+### Noticias de la región
+
+`region.html` reúne noticias de San Pedro de Cajas y sus centros poblados, Tarma, Junín, La Oroya y Acobamba. Cada ventanita (`.news-mini`) y cada `.article` lleva `data-place` = `spc` | `tarma` | `junin` | `oroya` | `acobamba`, que usan las pestañas `.region-tabs` para filtrar. Si una noticia no tiene foto propia, se muestra un recuadro con motivo de tapiz y el nombre del lugar (`.news-ph`).
