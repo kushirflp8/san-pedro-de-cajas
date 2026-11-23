@@ -6,11 +6,11 @@
     <title>San Pedro de Cajas - Tierra de Artesanos | Tarma, Junín, Perú</title>
     <meta name="description" content="San Pedro de Cajas, tierra de artesanos: turismo, hospedajes, galería, paisajes, nuestra gente y Radio San Pedro en vivo. Distrito de la provincia de Tarma, Región Junín, Perú.">
     <meta name="keywords" content="San Pedro de Cajas, Tarma, Junín, Perú, artesanos, tapices, turismo, hospedajes, radio en vivo">
-    <meta name="theme-color" content="#1B4D5C">
+    <meta name="theme-color" content="#A3312B">
     <meta property="og:title" content="San Pedro de Cajas - Tierra de Artesanos">
     <meta property="og:description" content="Turismo, cultura, hospedajes y Radio San Pedro en vivo desde los Andes de Tarma.">
     <meta property="og:type" content="website">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231B4D5C'/%3E%3Cpath d='M8 44 22 24l10 12 8-8 16 16z' fill='%23D9A441'/%3E%3C/svg%3E">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%23A3312B'/%3E%3Cpolygon fill='%23D19A2E' points='24,4 24,8 28,8 28,12 32,12 32,16 36,16 36,20 36,20 36,24 32,24 32,28 28,28 28,32 24,32 24,36 16,36 16,32 12,32 12,28 8,28 8,24 4,24 4,20 4,20 4,16 8,16 8,12 12,12 12,8 16,8 16,4'/%3E%3Cpolygon fill='%2326365C' points='22,10 22,12 24,12 24,14 26,14 26,16 28,16 28,18 30,18 30,20 30,20 30,22 28,22 28,24 26,24 26,26 24,26 24,28 22,28 22,30 18,30 18,28 16,28 16,26 14,26 14,24 12,24 12,22 10,22 10,20 10,20 10,18 12,18 12,16 14,16 14,14 16,14 16,12 18,12 18,10'/%3E%3Cpolygon fill='%23F2E8D5' points='22,16 22,18 24,18 24,20 24,20 24,22 22,22 22,24 18,24 18,22 16,22 16,20 16,20 16,18 18,18 18,16'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -39,7 +39,14 @@
             <nav id="nav-principal" class="nav" aria-label="Navegación principal">
                 <ul>
                     <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#noticias">Noticias</a></li>
+                    <li class="nav__group">
+                        <a href="#noticias">Noticias</a>
+                        <ul class="nav__sub" aria-label="Noticias">
+                            <li><a href="noticias.html">Noticias de San Pedro de Cajas</a></li>
+                            <li><a href="region.html">Noticias de la región</a></li>
+                            <li><a href="comunidad.html#enviar">Envía tu noticia</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#nosotros">Nosotros</a></li>
                     <li><a href="#turismo">Turismo</a></li>
                     <li><a href="#hospedajes">Hospedajes</a></li>
@@ -106,44 +113,111 @@
 
                 <div class="news-grid">
                     <article class="news news--destacada">
-                        <div class="news__media"><img src="imagenes/plaza-san-pedro.jpg" alt="Plaza Principal de San Pedro de Cajas en proceso de remodelación" loading="lazy"></div>
+                        <div class="news__media"><img src="imagenes/panorama-aerea.jpg" alt="Vista panorámica de San Pedro de Cajas (foto referencial)" loading="lazy"></div>
+                        <div class="news__body">
+                            <div class="news__meta">
+                                <span class="news__tag">Emergencia</span>
+                                <time datetime="2026-11-21">21 de noviembre de 2026</time>
+                            </div>
+                            <h3>Sismo de magnitud 6.7 deja viviendas dañadas en San Pedro de Cajas</h3>
+                            <p>El viernes 20 de noviembre un sismo de magnitud 6.7, con epicentro en Ondores (provincia de Junín), se sintió con fuerza en San Pedro de Cajas, ubicado a unos 33 km del epicentro. Cerca de la medianoche se registró además una réplica de magnitud 5.4.</p>
+                            <a href="noticias.html#sismo-junin-2026" class="news__link">Leer noticia →</a>
+                        </div>
+                    </article>
+                    <article class="news">
+                        <div class="news__media"><img src="imagenes/arrieros.jpg" alt="Camino de altura en San Pedro de Cajas (foto referencial)" loading="lazy"></div>
                         <div class="news__body">
                             <div class="news__meta">
                                 <span class="news__tag">Obras</span>
-                                <time datetime="2026-09-04">4 de septiembre de 2026</time>
+                                <time datetime="2026-11-19">19 de noviembre de 2026</time>
                             </div>
-                            <h3>Se remodela la Plaza Principal de San Pedro de Cajas</h3>
-                            <p>El proyecto busca recuperar, modernizar y poner en valor uno de los espacios más emblemáticos e históricos del distrito, respetando su identidad y su profundo significado cívico y religioso.</p>
-                            <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid021gVRkrjAGcUxDvXnfpdcKvWJx6TqD87RoTB1FbobawnPXNdih8mWMqbeDKcfrBTSl&id=100089357196587" class="news__link" target="_blank" rel="noopener">Ver publicación →</a>
+                            <h3>Alcalde muestra el deterioro de la carretera Acobamba–Palcamayo–San Pedro de Cajas</h3>
+                            <p>En el Debate Agrario Junín 2026, el 18 de noviembre, el exgobernador regional y candidato Fernando Orihuela presentó la carretera Acobamba–Palcamayo–San Pedro de Cajas–Condorín como una de las obras de su gestión.</p>
+                            <a href="noticias.html#carretera-acobamba-san-pedro" class="news__link">Leer noticia →</a>
                         </div>
                     </article>
                     <article class="news">
-                        <div class="news__media"><img src="imagenes/cachipozo.jpg" alt="Paisaje arqueológico de Cachipozo" loading="lazy"></div>
+                        <div class="news__media"><img src="imagenes/comunidad-municipio.jpg" alt="Comunidad reunida frente a la municipalidad de San Pedro de Cajas" loading="lazy"></div>
                         <div class="news__body">
                             <div class="news__meta">
-                                <span class="news__tag">Patrimonio</span>
-                                <time datetime="2026-09-02">2 de septiembre de 2026</time>
+                                <span class="news__tag">Elecciones</span>
+                                <time datetime="2026-10-19">19 de octubre de 2026</time>
                             </div>
-                            <h3>Cachipozo recibe protección provisional como sitio arqueológico</h3>
-                            <p>El Ministerio de Cultura determinó la protección provisional del Sitio Arqueológico Cachipozo mediante la Resolución Directoral N.° 000242-2026-DGPA-VMPCIC/MC del 27 de agosto de 2026.</p>
-                            <a href="https://www.facebook.com/MuniSPC2023/posts/pfbid0yTJ7LLWsr3SxB7fHKiYyTRWS82QuWgm7J2qqfK3jsT5nFCCVPqcyECpNcDVNMoThl" class="news__link" target="_blank" rel="noopener">Ver publicación →</a>
-                        </div>
-                    </article>
-                    <article class="news">
-                        <div class="news__media"><img src="imagenes/hilandera-sanpedrana.jpg" alt="Hilandera sampedrana trabajando con lana" loading="lazy"></div>
-                        <div class="news__body">
-                            <div class="news__meta">
-                                <span class="news__tag">Cultura</span>
-                                <time datetime="2026-09-01">1 de septiembre de 2026</time>
-                            </div>
-                            <h3>«La Pushka»: el hilado sampedrano llega al Museo Nacional en Lima</h3>
-                            <p>Demostración y taller de hilado andino el domingo 6 de septiembre, de 10:00 a 16:00, en el Museo Nacional de Arqueología, Antropología e Historia del Perú (Pueblo Libre). Ingreso libre.</p>
-                            <a href="https://www.facebook.com/MuniSPC2023/posts/pfbid02r5C3Gf4BCqWyGYVzNahjVnPBXpvupkEYBtnB35ddE5hxpkFZqzXfaVa1tZqjdkC1l" class="news__link" target="_blank" rel="noopener">Ver publicación →</a>
+                            <h3>JEE Tarma descarta anular las elecciones municipales en San Pedro de Cajas</h3>
+                            <p>Tras las Elecciones Regionales y Municipales del 4 de octubre de 2026, algunos candidatos presentaron reclamos sobre los resultados en el distrito. El presidente del Jurado Electoral Especial (JEE) de Tarma, Nick Olivera Guerra, descartó cualquier irregularidad.</p>
+                            <a href="noticias.html#elecciones-municipales-2026" class="news__link">Leer noticia →</a>
                         </div>
                     </article>
                 </div>
 
-                <p class="note">Más noticias en las páginas oficiales: <a href="https://www.facebook.com/MuniSPC2023" target="_blank" rel="noopener">Municipalidad Distrital</a> · <a href="https://www.facebook.com/profile.php?id=100089357196587" target="_blank" rel="noopener">San Pedro de Cajas</a></p>
+                <h3 class="news-older__title">Noticias anteriores</h3>
+                <div class="news-minis news-minis--home">
+                    <a class="news-mini" href="noticias.html#remodelacion-plaza-principal">
+                        <img src="imagenes/plaza-san-pedro.jpg" alt="" loading="lazy">
+                        <span class="news-mini__body">
+                            <span class="news-mini__meta"><span class="news__tag">Obras</span> <time datetime="2026-09-04">4 de septiembre de 2026</time></span>
+                            <strong>Se remodela la Plaza Principal de San Pedro de Cajas</strong>
+                        </span>
+                    </a>
+                    <a class="news-mini" href="noticias.html#cachipozo-proteccion-provisional">
+                        <img src="imagenes/cachipozo.jpg" alt="" loading="lazy">
+                        <span class="news-mini__body">
+                            <span class="news-mini__meta"><span class="news__tag">Patrimonio</span> <time datetime="2026-09-02">2 de septiembre de 2026</time></span>
+                            <strong>Cachipozo recibe protección provisional como sitio arqueológico</strong>
+                        </span>
+                    </a>
+                    <a class="news-mini" href="noticias.html#la-pushka-museo-nacional">
+                        <img src="imagenes/hilandera-sanpedrana.jpg" alt="" loading="lazy">
+                        <span class="news-mini__body">
+                            <span class="news-mini__meta"><span class="news__tag">Cultura</span> <time datetime="2026-09-01">1 de septiembre de 2026</time></span>
+                            <strong>«La Pushka»: el hilado sampedrano llega al Museo Nacional en Lima</strong>
+                        </span>
+                    </a>
+                    <a class="news-mini" href="noticias.html#tapiz-papa-leon-xiv">
+                        <img src="imagenes/tapiz-diseno.jpg" alt="" loading="lazy">
+                        <span class="news-mini__body">
+                            <span class="news-mini__meta"><span class="news__tag">Artesanía</span> <time datetime="2026-07-03">3 de julio de 2026</time></span>
+                            <strong>«Luz de Esperanza» gana el I Concurso Nacional del Tapiz Sampedrano «Papa León XIV»</strong>
+                        </span>
+                    </a>
+                    <a class="news-mini" href="noticias.html#fiesta-patronal-2026">
+                        <img src="imagenes/gorpagaray.jpg" alt="" loading="lazy">
+                        <span class="news-mini__body">
+                            <span class="news-mini__meta"><span class="news__tag">Fiesta</span> <time datetime="2026-06-30">30 de junio de 2026</time></span>
+                            <strong>Miles de devotos celebran la fiesta patronal de San Pedro y San Pablo</strong>
+                        </span>
+                    </a>
+                    <a class="news-mini" href="noticias.html#festival-pachamanca-telarmachay-2026">
+                        <img src="imagenes/cordillera.jpg" alt="" loading="lazy">
+                        <span class="news-mini__body">
+                            <span class="news-mini__meta"><span class="news__tag">Gastronomía</span> <time datetime="2026-01-29">29 de enero de 2026</time></span>
+                            <strong>San Pedro de Cajas anuncia el Festival de la Pachamanca Telarmachay 2026</strong>
+                        </span>
+                    </a>
+                    <a class="news-mini" href="noticias.html#reservorios-agro-rural-2025">
+                        <img src="imagenes/ovejas.jpg" alt="" loading="lazy">
+                        <span class="news-mini__body">
+                            <span class="news-mini__meta"><span class="news__tag">Agro</span> <time datetime="2025-01-27">27 de enero de 2025</time></span>
+                            <strong>Entregan dos reservorios de agua a 300 familias de San Pedro de Cajas</strong>
+                        </span>
+                    </a>
+                    <a class="news-mini" href="noticias.html#away-wasy-tapices-2023">
+                        <img src="imagenes/tejedora-telar.jpg" alt="" loading="lazy">
+                        <span class="news-mini__body">
+                            <span class="news-mini__meta"><span class="news__tag">Artesanía</span> <time datetime="2023-09-06">6 de septiembre de 2023</time></span>
+                            <strong>Away Wasy: la familia Ulloa mantiene vivo el teñido natural y el tejido a mano</strong>
+                        </span>
+                    </a>
+                    <a class="news-mini" href="noticias.html#fiesta-patronal-2022">
+                        <img src="imagenes/chutos.jpg" alt="" loading="lazy">
+                        <span class="news-mini__body">
+                            <span class="news-mini__meta"><span class="news__tag">Fiesta</span> <time datetime="2022-06-30">30 de junio de 2022</time></span>
+                            <strong>San Pedro de Cajas vuelve a celebrar a su patrón tras dos años</strong>
+                        </span>
+                    </a>
+                </div>
+
+                <p class="note"><a href="noticias.html"><strong>Ver todas las noticias →</strong></a> · <a href="region.html"><strong>Noticias de la región →</strong></a> · <a href="comunidad.html#enviar"><strong>Envía tu noticia →</strong></a> · Páginas oficiales: <a href="https://www.facebook.com/MuniSPC2023" target="_blank" rel="noopener">Municipalidad Distrital</a> · <a href="https://www.facebook.com/sanpedrodecajasperu" target="_blank" rel="noopener">San Pedro de Cajas</a></p>
             </div>
         </section>
 
@@ -324,6 +398,8 @@
                     <figure class="gallery__item"><img src="imagenes/tapiz-diseno.jpg" alt="Diseño de tapiz" loading="lazy"><figcaption>Diseño de tapiz</figcaption></figure>
                     <figure class="gallery__item"><img src="imagenes/concurso-hilanderas.jpg" alt="Concurso de hilanderas" loading="lazy"><figcaption>Concurso de hilanderas</figcaption></figure>
                     <figure class="gallery__item gallery__item--wide"><img src="imagenes/limpia-de-sal.jpg" alt="Limpia de sal en Cachipuquio" loading="lazy"><figcaption>Limpia de sal en Cachipuquio</figcaption></figure>
+                    <figure class="gallery__item gallery__item--wide"><img src="imagenes/manta-sampedrana.jpg" alt="Manta sampedrana de franjas crema y negras con estrellas de colores" loading="lazy"><figcaption>Manta sampedrana</figcaption></figure>
+                    <figure class="gallery__item gallery__item--wide"><img src="imagenes/manta-estrellas.jpg" alt="Manta tejida con franjas y estrellas de ocho puntas" loading="lazy"><figcaption>Manta de franjas con estrellas</figcaption></figure>
                 </div>
 
                 <!-- ---- Música Personal ---- -->
@@ -342,7 +418,9 @@
                             <div class="music__meta">
                                 <span class="music__tag">Reproduciendo</span>
                                 <h4 id="music-title" class="music__track">Selecciona un tema</h4>
-                                <p id="music-artist" class="music__artist">Colección San Pedro de Cajas</p>
+                                <p id="music-artist" class="music__artist">Kushi Music</p>
+                                <p class="music__producer">Producción: Kushi Music Productions</p>
+                                <p id="music-error" class="music__error" role="status"></p>
                             </div>
                         </div>
                         <audio id="music-player" class="music__player" controls preload="none"></audio>
@@ -352,6 +430,14 @@
                         </div>
 
                         <div class="playlist">
+                            <div class="playlist__genres" role="group" aria-label="Géneros">
+                                <button type="button" class="playlist__genre is-active" data-genre="" aria-pressed="true">Todos</button>
+                                <button type="button" class="playlist__genre" data-genre="Huayno" aria-pressed="false">Huayno</button>
+                                <button type="button" class="playlist__genre" data-genre="Cumbia" aria-pressed="false">Cumbia</button>
+                                <button type="button" class="playlist__genre" data-genre="Latinoamericano" aria-pressed="false">Latinoamericano</button>
+                                <button type="button" class="playlist__genre" data-genre="Romántico" aria-pressed="false">Romántico</button>
+                                <button type="button" class="playlist__genre" data-genre="Instrumentales" aria-pressed="false">Instrumentales</button>
+                            </div>
                             <div class="playlist__head">
                                 <label for="music-search" class="visually-hidden">Buscar canción</label>
                                 <input id="music-search" class="playlist__search" type="search" placeholder="Buscar entre los temas…" autocomplete="off">
@@ -362,26 +448,75 @@
                                   data-src   → ruta/URL del archivo de audio (mp3/ogg)
                                   data-title → nombre del tema
                                   data-artist→ intérprete
+                                  data-genre → Huayno, Cumbia, Latinoamericano, Romántico o Instrumentales
                                 Recomendado: guardar los archivos en la carpeta /musica/
                             -->
                             <ol id="music-list" class="playlist__list">
-                                <li class="playlist__item" data-src="musica/tema-01.mp3" data-title="Amanecer en Cajas" data-artist="Conjunto San Pedro">
-                                    <button type="button"><span class="playlist__num">1</span><span class="playlist__info"><strong>Amanecer en Cajas</strong><small>Conjunto San Pedro</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
+                                <li class="playlist__item" data-src="musica/la-voz-de-mi-pueblo.mp3" data-title="La voz de mi pueblo" data-artist="Kushi Music" data-genre="Huayno">
+                                    <button type="button"><span class="playlist__num">1</span><span class="playlist__info"><strong>La voz de mi pueblo</strong><small>Kushi Music · Huayno</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
                                 </li>
-                                <li class="playlist__item" data-src="musica/tema-02.mp3" data-title="Muliza del Tejedor" data-artist="Los Hijos de Tarma">
-                                    <button type="button"><span class="playlist__num">2</span><span class="playlist__info"><strong>Muliza del Tejedor</strong><small>Los Hijos de Tarma</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
+                                <li class="playlist__item" data-src="musica/my-heart-is-in-the-mountain.mp3" data-title="My heart is in the mountain" data-artist="Kushi Music" data-genre="Instrumentales">
+                                    <button type="button"><span class="playlist__num">2</span><span class="playlist__info"><strong>My heart is in the mountain</strong><small>Kushi Music · Instrumentales</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
                                 </li>
-                                <li class="playlist__item" data-src="musica/tema-03.mp3" data-title="Huayno de la Laguna" data-artist="Voces de la Puna">
-                                    <button type="button"><span class="playlist__num">3</span><span class="playlist__info"><strong>Huayno de la Laguna</strong><small>Voces de la Puna</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
+                                <li class="playlist__item" data-src="musica/my-heart-is-broken.mp3" data-title="My heart is broken" data-artist="Kushi Music" data-genre="Instrumentales">
+                                    <button type="button"><span class="playlist__num">3</span><span class="playlist__info"><strong>My heart is broken</strong><small>Kushi Music · Instrumentales</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
                                 </li>
-                                <li class="playlist__item" data-src="musica/tema-04.mp3" data-title="Fiesta de San Pedro" data-artist="Banda Municipal">
-                                    <button type="button"><span class="playlist__num">4</span><span class="playlist__info"><strong>Fiesta de San Pedro</strong><small>Banda Municipal</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
+                                <li class="playlist__item" data-src="musica/pachamama-sonqo.mp3" data-title="Pachamama Sonqo" data-artist="Kushi Music" data-genre="Instrumentales">
+                                    <button type="button"><span class="playlist__num">4</span><span class="playlist__info"><strong>Pachamama Sonqo</strong><small>Kushi Music · Instrumentales</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
                                 </li>
-                                <li class="playlist__item" data-src="musica/tema-05.mp3" data-title="Cielo de Junín" data-artist="Dúo Andino">
-                                    <button type="button"><span class="playlist__num">5</span><span class="playlist__info"><strong>Cielo de Junín</strong><small>Dúo Andino</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
+                                <li class="playlist__item" data-src="musica/desde-lejos-te-recuerdo.mp3" data-title="Desde lejos te recuerdo" data-artist="Kushi Music" data-genre="Romántico">
+                                    <button type="button"><span class="playlist__num">5</span><span class="playlist__info"><strong>Desde lejos te recuerdo</strong><small>Kushi Music · Romántico</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
+                                </li>
+                                <li class="playlist__item" data-src="musica/el-recluso-alegre.mp3" data-title="El recluso alegre" data-artist="Kushi Music" data-genre="Cumbia">
+                                    <button type="button"><span class="playlist__num">6</span><span class="playlist__info"><strong>El recluso alegre</strong><small>Kushi Music · Cumbia</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
+                                </li>
+                                <li class="playlist__item" data-src="musica/ingrata-cholita.mp3" data-title="Ingrata Cholita" data-artist="Kushi Music" data-genre="Cumbia">
+                                    <button type="button"><span class="playlist__num">7</span><span class="playlist__info"><strong>Ingrata Cholita</strong><small>Kushi Music · Cumbia</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
+                                </li>
+                                <li class="playlist__item" data-src="musica/cholita-de-mi-ande.mp3" data-title="Cholita de mi Ande" data-artist="Kushi Music" data-genre="Cumbia">
+                                    <button type="button"><span class="playlist__num">8</span><span class="playlist__info"><strong>Cholita de mi Ande</strong><small>Kushi Music · Cumbia</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
+                                </li>
+                                <li class="playlist__item" data-src="musica/mirar-tus-ojos.mp3" data-title="Mirar tus ojos" data-artist="Kushi Music" data-genre="Cumbia">
+                                    <button type="button"><span class="playlist__num">9</span><span class="playlist__info"><strong>Mirar tus ojos</strong><small>Kushi Music · Cumbia</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
+                                </li>
+                                <li class="playlist__item" data-src="musica/sirena-del-titicaca.mp3" data-title="Sirena del Titicaca" data-artist="Kushi Music" data-genre="Latinoamericano">
+                                    <button type="button"><span class="playlist__num">10</span><span class="playlist__info"><strong>Sirena del Titicaca</strong><small>Kushi Music · Latinoamericano</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
+                                </li>
+                                <li class="playlist__item" data-src="musica/aguas-del-titicaca.mp3" data-title="Aguas del Titicaca" data-artist="Kushi Music" data-genre="Latinoamericano">
+                                    <button type="button"><span class="playlist__num">11</span><span class="playlist__info"><strong>Aguas del Titicaca</strong><small>Kushi Music · Latinoamericano</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
+                                </li>
+                                <li class="playlist__item" data-src="musica/luna-de-huamanga.mp3" data-title="Luna de Huamanga" data-artist="Kushi Music" data-genre="Huayno">
+                                    <button type="button"><span class="playlist__num">12</span><span class="playlist__info"><strong>Luna de Huamanga</strong><small>Kushi Music · Huayno</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
+                                </li>
+                                <li class="playlist__item" data-src="musica/flor-de-chincheros.mp3" data-title="Flor de Chincheros" data-artist="Kushi Music" data-genre="Huayno">
+                                    <button type="button"><span class="playlist__num">13</span><span class="playlist__info"><strong>Flor de Chincheros</strong><small>Kushi Music · Huayno</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
+                                </li>
+                                <li class="playlist__item" data-src="musica/galope-del-condor.mp3" data-title="Galope del cóndor" data-artist="Kushi Music" data-genre="Instrumentales">
+                                    <button type="button"><span class="playlist__num">14</span><span class="playlist__info"><strong>Galope del cóndor</strong><small>Kushi Music · Instrumentales</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
+                                </li>
+                                <li class="playlist__item" data-src="musica/como-el-agua-de-yanayacu.mp3" data-title="Como el agua de Yanayacu" data-artist="Kushi Music" data-genre="Latinoamericano">
+                                    <button type="button"><span class="playlist__num">15</span><span class="playlist__info"><strong>Como el agua de Yanayacu</strong><small>Kushi Music · Latinoamericano</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
+                                </li>
+                                <li class="playlist__item" data-src="musica/esos-tus-ojito.mp3" data-title="Esos tus ojito" data-artist="Kushi Music" data-genre="Latinoamericano">
+                                    <button type="button"><span class="playlist__num">16</span><span class="playlist__info"><strong>Esos tus ojito</strong><small>Kushi Music · Latinoamericano</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
+                                </li>
+                                <li class="playlist__item" data-src="musica/el-zapateo-de-amor.mp3" data-title="El zapateo de amor" data-artist="Kushi Music" data-genre="Latinoamericano">
+                                    <button type="button"><span class="playlist__num">17</span><span class="playlist__info"><strong>El zapateo de amor</strong><small>Kushi Music · Latinoamericano</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
+                                </li>
+                                <li class="playlist__item" data-src="musica/fiesta-en-mi-tierra.mp3" data-title="Fiesta en mi tierra" data-artist="Kushi Music" data-genre="Huayno">
+                                    <button type="button"><span class="playlist__num">18</span><span class="playlist__info"><strong>Fiesta en mi tierra</strong><small>Kushi Music · Huayno</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
+                                </li>
+                                <li class="playlist__item" data-src="musica/vientos-del-sur.mp3" data-title="Vientos del Sur" data-artist="Kushi Music" data-genre="Instrumentales">
+                                    <button type="button"><span class="playlist__num">19</span><span class="playlist__info"><strong>Vientos del Sur</strong><small>Kushi Music · Instrumentales</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
+                                </li>
+                                <li class="playlist__item" data-src="musica/lagrimas-de-amor.mp3" data-title="Lágrimas de amor" data-artist="Kushi Music" data-genre="Romántico">
+                                    <button type="button"><span class="playlist__num">20</span><span class="playlist__info"><strong>Lágrimas de amor</strong><small>Kushi Music · Romántico</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
+                                </li>
+                                <li class="playlist__item" data-src="musica/almas-gemelas.mp3" data-title="Almas gemelas" data-artist="Kushi Music" data-genre="Romántico">
+                                    <button type="button"><span class="playlist__num">21</span><span class="playlist__info"><strong>Almas gemelas</strong><small>Kushi Music · Romántico</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
                                 </li>
                             </ol>
-                            <p class="playlist__empty" hidden>No se encontraron temas con ese nombre.</p>
+                            <p class="playlist__empty" hidden>Todavía no hay temas aquí.</p>
                         </div>
                     </div>
                 </div>
@@ -486,13 +621,19 @@
                             <strong>Redes sociales</strong>
                             <span class="contact__social">
                                 <a href="https://www.facebook.com/MuniSPC2023" target="_blank" rel="noopener">Facebook Municipalidad</a>
-                                <a href="https://www.facebook.com/profile.php?id=100089357196587" target="_blank" rel="noopener">Facebook San Pedro de Cajas</a>
+                                <a href="https://www.facebook.com/sanpedrodecajasperu" target="_blank" rel="noopener">Facebook San Pedro de Cajas</a>
                                 <a href="https://twitter.com/Sanpedrodecajas" target="_blank" rel="noopener">Twitter/X</a>
                             </span>
                         </div>
                     </div>
 
-                    <form class="form" action="mailto:support@spcserver.net" method="post" enctype="text/plain">
+                    <form class="form contact-form" action="comunidad/contacto.php" method="post">
+                        <div id="contacto-estado" aria-live="polite"></div>
+                        <input type="hidden" name="t" id="contacto-t" value="">
+                        <div class="form__hp" aria-hidden="true">
+                            <label for="contacto-web">No llenar</label>
+                            <input id="contacto-web" name="sitio_web" type="text" tabindex="-1" autocomplete="off">
+                        </div>
                         <div class="form__row">
                             <label for="nombre">Nombre</label>
                             <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required>
@@ -513,9 +654,9 @@
                         </div>
                         <div class="form__row">
                             <label for="mensaje">Mensaje</label>
-                            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntanos en qué podemos ayudarte" required></textarea>
+                            <textarea id="mensaje" name="mensaje" rows="5" maxlength="4000" placeholder="Cuéntanos en qué podemos ayudarte" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn--primary">Enviar mensaje</button>
+                        <button type="submit" class="btn btn--primary" id="contacto-enviar" disabled>Enviar mensaje</button>
                     </form>
                 </div>
             </div>
@@ -567,7 +708,7 @@
                 <h4>Síguenos</h4>
                 <ul>
                     <li><a href="https://www.facebook.com/MuniSPC2023" target="_blank" rel="noopener">Facebook Municipalidad</a></li>
-                    <li><a href="https://www.facebook.com/profile.php?id=100089357196587" target="_blank" rel="noopener">Facebook San Pedro de Cajas</a></li>
+                    <li><a href="https://www.facebook.com/sanpedrodecajasperu" target="_blank" rel="noopener">Facebook San Pedro de Cajas</a></li>
                     <li><a href="https://www.facebook.com/spc.pe" target="_blank" rel="noopener">Facebook spc.pe</a></li>
                     <li><a href="https://twitter.com/Sanpedrodecajas" target="_blank" rel="noopener">Twitter/X</a></li>
                 </ul>
@@ -598,64 +739,140 @@
         var list = document.getElementById('music-list');
         if (!player || !list) return;
         var items = Array.prototype.slice.call(list.querySelectorAll('.playlist__item'));
+        var genres = Array.prototype.slice.call(document.querySelectorAll('.playlist__genre'));
         var title = document.getElementById('music-title');
         var artist = document.getElementById('music-artist');
+        var error = document.getElementById('music-error');
         var search = document.getElementById('music-search');
         var count = document.getElementById('music-count');
         var empty = document.querySelector('.playlist__empty');
         var card = document.querySelector('.music__card');
         var current = -1;
+        var genre = '';
 
-        function updateCount(visible) {
-            count.textContent = visible + ' / ' + items.length + ' temas';
+        function visibleItems() {
+            return items.filter(function (li) { return !li.hidden; });
         }
 
-        function play(index, autoplay) {
-            if (index < 0 || index >= items.length) return;
-            var li = items[index];
-            current = index;
+        function play(li, autoplay) {
+            if (!li) return;
+            current = items.indexOf(li);
             items.forEach(function (el) { el.classList.remove('is-active'); });
             li.classList.add('is-active');
+            error.textContent = '';
             player.src = li.getAttribute('data-src');
             title.textContent = li.getAttribute('data-title');
-            artist.textContent = li.getAttribute('data-artist') || '';
-            card.classList.add('is-playing');
+            artist.textContent = [li.getAttribute('data-artist'), li.getAttribute('data-genre')].filter(Boolean).join(' · ');
             if (autoplay) player.play().catch(function () {});
+        }
+
+        function step(dir) {
+            var pool = visibleItems();
+            if (!pool.length) return;
+            var pos = pool.indexOf(items[current]);
+            if (pos === -1) pos = dir > 0 ? -1 : 0;
+            play(pool[(pos + dir + pool.length) % pool.length], true);
+        }
+
+        function fold(str) {
+            return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+        }
+
+        function filter() {
+            var q = fold(search.value.trim());
+            var visible = 0;
+            items.forEach(function (li) {
+                var text = fold(li.getAttribute('data-title') + ' ' + li.getAttribute('data-artist'));
+                var match = (!genre || li.getAttribute('data-genre') === genre) && (!q || text.indexOf(q) !== -1);
+                li.hidden = !match;
+                if (match) visible++;
+            });
+            empty.textContent = q ? 'No se encontraron temas con ese nombre.' : 'Todavía no hay temas en ' + (genre || 'la colección') + '.';
+            empty.hidden = visible !== 0;
+            count.textContent = visible + ' / ' + items.length + ' temas';
         }
 
         list.addEventListener('click', function (e) {
             var li = e.target.closest('.playlist__item');
-            if (li) play(items.indexOf(li), true);
+            if (li) play(li, true);
         });
 
         document.querySelectorAll('[data-music]').forEach(function (btn) {
             btn.addEventListener('click', function () {
-                if (!items.length) return;
-                var step = btn.getAttribute('data-music') === 'next' ? 1 : -1;
-                play((current + step + items.length) % items.length, true);
+                step(btn.getAttribute('data-music') === 'next' ? 1 : -1);
+            });
+        });
+
+        genres.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                genre = btn.getAttribute('data-genre');
+                genres.forEach(function (b) {
+                    b.classList.toggle('is-active', b === btn);
+                    b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+                });
+                filter();
             });
         });
 
         player.addEventListener('ended', function () {
-            if (current < items.length - 1) play(current + 1, true);
+            var pool = visibleItems();
+            var pos = pool.indexOf(items[current]);
+            if (pos !== -1 && pos < pool.length - 1) play(pool[pos + 1], true);
+        });
+        player.addEventListener('error', function () {
+            if (!player.getAttribute('src')) return;
+            error.textContent = 'Este tema no está disponible por ahora.';
+            card.classList.remove('is-playing');
         });
         player.addEventListener('pause', function () { card.classList.remove('is-playing'); });
-        player.addEventListener('play', function () { card.classList.add('is-playing'); });
+        player.addEventListener('playing', function () { card.classList.add('is-playing'); });
 
-        search.addEventListener('input', function () {
-            var q = search.value.trim().toLowerCase();
-            var visible = 0;
-            items.forEach(function (li) {
-                var text = (li.getAttribute('data-title') + ' ' + li.getAttribute('data-artist')).toLowerCase();
-                var match = !q || text.indexOf(q) !== -1;
-                li.hidden = !match;
-                if (match) visible++;
-            });
-            empty.hidden = visible !== 0;
-            updateCount(visible);
-        });
+        search.addEventListener('input', filter);
+        filter();
+    })();
 
-        updateCount(items.length);
+    (function () {
+        var form = document.querySelector('.contact-form');
+        if (!form) return;
+        var estado = document.getElementById('contacto-estado');
+        var boton = document.getElementById('contacto-enviar');
+        var q = new URLSearchParams(location.search);
+        var msgs = {
+            ok: ['ok', '¡Gracias! Recibimos tu mensaje y te responderemos a tu correo.'],
+            datos: ['error', 'Revisa los datos: nombre, un correo válido y un mensaje de entre 10 y 4000 letras.'],
+            rapido: ['error', 'El formulario caducó. Vuelve a escribir tu mensaje y envíalo.'],
+            limite: ['error', 'Enviaste demasiados mensajes. Inténtalo de nuevo en una hora.'],
+            error: ['error', 'No se pudo enviar el mensaje. Inténtalo más tarde o escríbenos por Facebook.']
+        };
+        var campos = ['nombre', 'email', 'asunto', 'mensaje'];
+        function guardar() {
+            var d = {};
+            campos.forEach(function (c) { d[c] = form.elements[c].value; });
+            try { sessionStorage.setItem('spc-contacto', JSON.stringify(d)); } catch (e) {}
+        }
+        form.addEventListener('input', guardar);
+        form.addEventListener('submit', guardar);
+        if (q.get('contacto') === 'ok') {
+            try { sessionStorage.removeItem('spc-contacto'); } catch (e) {}
+        } else {
+            try {
+                var g = JSON.parse(sessionStorage.getItem('spc-contacto') || '{}');
+                campos.forEach(function (c) { if (g[c]) form.elements[c].value = g[c]; });
+            } catch (e) {}
+        }
+        var m = msgs[q.get('contacto')];
+        if (m) {
+            var p = document.createElement('p');
+            p.className = 'community-status community-status--' + m[0];
+            p.setAttribute('role', m[0] === 'ok' ? 'status' : 'alert');
+            p.textContent = m[1];
+            estado.appendChild(p);
+            history.replaceState(null, '', location.pathname + location.hash);
+        }
+        fetch('comunidad/publicadas.php', { cache: 'no-store' })
+            .then(function (r) { return r.json(); })
+            .then(function (d) { document.getElementById('contacto-t').value = d.token; boton.disabled = false; })
+            .catch(function () { boton.disabled = true; });
     })();
 </script>
 </body>

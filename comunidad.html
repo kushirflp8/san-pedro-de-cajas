@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias de la comunidad | San Pedro de Cajas - Tarma, Junín, Perú</title>
+    <meta name="description" content="Noticias enviadas por los vecinos de San Pedro de Cajas y la región. Envía tu noticia.">
+    <meta name="keywords" content="San Pedro de Cajas, Tarma, Junín, Perú, artesanos, tapices, turismo, hospedajes, radio en vivo">
+    <meta name="theme-color" content="#A3312B">
+    <meta property="og:title" content="Noticias de la comunidad | San Pedro de Cajas">
+    <meta property="og:description" content="Noticias enviadas por los vecinos de San Pedro de Cajas y la región. Envía tu noticia.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%23A3312B'/%3E%3Cpolygon fill='%23D19A2E' points='24,4 24,8 28,8 28,12 32,12 32,16 36,16 36,20 36,20 36,24 32,24 32,28 28,28 28,32 24,32 24,36 16,36 16,32 12,32 12,28 8,28 8,24 4,24 4,20 4,20 4,16 8,16 8,12 12,12 12,8 16,8 16,4'/%3E%3Cpolygon fill='%2326365C' points='22,10 22,12 24,12 24,14 26,14 26,16 28,16 28,18 30,18 30,20 30,20 30,22 28,22 28,24 26,24 26,26 24,26 24,28 22,28 22,30 18,30 18,28 16,28 16,26 14,26 14,24 12,24 12,22 10,22 10,20 10,20 10,18 12,18 12,16 14,16 14,14 16,14 16,12 18,12 18,10'/%3E%3Cpolygon fill='%23F2E8D5' points='22,16 22,18 24,18 24,20 24,20 24,22 22,22 22,24 18,24 18,22 16,22 16,20 16,20 16,18 18,18 18,16'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <a class="skip-link" href="#comunidad-top">Saltar al contenido</a>
+
+    <!-- ============ CABECERA ============ -->
+    <header class="header">
+        <div class="container header__inner">
+            <a href="index.html#inicio" class="logo" aria-label="San Pedro de Cajas - Inicio">
+                <span class="logo__mark" aria-hidden="true"></span>
+                <span class="logo__text">
+                    <strong>San Pedro de Cajas</strong>
+                    <small>Tierra de Artesanos</small>
+                </span>
+            </a>
+
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
+            <label for="menu-toggle" class="menu-btn" role="button" tabindex="0" aria-label="Abrir menú" aria-controls="nav-principal">
+                <span></span><span></span><span></span>
+            </label>
+
+            <nav id="nav-principal" class="nav" aria-label="Navegación principal">
+                <ul>
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li class="nav__group">
+                        <a href="noticias.html">Noticias</a>
+                        <ul class="nav__sub" aria-label="Noticias">
+                            <li><a href="noticias.html">Noticias de San Pedro de Cajas</a></li>
+                            <li><a href="region.html">Noticias de la región</a></li>
+                            <li><a href="comunidad.html#enviar" aria-current="page">Envía tu noticia</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#nosotros">Nosotros</a></li>
+                    <li><a href="index.html#turismo">Turismo</a></li>
+                    <li><a href="index.html#hospedajes">Hospedajes</a></li>
+                    <li><a href="index.html#galeria">Galería</a></li>
+                    <li><a href="index.html#paisajes">Paisajes</a></li>
+                    <li><a href="index.html#gente">Nuestra Gente</a></li>
+                    <li><a href="index.html#contacto" class="nav__cta">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="comunidad-top">
+        <section class="section section--alt news-page">
+            <div class="container container--narrow">
+                <header class="section__head">
+                    <p class="section__eyebrow">Noticias de la comunidad</p>
+                    <h1>Lo que cuentan los vecinos</h1>
+                    <p class="section__lead">Noticias enviadas por sampedranos y vecinos de la región. Cada noticia se revisa antes de publicarse.</p>
+                </header>
+                <p class="note"><a href="#enviar"><strong>Envía tu noticia ↓</strong></a> · <a href="noticias.html">Noticias de San Pedro de Cajas</a> · <a href="region.html">Noticias de la región</a></p>
+                <div id="comunidad-lista" aria-live="polite">
+                    <p class="community-empty">Cargando noticias…</p>
+                </div>
+
+                <h2 id="enviar" class="news-page__sub">Envía tu noticia</h2>
+                <div id="enviar-estado"></div>
+                <form class="form community-form" action="comunidad/enviar.php" method="post" enctype="multipart/form-data">
+                    <div class="form__row">
+                        <label>Tu nombre<input name="nombre" required maxlength="80" autocomplete="name"></label>
+                        <label>Correo o teléfono <small>(no se publica)</small><input name="contacto" required maxlength="120"></label>
+                    </div>
+                    <div class="form__row">
+                        <label>Lugar
+                            <select name="lugar" required>
+                            <option>San Pedro de Cajas</option>
+                            <option>Condorín</option>
+                            <option>Otro centro poblado de San Pedro de Cajas</option>
+                            <option>Tarma</option>
+                            <option>Junín</option>
+                            <option>La Oroya</option>
+                            <option>Acobamba</option>
+                            <option>Otro lugar</option>
+                            </select>
+                        </label>
+                        <label>Foto <small>(opcional, JPG/PNG/WebP, máx. 8 MB y 40 megapíxeles)</small><input name="foto" type="file" accept="image/jpeg,image/png,image/webp"></label>
+                    </div>
+                    <label>Título<input name="titulo" required maxlength="140"></label>
+                    <label>Noticia <small>(mínimo 40 caracteres)</small><textarea name="texto" rows="7" required minlength="40" maxlength="5000"></textarea></label>
+                    <label class="form__hp" aria-hidden="true">No llenar<input name="sitio_web" tabindex="-1" autocomplete="off"></label>
+                    <input type="hidden" name="t" id="form-t">
+                    <label class="form__check"><input type="checkbox" name="acepto" required> Confirmo que la información es verdadera y acepto que se revise antes de publicarse.</label>
+                    <button type="submit" class="btn btn--primary" id="form-enviar" disabled>Enviar noticia</button>
+                </form>
+                <p class="note"><a href="index.html#noticias">← Volver al inicio</a></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============ PIE DE PÁGINA ============ -->
+    <footer class="footer">
+        <div class="footer__pattern" aria-hidden="true"></div>
+        <div class="container footer__grid">
+            <div>
+                <a href="index.html#inicio" class="logo logo--footer">
+                    <span class="logo__mark" aria-hidden="true"></span>
+                    <span class="logo__text"><strong>San Pedro de Cajas</strong><small>Tierra de Artesanos</small></span>
+                </a>
+                <p>Portal de la comunidad sampedrana: cultura, turismo y Radio San Pedro en vivo.</p>
+            </div>
+            <div>
+                <h4>Secciones</h4>
+                <ul>
+                    <li><a href="index.html#noticias">Noticias</a></li>
+                    <li><a href="index.html#nosotros">Nosotros</a></li>
+                    <li><a href="index.html#turismo">Turismo</a></li>
+                    <li><a href="index.html#hospedajes">Hospedajes</a></li>
+                    <li><a href="index.html#galeria">Galería</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Comunidad</h4>
+                <ul>
+                    <li><a href="index.html#paisajes">Paisajes</a></li>
+                    <li><a href="index.html#gente">Nuestra Gente</a></li>
+                    <li><a href="index.html#radio">Radio San Pedro</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Síguenos</h4>
+                <ul>
+                    <li><a href="https://www.facebook.com/MuniSPC2023" target="_blank" rel="noopener">Facebook Municipalidad</a></li>
+                    <li><a href="https://www.facebook.com/sanpedrodecajasperu" target="_blank" rel="noopener">Facebook San Pedro de Cajas</a></li>
+                    <li><a href="https://www.facebook.com/spc.pe" target="_blank" rel="noopener">Facebook spc.pe</a></li>
+                    <li><a href="https://twitter.com/Sanpedrodecajas" target="_blank" rel="noopener">Twitter/X</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer__bottom">
+            <p>&copy; 2026 San Pedro de Cajas. Todos los derechos reservados.</p>
+            <a href="#comunidad-top" class="footer__top">Volver arriba ↑</a>
+        </div>
+    </footer>
+
+<script>
+    (function () {
+        var toggle = document.getElementById('menu-toggle');
+        var menuBtn = document.querySelector('.menu-btn');
+        if (toggle && menuBtn) {
+            menuBtn.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle.checked = !toggle.checked; }
+            });
+            document.querySelectorAll('.nav a').forEach(function (a) {
+                a.addEventListener('click', function () { toggle.checked = false; });
+            });
+        }
+    })();
+</script>
+
+<script>
+    (function () {
+        var t = document.getElementById('form-t');
+        var estado = document.getElementById('enviar-estado');
+        var q = new URLSearchParams(location.search);
+        var errores = {
+            datos: 'Revisa los datos: todos los campos son obligatorios y la noticia debe tener al menos 40 caracteres.',
+            rapido: 'El formulario se envió demasiado rápido o caducó. Recarga la página e inténtalo de nuevo.',
+            limite: 'Ya enviaste varias noticias. Inténtalo más tarde.',
+            foto: 'La foto no es válida o es muy grande. Usa una imagen JPG, PNG o WebP de máximo 8 MB y 40 megapíxeles. Vuelve a elegirla.',
+            guardar: 'No se pudo guardar tu noticia. Inténtalo de nuevo más tarde.',
+            metodo: 'No se pudo enviar el formulario.'
+        };
+        var form = document.querySelector('.community-form');
+        var campos = ['nombre', 'contacto', 'lugar', 'titulo', 'texto'];
+        function guardarBorrador() {
+            var borrador = {};
+            campos.forEach(function (c) { borrador[c] = form.elements[c].value; });
+            try { sessionStorage.setItem('spc-borrador', JSON.stringify(borrador)); } catch (e) {}
+        }
+        form.addEventListener('input', guardarBorrador);
+        form.addEventListener('submit', guardarBorrador);
+        if (!q.get('enviado')) {
+            try {
+                var guardado = JSON.parse(sessionStorage.getItem('spc-borrador') || '{}');
+                campos.forEach(function (c) { if (guardado[c]) form.elements[c].value = guardado[c]; });
+            } catch (e) {}
+        } else {
+            try { sessionStorage.removeItem('spc-borrador'); } catch (e) {}
+        }
+        if (q.get('enviado')) {
+            estado.innerHTML = '<p class="community-status community-status--ok" role="status">¡Gracias! Recibimos tu noticia. La revisaremos y, si se aprueba, aparecerá en esta página.</p>';
+            history.replaceState(null, '', location.pathname + location.hash);
+        } else if (q.get('error')) {
+            estado.innerHTML = '<p class="community-status community-status--error" role="alert"></p>';
+            estado.firstChild.textContent = errores[q.get('error')] || errores.metodo;
+        }
+        var lista = document.getElementById('comunidad-lista');
+        function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+        fetch('comunidad/publicadas.php', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (data) {
+            t.value = data.token;
+            document.getElementById('form-enviar').disabled = false;
+            var items = data.items;
+            lista.innerHTML = '';
+            if (!items.length) { lista.appendChild(el('p', 'community-empty', 'Todavía no hay noticias de la comunidad. ¡Sé el primero en enviar una!')); return; }
+            items.forEach(function (n) {
+                var a = el('article', 'article'); a.id = 'c-' + n.id;
+                if (n.foto) { var img = el('img', 'article__img'); img.src = n.foto; img.alt = n.titulo; img.loading = 'lazy'; a.appendChild(img); }
+                var b = el('div', 'article__body');
+                var meta = el('div', 'news__meta');
+                meta.appendChild(el('span', 'news__tag', n.lugar));
+                var tm = el('time', null, new Date(n.fecha).toLocaleDateString('es-PE', { day: 'numeric', month: 'long', year: 'numeric' }));
+                tm.dateTime = n.fecha; meta.appendChild(tm);
+                b.appendChild(meta);
+                b.appendChild(el('h2', null, n.titulo));
+                n.texto.split(/\n\s*\n/).forEach(function (p) { if (p.trim()) b.appendChild(el('p', null, p.trim())); });
+                b.appendChild(el('p', 'article__source', 'Enviada por: ' + n.nombre));
+                a.appendChild(b); lista.appendChild(a);
+            });
+        }).catch(function () {
+            lista.innerHTML = '';
+            lista.appendChild(el('p', 'community-empty', 'No se pudieron cargar las noticias de la comunidad.'));
+            estado.innerHTML = '<p class="community-status community-status--error" role="alert">Por ahora no se puede enviar noticias. Recarga la página en unos minutos; el texto que escribiste se intentará conservar, pero la foto tendrás que elegirla de nuevo.</p>';
+        });
+    })();
+</script>
+</body>
+</html>
