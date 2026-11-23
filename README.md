@@ -110,7 +110,7 @@ return [
 ];
 ```
 
-Al publicar, sube `comunidad.html`, la carpeta `comunidad/` y la carpeta `imagenes/` junto con `index.html`, `noticias.html`, `region.html`, `turismo.html`, `gente.html`, `circuitos.html`, `sitemap.xml` y `styles.css`.
+Al publicar, sube `comunidad.html`, la carpeta `comunidad/` y la carpeta `imagenes/` junto con `index.html`, `noticias.html`, `region.html`, `turismo.html`, `gente.html`, `circuitos.html`, `sitemap.xml`, `styles.css` y los archivos del favicon (`favicon.ico`, `favicon-32.png`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`, `site.webmanifest`).
 
 ## 🛏️ Hospedajes
 

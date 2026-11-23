@@ -95,6 +95,7 @@ if ($logged) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <title>Panel de noticias de la comunidad</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
