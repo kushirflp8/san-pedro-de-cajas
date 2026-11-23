@@ -372,6 +372,15 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
 .btn--ghost-dark:hover { background: rgba(255, 255, 255, 0.12); color: var(--blanco); }
 
 .playlist { background: var(--lana); color: var(--texto); border-radius: var(--radio-sm); padding: 1rem; }
+.playlist__genres { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 0.9rem; }
+.playlist__genre {
+    padding: 0.4rem 0.85rem; border: 1px solid var(--crema-oscuro); border-radius: 999px; cursor: pointer;
+    font: inherit; font-size: 0.85rem; font-weight: 700; background: var(--crema); color: var(--tierra);
+}
+.playlist__genre:hover { border-color: var(--dorado); }
+.playlist__genre:focus-visible { outline: 2px solid var(--azul-oscuro); outline-offset: 2px; }
+.playlist__genre.is-active { background: var(--cochinilla); border-color: var(--cochinilla); color: var(--blanco); }
+.music__error { margin-top: 0.3rem; font-size: 0.85rem; font-weight: 700; color: #F5D27A; }
 .playlist__head { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem; }
 .playlist__search {
     flex: 1; min-width: 0; padding: 0.6rem 0.9rem; border: 1px solid var(--crema-oscuro); border-radius: var(--radio-sm);

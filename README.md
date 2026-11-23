@@ -25,7 +25,7 @@ Una página web moderna, limpia y completamente responsiva dedicada a **San Pedr
 ### Funcionalidades
 ✅ Menú de navegación responsivo (hamburguesa en móvil, solo CSS, sin JavaScript)  
 ✅ Reproductor de audio en vivo integrado  
-✅ Reproductor de música personal con lista de temas, buscador y avance automático  
+✅ Reproductor de música personal con géneros (Huayno, Cumbia, Latinoamericano, Romántico, Instrumentales), buscador y avance automático  
 ✅ Formulario de contacto con validación nativa HTML5  
 ✅ Scroll suave entre secciones  
 ✅ Animaciones de carga de elementos  
@@ -100,12 +100,14 @@ La lista oficial de alojamientos está pendiente de datos reales. La sección co
 La lista de canciones vive en `index.html` dentro de `<ol id="music-list">`. Para añadir un tema (la estructura admite 200 o más), copia un `<li>`:
 
 ```html
-<li class="playlist__item" data-src="musica/tema-06.mp3" data-title="Nombre del tema" data-artist="Intérprete">
+<li class="playlist__item" data-src="musica/tema-06.mp3" data-title="Nombre del tema" data-artist="Intérprete" data-genre="Huayno">
     <button type="button"><span class="playlist__num">6</span><span class="playlist__info"><strong>Nombre del tema</strong><small>Intérprete</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
 </li>
 ```
 
-Guarda los archivos de audio (mp3/ogg) en una carpeta `musica/`. La lista tiene scroll propio y un buscador por título o intérprete; al terminar una canción se reproduce la siguiente. Un pequeño script al final de `index.html` gestiona la reproducción.
+`data-genre` debe ser uno de: `Huayno`, `Cumbia`, `Latinoamericano`, `Romántico` o `Instrumentales` (las pestañas filtran por ese valor).
+
+Guarda los archivos de audio (mp3) en la carpeta `musica/` del hosting (cPanel). Los MP3 no se suben al repositorio (`.gitignore`) por su tamaño. La lista tiene scroll propio y un buscador por título o intérprete; al terminar una canción se reproduce la siguiente. Un pequeño script al final de `index.html` gestiona la reproducción.
 
 ## 💬 Formulario de Contacto
 
