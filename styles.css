@@ -481,12 +481,12 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
     .nav {
         position: absolute; top: 100%; left: 0; right: 0;
         background: var(--lana); border-bottom: 1px solid var(--crema-oscuro); box-shadow: var(--sombra-fuerte);
-        max-height: 0; overflow: hidden; transition: max-height 0.35s ease;
+        max-height: 0; overflow: hidden; visibility: hidden; transition: max-height 0.35s ease, visibility 0s linear 0.35s;
     }
     .nav ul { flex-direction: column; align-items: stretch; padding: 0.8rem 1.25rem 1.2rem; gap: 0.2rem; }
     .nav a { padding: 0.8rem 1rem; border-radius: var(--radio-sm); }
     .nav__cta { text-align: center; margin-top: 0.4rem; }
-    .menu-toggle:checked ~ .nav { max-height: 520px; }
+    .menu-toggle:checked ~ .nav { max-height: 520px; visibility: visible; transition-delay: 0s; }
     .menu-toggle:checked ~ .menu-btn span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .menu-toggle:checked ~ .menu-btn span:nth-child(2) { opacity: 0; }
     .menu-toggle:checked ~ .menu-btn span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
