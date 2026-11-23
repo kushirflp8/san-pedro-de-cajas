@@ -25,7 +25,7 @@ Una página web moderna, limpia y completamente responsiva dedicada a **San Pedr
 ### Funcionalidades
 ✅ Menú de navegación responsivo (hamburguesa en móvil, solo CSS, sin JavaScript)  
 ✅ Reproductor de audio en vivo integrado  
-✅ Reproductor de música personal con lista de temas, buscador y avance automático  
+✅ Reproductor de música personal con géneros (Huayno, Cumbia, Latinoamericano, Romántico, Instrumentales), buscador y avance automático  
 ✅ Formulario de contacto con validación nativa HTML5  
 ✅ Scroll suave entre secciones  
 ✅ Animaciones de carga de elementos  
@@ -84,12 +84,33 @@ La sección `#noticias` va justo después del hero y el anuncio superior. Para p
         </div>
         <h3>Título de la noticia</h3>
         <p>Resumen breve de la noticia.</p>
-        <a href="#" class="news__link">Leer más →</a>
+        <a href="noticias.html#id-de-la-noticia" class="news__link">Leer noticia →</a>
     </div>
 </article>
 ```
 
-Añade `news--destacada` al artículo principal para que ocupe el doble de ancho. Las noticias enlazan a publicaciones públicas de Facebook.
+Añade `news--destacada` al artículo principal para que ocupe el doble de ancho. La portada muestra las 3 más recientes en grande y las anteriores como ventanitas (`<a class="news-mini">`) en «Noticias anteriores»; al agregar una noticia, la más antigua de las grandes pasa a ventanita.
+
+El texto completo de cada noticia vive en `noticias.html`, que es el archivo permanente. Añade allí un `<article class="article" id="id-de-la-noticia">` (foto, etiqueta, fecha, texto y `article__source` con el enlace a la fuente) arriba de los demás y agrega su ventanita en `.news-minis` («Todas las noticias»). Sube a cPanel `index.html` y `noticias.html` juntos.
+
+## 🗞️ Noticias de la comunidad
+
+`comunidad.html` tiene el formulario «Envía tu noticia» y muestra solo las noticias aprobadas. Funciona con PHP en el hosting:
+
+- `comunidad/enviar.php`: recibe el formulario (honeypot, tiempo mínimo de llenado, límite de 5 envíos por hora por IP). Las fotos se vuelven a codificar como JPEG de máximo 1600 px. Avisa por correo a la dirección configurada.
+- `comunidad/panel.php`: panel privado con contraseña para aprobar (con opción de corregir título y texto), rechazar o retirar noticias.
+- `comunidad/publicadas.php`: devuelve en JSON las noticias aprobadas.
+- Los envíos pendientes se guardan fuera de `public_html`, en `~/spc_noticias/`. Ahí está también `config.php` (no va al repositorio):
+
+```php
+<?php
+return [
+    'email' => 'correo@ejemplo.com',
+    'password_hash' => '...', // password_hash('clave', PASSWORD_DEFAULT)
+];
+```
+
+Al publicar, sube `comunidad.html` y la carpeta `comunidad/` junto con `index.html`, `noticias.html`, `region.html` y `styles.css`.
 
 ## 🛏️ Hospedajes
 
@@ -100,12 +121,14 @@ La lista oficial de alojamientos está pendiente de datos reales. La sección co
 La lista de canciones vive en `index.html` dentro de `<ol id="music-list">`. Para añadir un tema (la estructura admite 200 o más), copia un `<li>`:
 
 ```html
-<li class="playlist__item" data-src="musica/tema-06.mp3" data-title="Nombre del tema" data-artist="Intérprete">
+<li class="playlist__item" data-src="musica/tema-06.mp3" data-title="Nombre del tema" data-artist="Intérprete" data-genre="Huayno">
     <button type="button"><span class="playlist__num">6</span><span class="playlist__info"><strong>Nombre del tema</strong><small>Intérprete</small></span><span class="playlist__play" aria-hidden="true">▶</span></button>
 </li>
 ```
 
-Guarda los archivos de audio (mp3/ogg) en una carpeta `musica/`. La lista tiene scroll propio y un buscador por título o intérprete; al terminar una canción se reproduce la siguiente. Un pequeño script al final de `index.html` gestiona la reproducción.
+`data-genre` debe ser uno de: `Huayno`, `Cumbia`, `Latinoamericano`, `Romántico` o `Instrumentales` (las pestañas filtran por ese valor).
+
+Guarda los archivos de audio (mp3) en la carpeta `musica/` del hosting (cPanel). Los MP3 no se suben al repositorio (`.gitignore`) por su tamaño. La lista tiene scroll propio y un buscador por título o intérprete; al terminar una canción se reproduce la siguiente. Un pequeño script al final de `index.html` gestiona la reproducción.
 
 ## 💬 Formulario de Contacto
 
@@ -229,3 +252,7 @@ Libre para uso y distribución.
 Para más información, contacta a:
 - 📧 Email: support@spcserver.net
 - 📍 Ubicación: Tarma, Junín, Perú
+
+### Noticias de la región
+
+`region.html` reúne noticias de San Pedro de Cajas y sus centros poblados, Tarma, Junín, La Oroya y Acobamba. Cada ventanita (`.news-mini`) y cada `.article` lleva `data-place` = `spc` | `tarma` | `junin` | `oroya` | `acobamba`, que usan las pestañas `.region-tabs` para filtrar. Si una noticia no tiene foto propia, se muestra un recuadro con motivo de tapiz y el nombre del lugar (`.news-ph`).
