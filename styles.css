@@ -97,7 +97,8 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
 .btn--ghost:hover { background: rgba(255, 255, 255, 0.15); color: var(--blanco); }
 .btn--small { padding: 0.5rem 1.1rem; font-size: 0.9rem; background: var(--azul); color: var(--blanco); outline: 1px dashed rgba(255, 255, 255, 0.4); outline-offset: -5px; }
 .btn--small:hover { background: var(--azul-claro); color: var(--blanco); }
-.btn:focus-visible { outline: 3px solid var(--dorado); outline-offset: 3px; }
+.btn:focus-visible { outline: 3px solid var(--azul-oscuro); outline-offset: 3px; }
+.hero .btn:focus-visible, .music__card .btn:focus-visible { outline-color: var(--dorado); }
 
 /* ---------- Cabecera ---------- */
 .header {
