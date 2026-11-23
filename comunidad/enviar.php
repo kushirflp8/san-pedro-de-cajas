@@ -28,8 +28,10 @@ if (!spc_rate_limit('enviar', 5, 3600)) { volver('error=limite'); }
 
 $id = date('Ymd-His') . '-' . bin2hex(random_bytes(4));
 $foto = false;
-if (!empty($_FILES['foto']['tmp_name']) && is_uploaded_file($_FILES['foto']['tmp_name'])) {
-    if ($_FILES['foto']['size'] > 8 * 1024 * 1024) { volver('error=foto'); }
+$uploadErr = $_FILES['foto']['error'] ?? UPLOAD_ERR_NO_FILE;
+if ($uploadErr !== UPLOAD_ERR_NO_FILE) {
+    if ($uploadErr !== UPLOAD_ERR_OK || !is_uploaded_file($_FILES['foto']['tmp_name'])
+        || $_FILES['foto']['size'] > 8 * 1024 * 1024) { volver('error=foto'); }
     $foto = spc_save_image($_FILES['foto']['tmp_name'], spc_dir('fotos-pendientes') . '/' . $id . '.jpg');
     if (!$foto) { volver('error=foto'); }
 }
