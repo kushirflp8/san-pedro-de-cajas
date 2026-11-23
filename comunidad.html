@@ -182,12 +182,14 @@
         };
         var form = document.querySelector('.community-form');
         var campos = ['nombre', 'contacto', 'lugar', 'titulo', 'texto'];
-        form.addEventListener('submit', function () {
+        function guardarBorrador() {
             var borrador = {};
             campos.forEach(function (c) { borrador[c] = form.elements[c].value; });
             try { sessionStorage.setItem('spc-borrador', JSON.stringify(borrador)); } catch (e) {}
-        });
-        if (q.get('error')) {
+        }
+        form.addEventListener('input', guardarBorrador);
+        form.addEventListener('submit', guardarBorrador);
+        if (!q.get('enviado')) {
             try {
                 var guardado = JSON.parse(sessionStorage.getItem('spc-borrador') || '{}');
                 campos.forEach(function (c) { if (guardado[c]) form.elements[c].value = guardado[c]; });
@@ -226,7 +228,7 @@
         }).catch(function () {
             lista.innerHTML = '';
             lista.appendChild(el('p', 'community-empty', 'No se pudieron cargar las noticias de la comunidad.'));
-            estado.innerHTML = '<p class="community-status community-status--error" role="alert">Por ahora no se puede enviar noticias. Recarga la página en unos minutos.</p>';
+            estado.innerHTML = '<p class="community-status community-status--error" role="alert">Por ahora no se puede enviar noticias. Lo que escribiste se guarda; recarga la página en unos minutos.</p>';
         });
     })();
 </script>
