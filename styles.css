@@ -575,3 +575,27 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
 @media (max-width: 640px) {
     .news-mini__img.news-ph { height: 90px; }
 }
+
+/* ---------- Noticias de la comunidad ---------- */
+.community-form { margin-bottom: 2.5rem; }
+.community-form .form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.community-form .form__check { display: flex; gap: 0.6rem; align-items: flex-start; font-weight: 400; }
+.community-form .form__check input { width: auto; margin-top: 0.25rem; }
+.community-form small { color: var(--texto-suave); font-weight: 400; }
+.form__hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.community-status { padding: 0.9rem 1.1rem; border-radius: var(--radio-sm); font-weight: 700; margin-bottom: 1.2rem; }
+.community-status--ok { background: #E4EDD6; color: #34481D; border-left: 5px solid var(--verde); }
+.community-status--error { background: #F6DEDA; color: #7A211C; border-left: 5px solid var(--cochinilla); }
+.community-empty { color: var(--texto-suave); font-style: italic; }
+.panel label { display: grid; gap: 0.3rem; font-weight: 700; font-size: 0.9rem; }
+.panel input, .panel textarea { width: 100%; padding: 0.7rem 0.9rem; border: 1px solid var(--crema-oscuro); border-radius: var(--radio-sm); font: inherit; background: var(--blanco); }
+.panel .btn--ghost { color: var(--cochinilla); border: 2px solid var(--cochinilla); background: transparent; }
+.panel .btn--ghost:hover { background: var(--cochinilla); color: var(--blanco); }
+.panel__actions { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+.panel__msg { background: var(--lana); border-left: 5px solid var(--dorado); padding: 0.8rem 1rem; font-weight: 700; }
+.panel__login { max-width: 360px; margin: 0 auto; }
+.panel__pub { list-style: none; padding: 0; display: grid; gap: 0.5rem; }
+.panel__pub li { display: flex; justify-content: space-between; align-items: center; gap: 1rem; background: var(--lana); padding: 0.6rem 0.9rem; border-radius: var(--radio-sm); }
+@media (max-width: 640px) {
+    .community-form .form__row { grid-template-columns: 1fr; }
+}

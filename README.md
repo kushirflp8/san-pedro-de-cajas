@@ -93,6 +93,25 @@ Añade `news--destacada` al artículo principal para que ocupe el doble de ancho
 
 El texto completo de cada noticia vive en `noticias.html`, que es el archivo permanente. Añade allí un `<article class="article" id="id-de-la-noticia">` (foto, etiqueta, fecha, texto y `article__source` con el enlace a la fuente) arriba de los demás y agrega su ventanita en `.news-minis` («Todas las noticias»). Sube a cPanel `index.html` y `noticias.html` juntos.
 
+## 🗞️ Noticias de la comunidad
+
+`comunidad.html` tiene el formulario «Envía tu noticia» y muestra solo las noticias aprobadas. Funciona con PHP en el hosting:
+
+- `comunidad/enviar.php`: recibe el formulario (honeypot, tiempo mínimo de llenado, límite de 5 envíos por hora por IP). Las fotos se vuelven a codificar como JPEG de máximo 1600 px. Avisa por correo a la dirección configurada.
+- `comunidad/panel.php`: panel privado con contraseña para aprobar (con opción de corregir título y texto), rechazar o retirar noticias.
+- `comunidad/publicadas.php`: devuelve en JSON las noticias aprobadas.
+- Los envíos pendientes se guardan fuera de `public_html`, en `~/spc_noticias/`. Ahí está también `config.php` (no va al repositorio):
+
+```php
+<?php
+return [
+    'email' => 'correo@ejemplo.com',
+    'password_hash' => '...', // password_hash('clave', PASSWORD_DEFAULT)
+];
+```
+
+Al publicar, sube `comunidad.html` y la carpeta `comunidad/` junto con `index.html`, `noticias.html`, `region.html` y `styles.css`.
+
 ## 🛏️ Hospedajes
 
 La lista oficial de alojamientos está pendiente de datos reales. La sección conserva un formulario de contacto para registrar hospedajes con fotos, precios y contacto.
