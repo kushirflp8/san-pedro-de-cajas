@@ -30,9 +30,13 @@ function spc_read_json($file, $default = []) {
 }
 
 function spc_write_json($file, $data) {
+    $json = json_encode($data, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
     $tmp = $file . '.' . bin2hex(random_bytes(4)) . '.tmp';
-    file_put_contents($tmp, json_encode($data, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT), LOCK_EX);
-    rename($tmp, $file);
+    if ($json === false || file_put_contents($tmp, $json, LOCK_EX) !== strlen($json) || !rename($tmp, $file)) {
+        @unlink($tmp);
+        return false;
+    }
+    return true;
 }
 
 function spc_with_lock($name, callable $fn) {

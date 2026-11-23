@@ -34,7 +34,7 @@ if (!empty($_FILES['foto']['tmp_name']) && is_uploaded_file($_FILES['foto']['tmp
     if (!$foto) { volver('error=foto'); }
 }
 
-spc_write_json(spc_dir('pendientes') . '/' . $id . '.json', [
+$saved = spc_write_json(spc_dir('pendientes') . '/' . $id . '.json', [
     'id' => $id,
     'fecha' => date('c'),
     'nombre' => $nombre,
@@ -45,6 +45,7 @@ spc_write_json(spc_dir('pendientes') . '/' . $id . '.json', [
     'foto' => $foto,
     'ip' => hash('sha256', spc_ip()),
 ]);
+if (!$saved) { volver('error=guardar'); }
 
 $cfg = spc_config();
 if (!empty($cfg['email'])) {

@@ -41,40 +41,48 @@ if ($logged && ($_SERVER['REQUEST_METHOD'] ?? '') === 'POST' && csrf_ok()) {
     $accion = $_POST['accion'] ?? '';
     $id = (string) ($_POST['id'] ?? '');
     $file = pend_file($id);
+    $lock = fopen(spc_dir() . '/moderar.lock', 'c');
+    flock($lock, LOCK_EX);
+    clearstatcache();
     if ($file && is_file($file) && in_array($accion, ['aprobar', 'rechazar'], true)) {
         $n = spc_read_json($file);
         $fotoPend = spc_dir('fotos-pendientes') . '/' . $id . '.jpg';
         if ($accion === 'aprobar') {
             $n['titulo'] = spc_clean($_POST['titulo'] ?? $n['titulo'], 140) ?: $n['titulo'];
             $n['texto'] = spc_clean($_POST['texto'] ?? $n['texto'], 5000) ?: $n['texto'];
-            if ($n['foto'] && is_file($fotoPend)) {
-                if (!is_dir(SPC_PUBLIC_FOTOS)) { mkdir(SPC_PUBLIC_FOTOS, 0755, true); }
-                rename($fotoPend, SPC_PUBLIC_FOTOS . '/' . $id . '.jpg');
-            } else {
-                $n['foto'] = false;
-            }
-            spc_with_lock('publicadas', function () use ($n) {
+            $conFoto = $n['foto'] && is_file($fotoPend);
+            $ok = spc_with_lock('publicadas', function () use ($n, $conFoto) {
                 $pub = spc_publicadas();
                 array_unshift($pub, ['id' => $n['id'], 'fecha' => date('c'), 'nombre' => $n['nombre'], 'lugar' => $n['lugar'],
-                    'titulo' => $n['titulo'], 'texto' => $n['texto'], 'foto' => (bool) $n['foto']]);
-                spc_write_json(spc_dir() . '/publicadas.json', $pub);
+                    'titulo' => $n['titulo'], 'texto' => $n['texto'], 'foto' => $conFoto]);
+                return spc_write_json(spc_dir() . '/publicadas.json', $pub);
             });
-            $msg = 'Noticia publicada.';
+            if ($ok && $conFoto) {
+                if (!is_dir(SPC_PUBLIC_FOTOS)) { mkdir(SPC_PUBLIC_FOTOS, 0755, true); }
+                rename($fotoPend, SPC_PUBLIC_FOTOS . '/' . $id . '.jpg');
+            }
+            $msg = $ok ? 'Noticia publicada.' : 'No se pudo publicar la noticia. Inténtalo de nuevo.';
         } else {
             if (is_file($fotoPend)) { unlink($fotoPend); }
+            $ok = true;
             $msg = 'Noticia rechazada y borrada.';
         }
-        unlink($file);
+        if ($ok) { unlink($file); }
     } elseif ($accion === 'retirar' && preg_match('/^[0-9]{8}-[0-9]{6}-[0-9a-f]{8}$/', $id)) {
-        spc_with_lock('publicadas', function () use ($id) {
+        $ok = spc_with_lock('publicadas', function () use ($id) {
             $pub = array_values(array_filter(spc_publicadas(), function ($n) use ($id) { return $n['id'] !== $id; }));
-            spc_write_json(spc_dir() . '/publicadas.json', $pub);
+            return spc_write_json(spc_dir() . '/publicadas.json', $pub);
         });
         $f = SPC_PUBLIC_FOTOS . '/' . $id . '.jpg';
-        if (is_file($f)) { unlink($f); }
-        $msg = 'Noticia retirada del sitio.';
+        if ($ok && is_file($f)) { unlink($f); }
+        $msg = $ok ? 'Noticia retirada del sitio.' : 'No se pudo retirar la noticia. Inténtalo de nuevo.';
+    } elseif (in_array($accion, ['aprobar', 'rechazar'], true)) {
+        $msg = 'Esa noticia ya fue revisada.';
     }
+    flock($lock, LOCK_UN);
+    fclose($lock);
 }
+
 $pendientes = [];
 if ($logged) {
     foreach (glob(spc_dir('pendientes') . '/*.json') ?: [] as $f) { $pendientes[] = spc_read_json($f); }
