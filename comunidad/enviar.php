@@ -49,17 +49,11 @@ $saved = spc_write_json(spc_dir('pendientes') . '/' . $id . '.json', [
 ]);
 if (!$saved) { volver('error=guardar'); }
 
-$cfg = spc_config();
-if (!empty($cfg['email'])) {
-    $panel = 'https://sanpedrodecajas.com/comunidad/panel.php';
-    $body = "Llegó una noticia nueva para revisar.\n\n"
-        . "Título: $titulo\nLugar: $lugar\nEnviada por: $nombre ($contacto)\n"
-        . 'Foto: ' . ($foto ? 'sí' : 'no') . "\n\n$texto\n\n"
-        . "Apruébala o recházala en el panel:\n$panel\n";
-    $subject = '=?UTF-8?B?' . base64_encode('Noticia de la comunidad: ' . mb_substr($titulo, 0, 80)) . '?=';
-    $headers = "From: San Pedro de Cajas <noreply@sanpedrodecajas.com>\r\n"
-        . "Content-Type: text/plain; charset=UTF-8\r\nMIME-Version: 1.0\r\n";
-    @mail($cfg['email'], $subject, $body, $headers, '-fnoreply@sanpedrodecajas.com');
-}
+$panel = 'https://sanpedrodecajas.com/comunidad/panel.php';
+$body = "Llegó una noticia nueva para revisar.\n\n"
+    . "Título: $titulo\nLugar: $lugar\nEnviada por: $nombre ($contacto)\n"
+    . 'Foto: ' . ($foto ? 'sí' : 'no') . "\n\n$texto\n\n"
+    . "Apruébala o recházala en el panel:\n$panel\n";
+spc_mail('Noticia de la comunidad: ' . mb_substr($titulo, 0, 80), $body);
 
 volver('enviado=1');

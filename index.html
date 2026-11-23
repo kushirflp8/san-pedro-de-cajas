@@ -654,7 +654,7 @@
                         </div>
                         <div class="form__row">
                             <label for="mensaje">Mensaje</label>
-                            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntanos en qué podemos ayudarte" required></textarea>
+                            <textarea id="mensaje" name="mensaje" rows="5" maxlength="4000" placeholder="Cuéntanos en qué podemos ayudarte" required></textarea>
                         </div>
                         <button type="submit" class="btn btn--primary" id="contacto-enviar" disabled>Enviar mensaje</button>
                     </form>
@@ -839,11 +839,27 @@
         var q = new URLSearchParams(location.search);
         var msgs = {
             ok: ['ok', '¡Gracias! Recibimos tu mensaje y te responderemos a tu correo.'],
-            datos: ['error', 'Revisa los datos: nombre, un correo válido y un mensaje de al menos 10 letras.'],
+            datos: ['error', 'Revisa los datos: nombre, un correo válido y un mensaje de entre 10 y 4000 letras.'],
             rapido: ['error', 'El formulario caducó. Vuelve a escribir tu mensaje y envíalo.'],
             limite: ['error', 'Enviaste demasiados mensajes. Inténtalo de nuevo en una hora.'],
             error: ['error', 'No se pudo enviar el mensaje. Inténtalo más tarde o escríbenos por Facebook.']
         };
+        var campos = ['nombre', 'email', 'asunto', 'mensaje'];
+        function guardar() {
+            var d = {};
+            campos.forEach(function (c) { d[c] = form.elements[c].value; });
+            try { sessionStorage.setItem('spc-contacto', JSON.stringify(d)); } catch (e) {}
+        }
+        form.addEventListener('input', guardar);
+        form.addEventListener('submit', guardar);
+        if (q.get('contacto') === 'ok') {
+            try { sessionStorage.removeItem('spc-contacto'); } catch (e) {}
+        } else {
+            try {
+                var g = JSON.parse(sessionStorage.getItem('spc-contacto') || '{}');
+                campos.forEach(function (c) { if (g[c]) form.elements[c].value = g[c]; });
+            } catch (e) {}
+        }
         var m = msgs[q.get('contacto')];
         if (m) {
             var p = document.createElement('p');

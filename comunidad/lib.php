@@ -111,6 +111,16 @@ function spc_save_image($tmp, $dest) {
     return $ok;
 }
 
+function spc_mail($subject, $body, $replyTo = null) {
+    $cfg = spc_config();
+    if (empty($cfg['email'])) { return false; }
+    $headers = "From: San Pedro de Cajas <noreply@sanpedrodecajas.com>\r\n"
+        . ($replyTo ? "Reply-To: $replyTo\r\n" : '')
+        . "MIME-Version: 1.0\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: base64\r\n";
+    $subject = mb_encode_mimeheader($subject, 'UTF-8', 'B', "\r\n");
+    return @mail($cfg['email'], $subject, chunk_split(base64_encode($body)), $headers, '-fnoreply@sanpedrodecajas.com');
+}
+
 function spc_form_key() {
     return hash('sha256', 'form|' . (spc_config()['password_hash'] ?? __FILE__));
 }
