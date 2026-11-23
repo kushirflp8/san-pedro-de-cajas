@@ -231,3 +231,8 @@ Libre para uso y distribución.
 Para más información, contacta a:
 - 📧 Email: support@spcserver.net
 - 📍 Ubicación: Tarma, Junín, Perú
+## 📰 Noticias
+
+- `noticias.html` es el archivo permanente: cada noticia es un `<article class="article" id="...">` con foto, etiqueta, fecha, texto completo y fuente.
+- La portada (`index.html#noticias`) muestra las 3 más recientes; su botón «Leer noticia →» enlaza a `noticias.html#id-de-la-noticia`.
+- Para agregar una noticia: añádela arriba en `noticias.html` (y en el índice), y reemplaza la tarjeta más antigua de la portada.
