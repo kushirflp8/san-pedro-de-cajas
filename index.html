@@ -672,11 +672,15 @@
             play(pool[(pos + dir + pool.length) % pool.length], true);
         }
 
+        function fold(str) {
+            return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+        }
+
         function filter() {
-            var q = search.value.trim().toLowerCase();
+            var q = fold(search.value.trim());
             var visible = 0;
             items.forEach(function (li) {
-                var text = (li.getAttribute('data-title') + ' ' + li.getAttribute('data-artist')).toLowerCase();
+                var text = fold(li.getAttribute('data-title') + ' ' + li.getAttribute('data-artist'));
                 var match = (!genre || li.getAttribute('data-genre') === genre) && (!q || text.indexOf(q) !== -1);
                 li.hidden = !match;
                 if (match) visible++;
