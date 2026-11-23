@@ -194,11 +194,12 @@
                 var guardado = JSON.parse(sessionStorage.getItem('spc-borrador') || '{}');
                 campos.forEach(function (c) { if (guardado[c]) form.elements[c].value = guardado[c]; });
             } catch (e) {}
-        } else if (q.get('enviado')) {
+        } else {
             try { sessionStorage.removeItem('spc-borrador'); } catch (e) {}
         }
         if (q.get('enviado')) {
             estado.innerHTML = '<p class="community-status community-status--ok" role="status">¡Gracias! Recibimos tu noticia. La revisaremos y, si se aprueba, aparecerá en esta página.</p>';
+            history.replaceState(null, '', location.pathname + location.hash);
         } else if (q.get('error')) {
             estado.innerHTML = '<p class="community-status community-status--error" role="alert"></p>';
             estado.firstChild.textContent = errores[q.get('error')] || errores.metodo;
@@ -228,7 +229,7 @@
         }).catch(function () {
             lista.innerHTML = '';
             lista.appendChild(el('p', 'community-empty', 'No se pudieron cargar las noticias de la comunidad.'));
-            estado.innerHTML = '<p class="community-status community-status--error" role="alert">Por ahora no se puede enviar noticias. Lo que escribiste se guarda; recarga la página en unos minutos.</p>';
+            estado.innerHTML = '<p class="community-status community-status--error" role="alert">Por ahora no se puede enviar noticias. Recarga la página en unos minutos; el texto que escribiste se intentará conservar, pero la foto tendrás que elegirla de nuevo.</p>';
         });
     })();
 </script>
