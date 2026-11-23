@@ -627,7 +627,13 @@
                         </div>
                     </div>
 
-                    <form class="form" action="mailto:support@spcserver.net" method="post" enctype="text/plain">
+                    <form class="form contact-form" action="comunidad/contacto.php" method="post">
+                        <div id="contacto-estado" aria-live="polite"></div>
+                        <input type="hidden" name="t" id="contacto-t" value="">
+                        <div class="form__hp" aria-hidden="true">
+                            <label for="contacto-web">No llenar</label>
+                            <input id="contacto-web" name="sitio_web" type="text" tabindex="-1" autocomplete="off">
+                        </div>
                         <div class="form__row">
                             <label for="nombre">Nombre</label>
                             <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required>
@@ -650,7 +656,7 @@
                             <label for="mensaje">Mensaje</label>
                             <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntanos en qué podemos ayudarte" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn--primary">Enviar mensaje</button>
+                        <button type="submit" class="btn btn--primary" id="contacto-enviar" disabled>Enviar mensaje</button>
                     </form>
                 </div>
             </div>
@@ -823,6 +829,34 @@
 
         search.addEventListener('input', filter);
         filter();
+    })();
+
+    (function () {
+        var form = document.querySelector('.contact-form');
+        if (!form) return;
+        var estado = document.getElementById('contacto-estado');
+        var boton = document.getElementById('contacto-enviar');
+        var q = new URLSearchParams(location.search);
+        var msgs = {
+            ok: ['ok', '¡Gracias! Recibimos tu mensaje y te responderemos a tu correo.'],
+            datos: ['error', 'Revisa los datos: nombre, un correo válido y un mensaje de al menos 10 letras.'],
+            rapido: ['error', 'El formulario caducó. Vuelve a escribir tu mensaje y envíalo.'],
+            limite: ['error', 'Enviaste demasiados mensajes. Inténtalo de nuevo en una hora.'],
+            error: ['error', 'No se pudo enviar el mensaje. Inténtalo más tarde o escríbenos por Facebook.']
+        };
+        var m = msgs[q.get('contacto')];
+        if (m) {
+            var p = document.createElement('p');
+            p.className = 'community-status community-status--' + m[0];
+            p.setAttribute('role', m[0] === 'ok' ? 'status' : 'alert');
+            p.textContent = m[1];
+            estado.appendChild(p);
+            history.replaceState(null, '', location.pathname + location.hash);
+        }
+        fetch('comunidad/publicadas.php', { cache: 'no-store' })
+            .then(function (r) { return r.json(); })
+            .then(function (d) { document.getElementById('contacto-t').value = d.token; boton.disabled = false; })
+            .catch(function () { boton.disabled = true; });
     })();
 </script>
 </body>
