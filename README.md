@@ -8,7 +8,7 @@ Una página web moderna, limpia y completamente responsiva dedicada a **San Pedr
 - **HTML5** semántico y accesible
 - **CSS3** con animaciones y gradientes
 - **Responsive** para todos los dispositivos (desktop, tablet, móvil)
-- Colores inspirados en la cultura andina (tonos tierra, azules y acentos vivos)
+- Estilo inspirado en los tapices y mantas sampedranas: tintes naturales (cochinilla, añil, ocre, lana cruda), grecas y rombos geométricos y textura de tejido
 
 ### Secciones Incluidas
 1. **Inicio (Hero)** - Presentación principal con Radio San Pedro en vivo

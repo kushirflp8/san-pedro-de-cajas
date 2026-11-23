@@ -1,41 +1,52 @@
 /* ==========================================================
    San Pedro de Cajas — styles.css
-   Paleta andina: tierra, azul de puna, dorado de ichu,
-   rojo cochinilla, verde valle, crema de lana.
+   Estilo "tapiz andino": colores de tintes naturales
+   (cochinilla, añil, qolle/ocre, nogal, chilca, lana cruda),
+   grecas de rombos escalonados, textura de tejido y flecos,
+   inspirados en los tapices y mantas de San Pedro de Cajas.
    ========================================================== */
 
 :root {
-    --tierra: #8B4A2B;
-    --tierra-oscuro: #5E2F18;
-    --azul: #1B4D5C;
-    --azul-oscuro: #0F2F3A;
-    --azul-claro: #2E7D99;
-    --dorado: #D9A441;
-    --cochinilla: #B7322C;
-    --verde: #4F7A3A;
-    --crema: #F6F1E7;
-    --crema-oscuro: #EAE2D3;
-    --lana: #FFFDF8;
-    --texto: #2B2A28;
-    --texto-suave: #5F5B55;
+    --tierra: #6B4226;
+    --tierra-oscuro: #3E2716;
+    --nogal: #4A2F1C;
+    --azul: #26365C;
+    --azul-oscuro: #1B2643;
+    --azul-claro: #3F5F8F;
+    --dorado: #D19A2E;
+    --cochinilla: #A3312B;
+    --rosa: #C2455E;
+    --verde: #5F7A3B;
+    --crema: #F2E8D5;
+    --crema-oscuro: #E2D3B8;
+    --lana: #FBF6EC;
+    --texto: #2E241C;
+    --texto-suave: #65574A;
     --blanco: #FFFFFF;
 
     --font-titulo: 'Lora', Georgia, serif;
     --font-texto: 'Nunito', 'Segoe UI', system-ui, sans-serif;
 
-    --radio: 14px;
-    --radio-sm: 8px;
-    --sombra: 0 6px 24px rgba(43, 42, 40, 0.10);
-    --sombra-fuerte: 0 14px 40px rgba(43, 42, 40, 0.18);
+    --radio: 8px;
+    --radio-sm: 5px;
+    --sombra: 0 6px 22px rgba(62, 39, 22, 0.12);
+    --sombra-fuerte: 0 14px 40px rgba(62, 39, 22, 0.22);
     --transicion: 0.25s ease;
     --ancho: 1180px;
     --header-h: 72px;
 
-    /* Franja tejida (motivo andino) */
-    --franja: repeating-linear-gradient(90deg,
-        var(--cochinilla) 0 12px, var(--dorado) 12px 24px,
-        var(--azul) 24px 36px, var(--verde) 36px 48px,
-        var(--tierra) 48px 60px);
+    /* Motivos tejidos (SVG en línea, no requieren archivos extra) */
+    --motivo-greca: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='24' viewBox='0 0 96 24'%3E%3Crect width='96' height='24' fill='%23A3312B'/%3E%3Cpolygon fill='%235F7A3B' points='3,6 3,9 6,9 6,12 6,12 6,15 3,15 3,18 -3,18 -3,15 -6,15 -6,12 -6,12 -6,9 -3,9 -3,6'/%3E%3Cpolygon fill='%23F2E8D5' points='3,9 3,12 3,12 3,15 -3,15 -3,12 -3,12 -3,9'/%3E%3Cpolygon fill='%235F7A3B' points='51,6 51,9 54,9 54,12 54,12 54,15 51,15 51,18 45,18 45,15 42,15 42,12 42,12 42,9 45,9 45,6'/%3E%3Cpolygon fill='%23F2E8D5' points='51,9 51,12 51,12 51,15 45,15 45,12 45,12 45,9'/%3E%3Cpolygon fill='%235F7A3B' points='99,6 99,9 102,9 102,12 102,12 102,15 99,15 99,18 93,18 93,15 90,15 90,12 90,12 90,9 93,9 93,6'/%3E%3Cpolygon fill='%23F2E8D5' points='99,9 99,12 99,12 99,15 93,15 93,12 93,12 93,9'/%3E%3Cpolygon fill='%23D19A2E' points='27,0 27,3 30,3 30,6 33,6 33,9 36,9 36,12 36,12 36,15 33,15 33,18 30,18 30,21 27,21 27,24 21,24 21,21 18,21 18,18 15,18 15,15 12,15 12,12 12,12 12,9 15,9 15,6 18,6 18,3 21,3 21,0'/%3E%3Cpolygon fill='%2326365C' points='27,6 27,9 30,9 30,12 30,12 30,15 27,15 27,18 21,18 21,15 18,15 18,12 18,12 18,9 21,9 21,6'/%3E%3Cpolygon fill='%23F2E8D5' points='27,9 27,12 27,12 27,15 21,15 21,12 21,12 21,9'/%3E%3Cpolygon fill='%2326365C' points='75,0 75,3 78,3 78,6 81,6 81,9 84,9 84,12 84,12 84,15 81,15 81,18 78,18 78,21 75,21 75,24 69,24 69,21 66,21 66,18 63,18 63,15 60,15 60,12 60,12 60,9 63,9 63,6 66,6 66,3 69,3 69,0'/%3E%3Cpolygon fill='%23F2E8D5' points='75,6 75,9 78,9 78,12 78,12 78,15 75,15 75,18 69,18 69,15 66,15 66,12 66,12 66,9 69,9 69,6'/%3E%3Cpolygon fill='%23A3312B' points='75,9 75,12 75,12 75,15 69,15 69,12 69,12 69,9'/%3E%3C/svg%3E");
+    --motivo-greca-v: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='96' viewBox='0 0 24 96'%3E%3Crect width='24' height='96' fill='%23A3312B'/%3E%3Cpolygon fill='%235F7A3B' points='6,3 9,3 9,6 12,6 12,6 15,6 15,3 18,3 18,-3 15,-3 15,-6 12,-6 12,-6 9,-6 9,-3 6,-3'/%3E%3Cpolygon fill='%23F2E8D5' points='9,3 12,3 12,3 15,3 15,-3 12,-3 12,-3 9,-3'/%3E%3Cpolygon fill='%235F7A3B' points='6,51 9,51 9,54 12,54 12,54 15,54 15,51 18,51 18,45 15,45 15,42 12,42 12,42 9,42 9,45 6,45'/%3E%3Cpolygon fill='%23F2E8D5' points='9,51 12,51 12,51 15,51 15,45 12,45 12,45 9,45'/%3E%3Cpolygon fill='%235F7A3B' points='6,99 9,99 9,102 12,102 12,102 15,102 15,99 18,99 18,93 15,93 15,90 12,90 12,90 9,90 9,93 6,93'/%3E%3Cpolygon fill='%23F2E8D5' points='9,99 12,99 12,99 15,99 15,93 12,93 12,93 9,93'/%3E%3Cpolygon fill='%23D19A2E' points='0,27 3,27 3,30 6,30 6,33 9,33 9,36 12,36 12,36 15,36 15,33 18,33 18,30 21,30 21,27 24,27 24,21 21,21 21,18 18,18 18,15 15,15 15,12 12,12 12,12 9,12 9,15 6,15 6,18 3,18 3,21 0,21'/%3E%3Cpolygon fill='%2326365C' points='6,27 9,27 9,30 12,30 12,30 15,30 15,27 18,27 18,21 15,21 15,18 12,18 12,18 9,18 9,21 6,21'/%3E%3Cpolygon fill='%23F2E8D5' points='9,27 12,27 12,27 15,27 15,21 12,21 12,21 9,21'/%3E%3Cpolygon fill='%2326365C' points='0,75 3,75 3,78 6,78 6,81 9,81 9,84 12,84 12,84 15,84 15,81 18,81 18,78 21,78 21,75 24,75 24,69 21,69 21,66 18,66 18,63 15,63 15,60 12,60 12,60 9,60 9,63 6,63 6,66 3,66 3,69 0,69'/%3E%3Cpolygon fill='%23F2E8D5' points='6,75 9,75 9,78 12,78 12,78 15,78 15,75 18,75 18,69 15,69 15,66 12,66 12,66 9,66 9,69 6,69'/%3E%3Cpolygon fill='%23A3312B' points='9,75 12,75 12,75 15,75 15,69 12,69 12,69 9,69'/%3E%3C/svg%3E");
+    --motivo-tapiz: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 220' preserveAspectRatio='none'%3E%3Crect width='140' height='220' fill='%234A2F1C'/%3E%3Crect x='5' y='5' width='130' height='210' fill='%23A3312B'/%3E%3Cpolygon fill='%23D19A2E' points='16,10 16,12 18,12 18,14 20,14 20,16 22,16 22,18 22,18 22,20 20,20 20,22 18,22 18,24 16,24 16,26 12,26 12,24 10,24 10,22 8,22 8,20 6,20 6,18 6,18 6,16 8,16 8,14 10,14 10,12 12,12 12,10'/%3E%3Cpolygon fill='%2326365C' points='16,14 16,16 18,16 18,18 18,18 18,20 16,20 16,22 12,22 12,20 10,20 10,18 10,18 10,16 12,16 12,14'/%3E%3Cpolygon fill='%23F2E8D5' points='32,10 32,12 34,12 34,14 36,14 36,16 38,16 38,18 38,18 38,20 36,20 36,22 34,22 34,24 32,24 32,26 28,26 28,24 26,24 26,22 24,22 24,20 22,20 22,18 22,18 22,16 24,16 24,14 26,14 26,12 28,12 28,10'/%3E%3Cpolygon fill='%23A3312B' points='32,14 32,16 34,16 34,18 34,18 34,20 32,20 32,22 28,22 28,20 26,20 26,18 26,18 26,16 28,16 28,14'/%3E%3Cpolygon fill='%23D19A2E' points='48,10 48,12 50,12 50,14 52,14 52,16 54,16 54,18 54,18 54,20 52,20 52,22 50,22 50,24 48,24 48,26 44,26 44,24 42,24 42,22 40,22 40,20 38,20 38,18 38,18 38,16 40,16 40,14 42,14 42,12 44,12 44,10'/%3E%3Cpolygon fill='%2326365C' points='48,14 48,16 50,16 50,18 50,18 50,20 48,20 48,22 44,22 44,20 42,20 42,18 42,18 42,16 44,16 44,14'/%3E%3Cpolygon fill='%23F2E8D5' points='64,10 64,12 66,12 66,14 68,14 68,16 70,16 70,18 70,18 70,20 68,20 68,22 66,22 66,24 64,24 64,26 60,26 60,24 58,24 58,22 56,22 56,20 54,20 54,18 54,18 54,16 56,16 56,14 58,14 58,12 60,12 60,10'/%3E%3Cpolygon fill='%23A3312B' points='64,14 64,16 66,16 66,18 66,18 66,20 64,20 64,22 60,22 60,20 58,20 58,18 58,18 58,16 60,16 60,14'/%3E%3Cpolygon fill='%23D19A2E' points='80,10 80,12 82,12 82,14 84,14 84,16 86,16 86,18 86,18 86,20 84,20 84,22 82,22 82,24 80,24 80,26 76,26 76,24 74,24 74,22 72,22 72,20 70,20 70,18 70,18 70,16 72,16 72,14 74,14 74,12 76,12 76,10'/%3E%3Cpolygon fill='%2326365C' points='80,14 80,16 82,16 82,18 82,18 82,20 80,20 80,22 76,22 76,20 74,20 74,18 74,18 74,16 76,16 76,14'/%3E%3Cpolygon fill='%23F2E8D5' points='96,10 96,12 98,12 98,14 100,14 100,16 102,16 102,18 102,18 102,20 100,20 100,22 98,22 98,24 96,24 96,26 92,26 92,24 90,24 90,22 88,22 88,20 86,20 86,18 86,18 86,16 88,16 88,14 90,14 90,12 92,12 92,10'/%3E%3Cpolygon fill='%23A3312B' points='96,14 96,16 98,16 98,18 98,18 98,20 96,20 96,22 92,22 92,20 90,20 90,18 90,18 90,16 92,16 92,14'/%3E%3Cpolygon fill='%23D19A2E' points='112,10 112,12 114,12 114,14 116,14 116,16 118,16 118,18 118,18 118,20 116,20 116,22 114,22 114,24 112,24 112,26 108,26 108,24 106,24 106,22 104,22 104,20 102,20 102,18 102,18 102,16 104,16 104,14 106,14 106,12 108,12 108,10'/%3E%3Cpolygon fill='%2326365C' points='112,14 112,16 114,16 114,18 114,18 114,20 112,20 112,22 108,22 108,20 106,20 106,18 106,18 106,16 108,16 108,14'/%3E%3Cpolygon fill='%23F2E8D5' points='128,10 128,12 130,12 130,14 132,14 132,16 134,16 134,18 134,18 134,20 132,20 132,22 130,22 130,24 128,24 128,26 124,26 124,24 122,24 122,22 120,22 120,20 118,20 118,18 118,18 118,16 120,16 120,14 122,14 122,12 124,12 124,10'/%3E%3Cpolygon fill='%23A3312B' points='128,14 128,16 130,16 130,18 130,18 130,20 128,20 128,22 124,22 124,20 122,20 122,18 122,18 122,16 124,16 124,14'/%3E%3Cpolygon fill='%23D19A2E' points='16,194 16,196 18,196 18,198 20,198 20,200 22,200 22,202 22,202 22,204 20,204 20,206 18,206 18,208 16,208 16,210 12,210 12,208 10,208 10,206 8,206 8,204 6,204 6,202 6,202 6,200 8,200 8,198 10,198 10,196 12,196 12,194'/%3E%3Cpolygon fill='%2326365C' points='16,198 16,200 18,200 18,202 18,202 18,204 16,204 16,206 12,206 12,204 10,204 10,202 10,202 10,200 12,200 12,198'/%3E%3Cpolygon fill='%23F2E8D5' points='32,194 32,196 34,196 34,198 36,198 36,200 38,200 38,202 38,202 38,204 36,204 36,206 34,206 34,208 32,208 32,210 28,210 28,208 26,208 26,206 24,206 24,204 22,204 22,202 22,202 22,200 24,200 24,198 26,198 26,196 28,196 28,194'/%3E%3Cpolygon fill='%23A3312B' points='32,198 32,200 34,200 34,202 34,202 34,204 32,204 32,206 28,206 28,204 26,204 26,202 26,202 26,200 28,200 28,198'/%3E%3Cpolygon fill='%23D19A2E' points='48,194 48,196 50,196 50,198 52,198 52,200 54,200 54,202 54,202 54,204 52,204 52,206 50,206 50,208 48,208 48,210 44,210 44,208 42,208 42,206 40,206 40,204 38,204 38,202 38,202 38,200 40,200 40,198 42,198 42,196 44,196 44,194'/%3E%3Cpolygon fill='%2326365C' points='48,198 48,200 50,200 50,202 50,202 50,204 48,204 48,206 44,206 44,204 42,204 42,202 42,202 42,200 44,200 44,198'/%3E%3Cpolygon fill='%23F2E8D5' points='64,194 64,196 66,196 66,198 68,198 68,200 70,200 70,202 70,202 70,204 68,204 68,206 66,206 66,208 64,208 64,210 60,210 60,208 58,208 58,206 56,206 56,204 54,204 54,202 54,202 54,200 56,200 56,198 58,198 58,196 60,196 60,194'/%3E%3Cpolygon fill='%23A3312B' points='64,198 64,200 66,200 66,202 66,202 66,204 64,204 64,206 60,206 60,204 58,204 58,202 58,202 58,200 60,200 60,198'/%3E%3Cpolygon fill='%23D19A2E' points='80,194 80,196 82,196 82,198 84,198 84,200 86,200 86,202 86,202 86,204 84,204 84,206 82,206 82,208 80,208 80,210 76,210 76,208 74,208 74,206 72,206 72,204 70,204 70,202 70,202 70,200 72,200 72,198 74,198 74,196 76,196 76,194'/%3E%3Cpolygon fill='%2326365C' points='80,198 80,200 82,200 82,202 82,202 82,204 80,204 80,206 76,206 76,204 74,204 74,202 74,202 74,200 76,200 76,198'/%3E%3Cpolygon fill='%23F2E8D5' points='96,194 96,196 98,196 98,198 100,198 100,200 102,200 102,202 102,202 102,204 100,204 100,206 98,206 98,208 96,208 96,210 92,210 92,208 90,208 90,206 88,206 88,204 86,204 86,202 86,202 86,200 88,200 88,198 90,198 90,196 92,196 92,194'/%3E%3Cpolygon fill='%23A3312B' points='96,198 96,200 98,200 98,202 98,202 98,204 96,204 96,206 92,206 92,204 90,204 90,202 90,202 90,200 92,200 92,198'/%3E%3Cpolygon fill='%23D19A2E' points='112,194 112,196 114,196 114,198 116,198 116,200 118,200 118,202 118,202 118,204 116,204 116,206 114,206 114,208 112,208 112,210 108,210 108,208 106,208 106,206 104,206 104,204 102,204 102,202 102,202 102,200 104,200 104,198 106,198 106,196 108,196 108,194'/%3E%3Cpolygon fill='%2326365C' points='112,198 112,200 114,200 114,202 114,202 114,204 112,204 112,206 108,206 108,204 106,204 106,202 106,202 106,200 108,200 108,198'/%3E%3Cpolygon fill='%23F2E8D5' points='128,194 128,196 130,196 130,198 132,198 132,200 134,200 134,202 134,202 134,204 132,204 132,206 130,206 130,208 128,208 128,210 124,210 124,208 122,208 122,206 120,206 120,204 118,204 118,202 118,202 118,200 120,200 120,198 122,198 122,196 124,196 124,194'/%3E%3Cpolygon fill='%23A3312B' points='128,198 128,200 130,200 130,202 130,202 130,204 128,204 128,206 124,206 124,204 122,204 122,202 122,202 122,200 124,200 124,198'/%3E%3Crect x='12' y='32' width='116' height='156' fill='%23F2E8D5'/%3E%3Crect x='16' y='36' width='108' height='148' fill='%2326365C'/%3E%3Cpolygon fill='%23D19A2E' points='74,58 74,62 78,62 78,66 82,66 82,70 86,70 86,74 90,74 90,78 94,78 94,82 98,82 98,86 102,86 102,90 106,90 106,94 110,94 110,98 114,98 114,102 118,102 118,106 122,106 122,110 122,110 122,114 118,114 118,118 114,118 114,122 110,122 110,126 106,126 106,130 102,130 102,134 98,134 98,138 94,138 94,142 90,142 90,146 86,146 86,150 82,150 82,154 78,154 78,158 74,158 74,162 66,162 66,158 62,158 62,154 58,154 58,150 54,150 54,146 50,146 50,142 46,142 46,138 42,138 42,134 38,134 38,130 34,130 34,126 30,126 30,122 26,122 26,118 22,118 22,114 18,114 18,110 18,110 18,106 22,106 22,102 26,102 26,98 30,98 30,94 34,94 34,90 38,90 38,86 42,86 42,82 46,82 46,78 50,78 50,74 54,74 54,70 58,70 58,66 62,66 62,62 66,62 66,58'/%3E%3Cpolygon fill='%23A3312B' points='74,66 74,70 78,70 78,74 82,74 82,78 86,78 86,82 90,82 90,86 94,86 94,90 98,90 98,94 102,94 102,98 106,98 106,102 110,102 110,106 114,106 114,110 114,110 114,114 110,114 110,118 106,118 106,122 102,122 102,126 98,126 98,130 94,130 94,134 90,134 90,138 86,138 86,142 82,142 82,146 78,146 78,150 74,150 74,154 66,154 66,150 62,150 62,146 58,146 58,142 54,142 54,138 50,138 50,134 46,134 46,130 42,130 42,126 38,126 38,122 34,122 34,118 30,118 30,114 26,114 26,110 26,110 26,106 30,106 30,102 34,102 34,98 38,98 38,94 42,94 42,90 46,90 46,86 50,86 50,82 54,82 54,78 58,78 58,74 62,74 62,70 66,70 66,66'/%3E%3Cpolygon fill='%23F2E8D5' points='72,76 72,78 74,78 74,80 76,80 76,82 78,82 78,84 80,84 80,86 82,86 82,88 84,88 84,90 86,90 86,92 88,92 88,94 90,94 90,96 92,96 92,98 94,98 94,100 96,100 96,102 98,102 98,104 100,104 100,106 102,106 102,108 104,108 104,110 104,110 104,112 102,112 102,114 100,114 100,116 98,116 98,118 96,118 96,120 94,120 94,122 92,122 92,124 90,124 90,126 88,126 88,128 86,128 86,130 84,130 84,132 82,132 82,134 80,134 80,136 78,136 78,138 76,138 76,140 74,140 74,142 72,142 72,144 68,144 68,142 66,142 66,140 64,140 64,138 62,138 62,136 60,136 60,134 58,134 58,132 56,132 56,130 54,130 54,128 52,128 52,126 50,126 50,124 48,124 48,122 46,122 46,120 44,120 44,118 42,118 42,116 40,116 40,114 38,114 38,112 36,112 36,110 36,110 36,108 38,108 38,106 40,106 40,104 42,104 42,102 44,102 44,100 46,100 46,98 48,98 48,96 50,96 50,94 52,94 52,92 54,92 54,90 56,90 56,88 58,88 58,86 60,86 60,84 62,84 62,82 64,82 64,80 66,80 66,78 68,78 68,76'/%3E%3Cpolygon fill='%235F7A3B' points='72,84 72,86 74,86 74,88 76,88 76,90 78,90 78,92 80,92 80,94 82,94 82,96 84,96 84,98 86,98 86,100 88,100 88,102 90,102 90,104 92,104 92,106 94,106 94,108 96,108 96,110 96,110 96,112 94,112 94,114 92,114 92,116 90,116 90,118 88,118 88,120 86,120 86,122 84,122 84,124 82,124 82,126 80,126 80,128 78,128 78,130 76,130 76,132 74,132 74,134 72,134 72,136 68,136 68,134 66,134 66,132 64,132 64,130 62,130 62,128 60,128 60,126 58,126 58,124 56,124 56,122 54,122 54,120 52,120 52,118 50,118 50,116 48,116 48,114 46,114 46,112 44,112 44,110 44,110 44,108 46,108 46,106 48,106 48,104 50,104 50,102 52,102 52,100 54,100 54,98 56,98 56,96 58,96 58,94 60,94 60,92 62,92 62,90 64,90 64,88 66,88 66,86 68,86 68,84'/%3E%3Cpolygon fill='%23C2455E' points='72,94 72,96 74,96 74,98 76,98 76,100 78,100 78,102 80,102 80,104 82,104 82,106 84,106 84,108 86,108 86,110 86,110 86,112 84,112 84,114 82,114 82,116 80,116 80,118 78,118 78,120 76,120 76,122 74,122 74,124 72,124 72,126 68,126 68,124 66,124 66,122 64,122 64,120 62,120 62,118 60,118 60,116 58,116 58,114 56,114 56,112 54,112 54,110 54,110 54,108 56,108 56,106 58,106 58,104 60,104 60,102 62,102 62,100 64,100 64,98 66,98 66,96 68,96 68,94'/%3E%3Cpolygon fill='%23F2E8D5' points='72,102 72,104 74,104 74,106 76,106 76,108 78,108 78,110 78,110 78,112 76,112 76,114 74,114 74,116 72,116 72,118 68,118 68,116 66,116 66,114 64,114 64,112 62,112 62,110 62,110 62,108 64,108 64,106 66,106 66,104 68,104 68,102'/%3E%3Cpolygon fill='%2326365C' points='72,106 72,108 74,108 74,110 74,110 74,112 72,112 72,114 68,114 68,112 66,112 66,110 66,110 66,108 68,108 68,106'/%3E%3Cpolygon fill='%23D19A2E' points='34,42 34,44 36,44 36,46 38,46 38,48 40,48 40,50 42,50 42,52 42,52 42,54 40,54 40,56 38,56 38,58 36,58 36,60 34,60 34,62 30,62 30,60 28,60 28,58 26,58 26,56 24,56 24,54 22,54 22,52 22,52 22,50 24,50 24,48 26,48 26,46 28,46 28,44 30,44 30,42'/%3E%3Cpolygon fill='%23A3312B' points='34,48 34,50 36,50 36,52 36,52 36,54 34,54 34,56 30,56 30,54 28,54 28,52 28,52 28,50 30,50 30,48'/%3E%3Cpolygon fill='%23D19A2E' points='110,42 110,44 112,44 112,46 114,46 114,48 116,48 116,50 118,50 118,52 118,52 118,54 116,54 116,56 114,56 114,58 112,58 112,60 110,60 110,62 106,62 106,60 104,60 104,58 102,58 102,56 100,56 100,54 98,54 98,52 98,52 98,50 100,50 100,48 102,48 102,46 104,46 104,44 106,44 106,42'/%3E%3Cpolygon fill='%23A3312B' points='110,48 110,50 112,50 112,52 112,52 112,54 110,54 110,56 106,56 106,54 104,54 104,52 104,52 104,50 106,50 106,48'/%3E%3Cpolygon fill='%23D19A2E' points='34,158 34,160 36,160 36,162 38,162 38,164 40,164 40,166 42,166 42,168 42,168 42,170 40,170 40,172 38,172 38,174 36,174 36,176 34,176 34,178 30,178 30,176 28,176 28,174 26,174 26,172 24,172 24,170 22,170 22,168 22,168 22,166 24,166 24,164 26,164 26,162 28,162 28,160 30,160 30,158'/%3E%3Cpolygon fill='%23A3312B' points='34,164 34,166 36,166 36,168 36,168 36,170 34,170 34,172 30,172 30,170 28,170 28,168 28,168 28,166 30,166 30,164'/%3E%3Cpolygon fill='%23D19A2E' points='110,158 110,160 112,160 112,162 114,162 114,164 116,164 116,166 118,166 118,168 118,168 118,170 116,170 116,172 114,172 114,174 112,174 112,176 110,176 110,178 106,178 106,176 104,176 104,174 102,174 102,172 100,172 100,170 98,170 98,168 98,168 98,166 100,166 100,164 102,164 102,162 104,162 104,160 106,160 106,158'/%3E%3Cpolygon fill='%23A3312B' points='110,164 110,166 112,166 112,168 112,168 112,170 110,170 110,172 106,172 106,170 104,170 104,168 104,168 104,166 106,166 106,164'/%3E%3C/svg%3E");
+    --rombo: polygon(62.5% 0%, 62.5% 12.5%, 75% 12.5%, 75% 25%, 87.5% 25%, 87.5% 37.5%, 100% 37.5%, 100% 50%, 100% 50%, 100% 62.5%, 87.5% 62.5%, 87.5% 75%, 75% 75%, 75% 87.5%, 62.5% 87.5%, 62.5% 100%, 37.5% 100%, 37.5% 87.5%, 25% 87.5%, 25% 75%, 12.5% 75%, 12.5% 62.5%, 0% 62.5%, 0% 50%, 0% 50%, 0% 37.5%, 12.5% 37.5%, 12.5% 25%, 25% 25%, 25% 12.5%, 37.5% 12.5%, 37.5% 0%);
+    --franja: var(--motivo-greca) left center / auto 100% repeat-x, var(--cochinilla);
+    --franja-v: var(--motivo-greca-v) center top / 100% auto repeat-y, var(--cochinilla);
+    --flecos: repeating-linear-gradient(90deg, var(--crema) 0 2px, transparent 2px 3px, var(--crema-oscuro) 3px 5px, transparent 5px 8px);
+    --trama: repeating-linear-gradient(0deg, rgba(74, 47, 28, 0.035) 0 1px, transparent 1px 4px),
+             repeating-linear-gradient(90deg, rgba(74, 47, 28, 0.035) 0 1px, transparent 1px 4px);
+    --trama-oscura: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 4px),
+                    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.08) 0 1px, transparent 1px 4px);
 }
 
 /* ---------- Reset ---------- */
@@ -46,14 +57,15 @@ body {
     font-size: 1rem;
     line-height: 1.65;
     color: var(--texto);
-    background: var(--crema);
+    background-color: var(--crema);
+    background-image: var(--trama);
     -webkit-font-smoothing: antialiased;
 }
 img { max-width: 100%; display: block; }
 a { color: var(--azul-claro); text-decoration: none; }
 a:hover { color: var(--azul); }
 ul { list-style: none; }
-h1, h2, h3, h4 { font-family: var(--font-titulo); line-height: 1.2; color: var(--azul-oscuro); }
+h1, h2, h3, h4 { font-family: var(--font-titulo); line-height: 1.2; color: var(--tierra-oscuro); }
 h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); }
 h3 { font-size: 1.25rem; }
 code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px; font-size: 0.9em; }
@@ -70,7 +82,7 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
 .btn {
     display: inline-block;
     padding: 0.8rem 1.6rem;
-    border-radius: 999px;
+    border-radius: var(--radio-sm);
     font-weight: 700;
     border: 2px solid transparent;
     cursor: pointer;
@@ -79,44 +91,42 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
     transition: transform var(--transicion), background var(--transicion), color var(--transicion), box-shadow var(--transicion);
 }
 .btn:hover { transform: translateY(-2px); }
-.btn--primary { background: var(--cochinilla); color: var(--blanco); box-shadow: 0 6px 18px rgba(183, 50, 44, 0.35); }
-.btn--primary:hover { background: #9c2822; color: var(--blanco); }
+.btn--primary { background: var(--cochinilla); color: var(--blanco); box-shadow: 0 6px 18px rgba(163, 49, 43, 0.35); outline: 1px dashed rgba(255, 255, 255, 0.55); outline-offset: -6px; }
+.btn--primary:hover { background: #8A2722; color: var(--blanco); }
 .btn--ghost { border-color: rgba(255, 255, 255, 0.7); color: var(--blanco); }
 .btn--ghost:hover { background: rgba(255, 255, 255, 0.15); color: var(--blanco); }
-.btn--small { padding: 0.5rem 1.1rem; font-size: 0.9rem; background: var(--azul); color: var(--blanco); }
+.btn--small { padding: 0.5rem 1.1rem; font-size: 0.9rem; background: var(--azul); color: var(--blanco); outline: 1px dashed rgba(255, 255, 255, 0.4); outline-offset: -5px; }
 .btn--small:hover { background: var(--azul-claro); color: var(--blanco); }
 
 /* ---------- Cabecera ---------- */
 .header {
     position: sticky; top: 0; z-index: 100;
-    background: rgba(255, 253, 248, 0.94);
+    background: rgba(251, 246, 236, 0.95);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--crema-oscuro);
 }
-.header::before { content: ""; display: block; height: 6px; background: var(--franja); }
+.header::before { content: ""; display: block; height: 12px; background: var(--franja); }
 .header__inner {
     min-height: var(--header-h);
     display: flex; align-items: center; justify-content: space-between; gap: 1rem;
 }
-.logo { display: flex; align-items: center; gap: 0.7rem; color: var(--azul-oscuro); }
+.logo { display: flex; align-items: center; gap: 0.7rem; color: var(--tierra-oscuro); }
 .logo__mark {
-    width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
-    background:
-        linear-gradient(135deg, var(--dorado) 0 50%, transparent 50%),
-        linear-gradient(45deg, var(--cochinilla) 0 50%, var(--azul) 50%);
-    box-shadow: inset 0 0 0 3px var(--lana);
+    width: 42px; height: 42px; flex-shrink: 0;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%23A3312B'/%3E%3Cpolygon fill='%23D19A2E' points='24,4 24,8 28,8 28,12 32,12 32,16 36,16 36,20 36,20 36,24 32,24 32,28 28,28 28,32 24,32 24,36 16,36 16,32 12,32 12,28 8,28 8,24 4,24 4,20 4,20 4,16 8,16 8,12 12,12 12,8 16,8 16,4'/%3E%3Cpolygon fill='%2326365C' points='22,10 22,12 24,12 24,14 26,14 26,16 28,16 28,18 30,18 30,20 30,20 30,22 28,22 28,24 26,24 26,26 24,26 24,28 22,28 22,30 18,30 18,28 16,28 16,26 14,26 14,24 12,24 12,22 10,22 10,20 10,20 10,18 12,18 12,16 14,16 14,14 16,14 16,12 18,12 18,10'/%3E%3Cpolygon fill='%23F2E8D5' points='22,16 22,18 24,18 24,20 24,20 24,22 22,22 22,24 18,24 18,22 16,22 16,20 16,20 16,18 18,18 18,16'/%3E%3C/svg%3E") center / contain no-repeat;
+    filter: drop-shadow(0 2px 4px rgba(62, 39, 22, 0.25));
 }
 .logo__text { display: flex; flex-direction: column; line-height: 1.1; }
 .logo__text strong { font-family: var(--font-titulo); font-size: 1.15rem; }
-.logo__text small { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--tierra); }
+.logo__text small { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cochinilla); }
 
 .nav ul { display: flex; gap: 0.25rem; align-items: center; }
 .nav a {
-    display: block; padding: 0.55rem 0.85rem; border-radius: 999px;
+    display: block; padding: 0.55rem 0.85rem; border-radius: var(--radio-sm);
     color: var(--texto); font-weight: 600; font-size: 0.95rem;
     transition: background var(--transicion), color var(--transicion);
 }
-.nav a:hover { background: var(--crema-oscuro); color: var(--azul-oscuro); }
+.nav a:hover { background: var(--crema-oscuro); color: var(--cochinilla); }
 .nav__cta { background: var(--azul); color: var(--blanco) !important; }
 .nav__cta:hover { background: var(--azul-claro) !important; }
 
@@ -127,27 +137,48 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
     flex-direction: column; justify-content: center; align-items: center; gap: 5px; cursor: pointer;
     background: var(--crema-oscuro);
 }
-.menu-btn span { width: 22px; height: 2px; background: var(--azul-oscuro); transition: transform var(--transicion), opacity var(--transicion); }
+.menu-btn span { width: 22px; height: 2px; background: var(--tierra-oscuro); transition: transform var(--transicion), opacity var(--transicion); }
 
 /* ---------- Hero ---------- */
 .hero {
     position: relative; overflow: hidden;
-    background-color: var(--azul-oscuro);
+    background-color: var(--nogal);
     background-image:
-        linear-gradient(160deg, rgba(15, 47, 58, 0.88) 0%, rgba(27, 77, 92, 0.78) 55%, rgba(94, 47, 24, 0.88) 100%),
-        url("imagenes/panorama-aerea.jpg");
+        linear-gradient(100deg, rgba(46, 28, 16, 0.94) 0%, rgba(62, 39, 22, 0.86) 45%, rgba(110, 32, 28, 0.62) 100%),
+        url("imagenes/tejedora-telar.jpg");
     background-size: cover;
     background-position: center;
     color: var(--blanco);
-    padding: clamp(4rem, 9vw, 7rem) 0 3rem;
+    padding: clamp(4rem, 9vw, 7rem) 0 calc(3rem + 18px);
 }
+.hero::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 18px;
+    background: var(--franja);
+}
+/* Tapiz colgado de su vara, con flecos */
 .hero__pattern {
-    display: none;
+    position: absolute; z-index: 0;
+    right: max(2.5rem, calc((100% - var(--ancho)) / 2 + 1rem));
+    top: clamp(3.5rem, 7vw, 5.5rem);
+    width: clamp(220px, 22vw, 290px); aspect-ratio: 140 / 220;
+    background: var(--motivo-tapiz) center / 100% 100% no-repeat;
+    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.45);
+    transform: rotate(1.5deg); transform-origin: top center;
 }
-.hero__content { position: relative; max-width: 780px; margin-bottom: 3rem; }
+.hero__pattern::before {
+    content: ""; position: absolute; left: -16px; right: -16px; top: -12px; height: 10px; border-radius: 5px;
+    background: linear-gradient(180deg, #8A5A34, var(--nogal));
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+}
+.hero__pattern::after {
+    content: ""; position: absolute; left: 6px; right: 6px; top: 100%; height: 22px;
+    background: var(--flecos);
+    -webkit-mask: linear-gradient(#000 55%, transparent); mask: linear-gradient(#000 55%, transparent);
+}
+.hero__content { position: relative; z-index: 1; max-width: 680px; margin-bottom: 3rem; }
 .hero__eyebrow { letter-spacing: 0.18em; text-transform: uppercase; font-size: 0.8rem; color: var(--dorado); font-weight: 700; margin-bottom: 1rem; }
 .hero h1 { color: var(--blanco); font-size: clamp(2.3rem, 5.5vw, 4rem); margin-bottom: 1rem; }
-.hero__lead { font-size: clamp(1.05rem, 1.6vw, 1.3rem); color: rgba(255, 255, 255, 0.88); max-width: 620px; margin-bottom: 2rem; }
+.hero__lead { font-size: clamp(1.05rem, 1.6vw, 1.3rem); color: rgba(251, 246, 236, 0.9); max-width: 620px; margin-bottom: 2rem; }
 .hero__actions { display: flex; gap: 0.8rem; flex-wrap: wrap; }
 
 /* Radio */
@@ -157,13 +188,14 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
     background: var(--lana); color: var(--texto);
     border-radius: var(--radio); padding: 1.4rem 1.6rem;
     box-shadow: var(--sombra-fuerte);
-    border-left: 8px solid var(--cochinilla);
+    padding-left: calc(1.6rem + 14px); overflow: hidden;
 }
+.radio::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 14px; background: var(--franja-v); }
 .radio h2 { font-size: 1.5rem; margin: 0.2rem 0; }
 .radio p { color: var(--texto-suave); }
 .radio__live { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.15em; color: var(--cochinilla); }
 .radio__dot { width: 9px; height: 9px; border-radius: 50%; background: var(--cochinilla); animation: pulso 1.4s infinite; }
-@keyframes pulso { 0%, 100% { box-shadow: 0 0 0 0 rgba(183, 50, 44, 0.5); } 50% { box-shadow: 0 0 0 8px rgba(183, 50, 44, 0); } }
+@keyframes pulso { 0%, 100% { box-shadow: 0 0 0 0 rgba(163, 49, 43, 0.5); } 50% { box-shadow: 0 0 0 8px rgba(163, 49, 43, 0); } }
 .radio__player { width: 100%; height: 44px; }
 
 /* ---------- Publicidad ---------- */
@@ -178,20 +210,25 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
 .ad__slot > ins, .ad__slot iframe { max-width: 100%; }
 .ad--leaderboard .ad__slot { max-width: 970px; margin-inline: auto; }
 .ad__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-.ad__slot--private { min-height: 250px; border-color: var(--dorado); background: #FFF8E8; }
+.ad__slot--private { min-height: 250px; border-color: var(--dorado); background-color: #FBF1DC; background-image: var(--trama); }
 
 /* ---------- Secciones ---------- */
-.section { padding: clamp(3.5rem, 7vw, 5.5rem) 0; }
-.section--alt { background: var(--lana); }
-.section--dark { background: linear-gradient(160deg, var(--azul-oscuro), var(--azul)); color: var(--blanco); }
+.section { position: relative; padding: clamp(3.5rem, 7vw, 5.5rem) 0; }
+.section--alt { background-color: var(--lana); background-image: var(--trama); }
+.section--alt::before, .section--alt::after, .section--dark::before {
+    content: ""; position: absolute; left: 0; right: 0; height: 10px; background: var(--franja);
+}
+.section--alt::before, .section--dark::before { top: 0; }
+.section--alt::after { bottom: 0; }
+.section--dark { background: var(--trama-oscura), linear-gradient(160deg, var(--nogal), #5E221E 70%, var(--cochinilla)); color: var(--blanco); }
 .section--dark h2, .section--dark h3 { color: var(--blanco); }
 .section--dark .section__lead { color: rgba(255, 255, 255, 0.82); }
 .section__head { max-width: 760px; margin: 0 auto 2.8rem; text-align: center; }
 .section__eyebrow {
     display: inline-block; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--tierra); margin-bottom: 0.6rem; position: relative; padding-bottom: 0.5rem;
+    color: var(--cochinilla); margin-bottom: 0.9rem; position: relative; padding-bottom: 0.7rem;
 }
-.section__eyebrow::after { content: ""; position: absolute; left: 50%; bottom: 0; width: 48px; height: 4px; transform: translateX(-50%); background: var(--franja); border-radius: 2px; }
+.section__eyebrow::after { content: ""; position: absolute; left: 50%; bottom: -4px; width: 96px; height: 8px; transform: translateX(-50%); background: var(--franja); }
 .section--dark .section__eyebrow { color: var(--dorado); }
 .section__lead { color: var(--texto-suave); font-size: 1.08rem; margin-top: 0.8rem; }
 
@@ -203,26 +240,30 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
 /* Tarjetas (Nosotros) */
 .card {
     background: var(--lana); border-radius: var(--radio); padding: 1.8rem;
-    box-shadow: var(--sombra); border-top: 5px solid var(--dorado);
+    position: relative; overflow: hidden; padding-top: calc(1.8rem + 8px);
+    box-shadow: var(--sombra);
+    outline: 1px dashed rgba(107, 66, 38, 0.28); outline-offset: -9px;
     transition: transform var(--transicion), box-shadow var(--transicion);
 }
+.card::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 8px; background: var(--franja); }
 .card:hover { transform: translateY(-4px); box-shadow: var(--sombra-fuerte); }
 .card h3 { margin: 0.8rem 0 0.5rem; }
 .card p { color: var(--texto-suave); }
-.card__icon { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; color: var(--blanco); font-size: 1.2rem; }
+.card__icon { width: 52px; height: 52px; clip-path: var(--rombo); display: grid; place-items: center; color: var(--blanco); font-size: 1.1rem; }
 .card__icon--tierra { background: var(--tierra); }
 .card__icon--azul { background: var(--azul); }
-.card__icon--dorado { background: var(--dorado); }
+.card__icon--dorado { background: var(--dorado); color: var(--tierra-oscuro); }
 
 .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 3rem; }
-.stat { text-align: center; padding: 1.3rem 1rem; background: var(--azul-oscuro); color: var(--blanco); border-radius: var(--radio); }
+.stat { position: relative; overflow: hidden; text-align: center; padding: 1.3rem 1rem calc(1.3rem + 8px); background-color: var(--nogal); background-image: var(--trama-oscura); color: var(--blanco); border-radius: var(--radio); }
+.stat::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 8px; background: var(--franja); }
 .stat strong { display: block; font-family: var(--font-titulo); font-size: 1.9rem; color: var(--dorado); }
 .stat span { font-size: 0.85rem; opacity: 0.85; }
 
 /* Noticias */
 .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
 .news {
-    background: var(--blanco); border-radius: var(--radio); overflow: hidden; box-shadow: var(--sombra);
+    background: var(--lana); border-radius: var(--radio); overflow: hidden; box-shadow: var(--sombra); border-bottom: 5px solid var(--dorado);
     display: flex; flex-direction: column; transition: transform var(--transicion), box-shadow var(--transicion);
 }
 .news:hover { transform: translateY(-4px); box-shadow: var(--sombra-fuerte); }
@@ -233,7 +274,7 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
 .news__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .news__body { padding: 1.3rem 1.5rem 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; flex: 1; }
 .news__meta { display: flex; align-items: center; gap: 0.7rem; flex-wrap: wrap; font-size: 0.8rem; color: var(--texto-suave); }
-.news__tag { font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.7rem; color: var(--blanco); background: var(--tierra); padding: 0.2rem 0.6rem; border-radius: 999px; }
+.news__tag { font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.7rem; color: var(--blanco); background: var(--cochinilla); padding: 0.2rem 0.6rem; border-radius: 3px; }
 .news h3 { font-size: 1.15rem; line-height: 1.3; }
 .news--destacada h3 { font-size: 1.6rem; }
 .news p { color: var(--texto-suave); flex: 1; }
@@ -241,7 +282,7 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
 .news__link:hover { color: var(--cochinilla); }
 
 /* Turismo */
-.feature { display: grid; grid-template-columns: 200px 1fr; background: var(--crema); border-radius: var(--radio); overflow: hidden; box-shadow: var(--sombra); }
+.feature { display: grid; grid-template-columns: 200px 1fr; background: var(--crema); border-left: 6px solid var(--cochinilla); border-radius: var(--radio); overflow: hidden; box-shadow: var(--sombra); }
 .feature__media { min-height: 180px; }
 .feature__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .feature__body { padding: 1.4rem 1.5rem; }
@@ -250,7 +291,7 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
 
 .info-strip {
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.5rem;
-    padding: 1.4rem 1.6rem; background: var(--azul-oscuro); color: rgba(255, 255, 255, 0.9);
+    padding: 1.4rem 1.6rem; background-color: var(--azul-oscuro); background-image: var(--trama-oscura); color: rgba(255, 255, 255, 0.9); border-top: 8px solid var(--dorado);
     border-radius: var(--radio); font-size: 0.95rem;
 }
 .info-strip strong { color: var(--dorado); }
@@ -259,7 +300,7 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
 .lodging-card { max-width: 640px; margin-inline: auto; text-align: center; }
 .lodging-card p { color: var(--texto-suave); margin: 0.5rem 0 1.2rem; }
 .lodging-card .btn { margin-inline: auto; }
-.tag { align-self: flex-start; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.25rem 0.7rem; border-radius: 999px; background: var(--crema-oscuro); color: var(--tierra); }
+.tag { align-self: flex-start; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.25rem 0.7rem; border-radius: 3px; background: var(--crema-oscuro); color: var(--cochinilla); }
 .note { text-align: center; margin-top: 2rem; color: var(--texto-suave); }
 .anexos { margin: 2rem auto 0; max-width: 760px; text-align: center; color: var(--texto-suave); }
 .anexos h3 { margin-bottom: 0.35rem; color: var(--azul); }
@@ -273,8 +314,9 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
 /* Galería */
 .gallery { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 200px; gap: 1rem; }
 .gallery__item {
-    position: relative; border-radius: var(--radio); overflow: hidden;
-    display: flex; align-items: flex-end; box-shadow: var(--sombra);
+    position: relative; border-radius: var(--radio-sm); overflow: hidden;
+    display: flex; align-items: flex-end;
+    border: 5px solid var(--lana); box-shadow: 0 0 0 2px var(--dorado), var(--sombra);
     transition: transform var(--transicion);
 }
 .gallery__item img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
@@ -282,30 +324,34 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
 .gallery__item--wide { grid-column: span 2; }
 .gallery__item figcaption {
     position: relative; width: 100%; padding: 0.8rem 1rem; color: var(--blanco); font-weight: 700;
-    background: linear-gradient(to top, rgba(15, 47, 58, 0.85), transparent);
+    background: linear-gradient(to top, rgba(62, 39, 22, 0.9), transparent);
 }
 
 /* Música Personal */
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-.music { margin-top: 4rem; padding-top: 3rem; border-top: 1px solid var(--crema-oscuro); }
+.music { position: relative; margin-top: 4rem; padding-top: 3rem; }
+.music::before { content: ""; position: absolute; top: 0; left: 50%; width: min(420px, 80%); height: 8px; transform: translateX(-50%); background: var(--franja); }
 .section__head--sub { margin-bottom: 2rem; }
 .music__title { font-size: clamp(1.6rem, 3vw, 2.2rem); }
 .music__card {
     max-width: 860px; margin: 0 auto;
     background: var(--azul-oscuro); color: var(--blanco);
     border-radius: var(--radio); padding: 1.6rem;
-    box-shadow: var(--sombra-fuerte); border-left: 8px solid var(--dorado);
+    position: relative; overflow: hidden; padding-left: calc(1.6rem + 14px);
+    background-image: var(--trama-oscura);
+    box-shadow: var(--sombra-fuerte);
     display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.2rem;
 }
+.music__card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 14px; background: var(--franja-v); }
 .music__card > * { min-width: 0; }
 .music__now { display: flex; align-items: center; gap: 1.2rem; }
 .music__meta { min-width: 0; overflow-wrap: anywhere; }
 .music__cover {
     flex: none; width: 88px; height: 88px; border-radius: var(--radio-sm);
-    background: linear-gradient(135deg, var(--cochinilla), var(--dorado) 60%, var(--tierra));
+    background: var(--motivo-tapiz) center / cover no-repeat, var(--cochinilla);
     display: grid; place-items: center; position: relative; overflow: hidden;
 }
-.music__cover::after { content: ''; position: absolute; inset: 0; background: var(--franja); opacity: 0.25; mix-blend-mode: multiply; }
+.music__cover::after { content: ''; position: absolute; inset: 0; background: rgba(27, 38, 67, 0.35); }
 .music__note { position: relative; font-size: 2.4rem; font-weight: 700; color: var(--blanco); }
 .is-playing .music__note { animation: latido 1.2s ease-in-out infinite; }
 @keyframes latido { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.18); } }
@@ -354,8 +400,8 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
 .landscape p { color: var(--texto-suave); }
 
 /* Nuestra gente */
-.person { text-align: center; padding: 1.5rem 1.2rem; background: rgba(255, 255, 255, 0.08); border-radius: var(--radio); border: 1px solid rgba(255, 255, 255, 0.12); }
-.person__avatar { width: 64px; height: 64px; margin: 0 auto 1rem; border-radius: 50%; overflow: hidden; background: var(--dorado); }
+.person { text-align: center; padding: 1.5rem 1.2rem; background: rgba(255, 255, 255, 0.07); border-radius: var(--radio); border: 1px dashed rgba(209, 154, 46, 0.45); }
+.person__avatar { width: 72px; height: 72px; margin: 0 auto 1rem; border-radius: 50%; overflow: hidden; background: var(--dorado); box-shadow: 0 0 0 3px var(--dorado), 0 0 0 6px rgba(255, 255, 255, 0.18); }
 .person__avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .person p { color: rgba(255, 255, 255, 0.82); font-size: 0.95rem; }
 .quote { margin: 3rem auto 0; max-width: 720px; text-align: center; font-family: var(--font-titulo); font-size: 1.35rem; font-style: italic; color: var(--dorado); }
@@ -366,20 +412,22 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
 .contact__item { padding: 1.1rem 1.3rem; background: var(--lana); border-radius: var(--radio-sm); border-left: 4px solid var(--dorado); box-shadow: var(--sombra); }
 .contact__item strong { display: block; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tierra); margin-bottom: 0.2rem; }
 .contact__social { display: flex; gap: 1rem; flex-wrap: wrap; }
-.form { background: var(--lana); padding: 2rem; border-radius: var(--radio); box-shadow: var(--sombra); display: grid; gap: 1.1rem; }
+.form { position: relative; overflow: hidden; background: var(--lana); padding: calc(2rem + 10px) 2rem 2rem; border-radius: var(--radio); box-shadow: var(--sombra); display: grid; gap: 1.1rem; }
+.form::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 10px; background: var(--franja); }
 .form__row { display: grid; gap: 0.35rem; }
 .form label { font-weight: 700; font-size: 0.9rem; }
 .form input, .form select, .form textarea {
     width: 100%; padding: 0.8rem 1rem; border: 1px solid var(--crema-oscuro); border-radius: var(--radio-sm);
     font: inherit; background: var(--crema); color: var(--texto); transition: border-color var(--transicion), box-shadow var(--transicion);
 }
-.form input:focus, .form select:focus, .form textarea:focus { outline: none; border-color: var(--azul-claro); box-shadow: 0 0 0 3px rgba(46, 125, 153, 0.2); background: var(--blanco); }
+.form input:focus, .form select:focus, .form textarea:focus { outline: none; border-color: var(--azul-claro); box-shadow: 0 0 0 3px rgba(63, 95, 143, 0.2); background: var(--blanco); }
 .form textarea { resize: vertical; }
 .form .btn { justify-self: start; }
 
 /* ---------- Pie ---------- */
-.footer { background: var(--azul-oscuro); color: rgba(255, 255, 255, 0.85); margin-top: 2rem; }
-.footer__pattern { height: 8px; background: var(--franja); }
+.footer { background-color: var(--tierra-oscuro); background-image: var(--trama-oscura); color: rgba(255, 255, 255, 0.85); margin-top: 2rem; }
+.footer__pattern { position: relative; height: 16px; background: var(--franja); }
+.footer__pattern::after { content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 14px; background: var(--flecos); opacity: 0.55; -webkit-mask: linear-gradient(#000 40%, transparent); mask: linear-gradient(#000 40%, transparent); }
 .footer__grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 2rem; padding: 3.5rem 0 2.5rem; }
 .footer h4 { color: var(--dorado); margin-bottom: 0.8rem; font-size: 1rem; }
 .footer li { margin-bottom: 0.4rem; }
@@ -392,6 +440,11 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
 .footer__top { font-weight: 700; }
 
 /* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+    .hero__pattern { display: none; }
+    .hero__content { max-width: 780px; }
+}
+
 @media (max-width: 1024px) {
     .nav ul { gap: 0; }
     .nav a { padding: 0.5rem 0.55rem; font-size: 0.88rem; }
@@ -440,7 +493,7 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
     .feature { grid-template-columns: 1fr; }
     .feature__media { min-height: 140px; }
     .footer__grid { grid-template-columns: 1fr; }
-    .form { padding: 1.4rem; }
+    .form { padding: calc(1.4rem + 10px) 1.4rem 1.4rem; }
     .logo__text small { display: none; }
     .hero__actions .btn { width: 100%; text-align: center; }
 }
