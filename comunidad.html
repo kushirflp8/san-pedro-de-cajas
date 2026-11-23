@@ -85,7 +85,7 @@
                             <option>Otro lugar</option>
                             </select>
                         </label>
-                        <label>Foto <small>(opcional, JPG/PNG/WebP, máx. 8 MB)</small><input name="foto" type="file" accept="image/jpeg,image/png,image/webp"></label>
+                        <label>Foto <small>(opcional, JPG/PNG/WebP, máx. 8 MB y 40 megapíxeles)</small><input name="foto" type="file" accept="image/jpeg,image/png,image/webp"></label>
                     </div>
                     <label>Título<input name="titulo" required maxlength="140"></label>
                     <label>Noticia <small>(mínimo 40 caracteres)</small><textarea name="texto" rows="7" required minlength="40" maxlength="5000"></textarea></label>
@@ -169,7 +169,7 @@
             datos: 'Revisa los datos: todos los campos son obligatorios y la noticia debe tener al menos 40 caracteres.',
             rapido: 'El formulario se envió demasiado rápido o caducó. Recarga la página e inténtalo de nuevo.',
             limite: 'Ya enviaste varias noticias. Inténtalo más tarde.',
-            foto: 'La foto no es válida. Usa una imagen JPG, PNG o WebP de máximo 8 MB.',
+            foto: 'La foto no es válida o es muy grande. Usa una imagen JPG, PNG o WebP de máximo 8 MB y 40 megapíxeles. Vuelve a elegirla.',
             guardar: 'No se pudo guardar tu noticia. Inténtalo de nuevo más tarde.',
             metodo: 'No se pudo enviar el formulario.'
         };
