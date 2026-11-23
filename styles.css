@@ -380,6 +380,7 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
 .playlist__genre:hover { border-color: var(--dorado); }
 .playlist__genre:focus-visible { outline: 2px solid var(--azul-oscuro); outline-offset: 2px; }
 .playlist__genre.is-active { background: var(--cochinilla); border-color: var(--cochinilla); color: var(--blanco); }
+.music__error:empty { display: none; }
 .music__error { margin-top: 0.3rem; font-size: 0.85rem; font-weight: 700; color: #F5D27A; }
 .playlist__head { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem; }
 .playlist__search {

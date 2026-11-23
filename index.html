@@ -345,7 +345,7 @@
                                 <span class="music__tag">Reproduciendo</span>
                                 <h4 id="music-title" class="music__track">Selecciona un tema</h4>
                                 <p id="music-artist" class="music__artist">Colección San Pedro de Cajas</p>
-                                <p id="music-error" class="music__error" role="status" hidden>Este tema no está disponible por ahora.</p>
+                                <p id="music-error" class="music__error" role="status"></p>
                             </div>
                         </div>
                         <audio id="music-player" class="music__player" controls preload="none"></audio>
@@ -618,7 +618,7 @@
             current = items.indexOf(li);
             items.forEach(function (el) { el.classList.remove('is-active'); });
             li.classList.add('is-active');
-            error.hidden = true;
+            error.textContent = '';
             player.src = li.getAttribute('data-src');
             title.textContent = li.getAttribute('data-title');
             artist.textContent = [li.getAttribute('data-artist'), li.getAttribute('data-genre')].filter(Boolean).join(' · ');
@@ -676,7 +676,7 @@
         });
         player.addEventListener('error', function () {
             if (!player.getAttribute('src')) return;
-            error.hidden = false;
+            error.textContent = 'Este tema no está disponible por ahora.';
             card.classList.remove('is-playing');
         });
         player.addEventListener('pause', function () { card.classList.remove('is-playing'); });
