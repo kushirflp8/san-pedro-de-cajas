@@ -42,16 +42,17 @@ san-pedro-de-cajas/
 └── README.md           # Este archivo
 ```
 
-## 🎨 Paleta de Colores (Andina)
+## 🎨 Paleta de Colores (tintes naturales del tapiz)
 
 | Color | Código | Uso |
 |-------|--------|-----|
-| Azul de puna | `#1B4D5C` / `#0F2F3A` | Header, hero, pie de página |
-| Tierra | `#8B4A2B` | Acentos, etiquetas de sección |
-| Rojo cochinilla | `#B7322C` | Botón principal, radio en vivo |
-| Dorado de ichu | `#D9A441` | Detalles decorativos, cifras |
-| Verde valle | `#4F7A3A` | Paisajes, franja tejida |
-| Crema de lana | `#F6F1E7` / `#FFFDF8` | Fondos |
+| Rojo cochinilla | `#A3312B` | Grecas, botón principal, etiquetas |
+| Azul añil | `#26365C` / `#1B2643` | Fondo de tapiz, botones secundarios |
+| Ocre / dorado | `#D19A2E` | Rombos, marcos, cifras |
+| Nogal / tierra | `#4A2F1C` / `#6B4226` | Pie de página, datos, textos |
+| Verde natural | `#5F7A3B` | Detalles del tejido |
+| Rosa | `#C2455E` | Centro de los rombos |
+| Lana cruda / crema | `#FBF6EC` / `#F2E8D5` | Fondos con textura de trama |
 
 ## 📱 Responsividad
 
@@ -145,10 +146,10 @@ Incluye:
 Edita las variables CSS en `styles.css`:
 ```css
 :root {
-    --tierra: #8B4A2B;
-    --azul: #1B4D5C;
-    --cochinilla: #B7322C;
-    --dorado: #D9A441;
+    --tierra: #6B4226;
+    --azul: #26365C;
+    --cochinilla: #A3312B;
+    --dorado: #D19A2E;
     /* ... más colores */
 }
 ```
