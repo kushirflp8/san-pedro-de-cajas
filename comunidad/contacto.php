@@ -13,6 +13,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') { volver('contacto=error'); }
 if (!empty($_POST['sitio_web'])) { volver('contacto=ok'); }
 $age = spc_form_age($_POST['t'] ?? '');
 if ($age < 3 || $age > 86400) { volver('contacto=rapido'); }
+if (!spc_rate_limit('humano', 10, 3600, false)) { volver('contacto=limite'); }
 if (!spc_human_ok($_POST['t'] ?? '', $_POST['humano'] ?? '')) {
     volver(spc_rate_limit('humano', 10, 3600) ? 'contacto=humano' : 'contacto=limite');
 }

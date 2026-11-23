@@ -50,8 +50,8 @@ function spc_ip() {
 }
 
 /** Returns true if the action is allowed, recording the hit. */
-function spc_rate_limit($bucket, $max, $window) {
-    return spc_with_lock('rate', function () use ($bucket, $max, $window) {
+function spc_rate_limit($bucket, $max, $window, $record = true) {
+    return spc_with_lock('rate', function () use ($bucket, $max, $window, $record) {
         $file = spc_dir() . '/rate.json';
         $now = time();
         $all = spc_read_json($file);
@@ -62,6 +62,7 @@ function spc_rate_limit($bucket, $max, $window) {
         $key = $bucket . ':' . hash('sha256', spc_ip());
         $recent = array_filter($all[$key] ?? [], function ($t) use ($now, $window) { return $t > $now - $window; });
         if (count($recent) >= $max) { spc_write_json($file, $all); return false; }
+        if (!$record) { return true; }
         $all[$key][] = $now;
         spc_write_json($file, $all);
         return true;
