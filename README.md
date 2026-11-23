@@ -84,12 +84,14 @@ La sección `#noticias` va justo después del hero y el anuncio superior. Para p
         </div>
         <h3>Título de la noticia</h3>
         <p>Resumen breve de la noticia.</p>
-        <a href="#" class="news__link">Leer más →</a>
+        <a href="noticias.html#id-de-la-noticia" class="news__link">Leer noticia →</a>
     </div>
 </article>
 ```
 
-Añade `news--destacada` al artículo principal para que ocupe el doble de ancho. Las noticias enlazan a publicaciones públicas de Facebook.
+Añade `news--destacada` al artículo principal para que ocupe el doble de ancho. La portada muestra solo las 3 más recientes: al agregar una, quita la tarjeta más antigua.
+
+El texto completo de cada noticia vive en `noticias.html`, que es el archivo permanente. Añade allí un `<article class="article" id="id-de-la-noticia">` (foto, etiqueta, fecha, texto y `article__source` con el enlace a la fuente) arriba de los demás y agrégalo al índice `.news-index`. Sube a cPanel `index.html` y `noticias.html` juntos.
 
 ## 🛏️ Hospedajes
 
@@ -231,8 +233,3 @@ Libre para uso y distribución.
 Para más información, contacta a:
 - 📧 Email: support@spcserver.net
 - 📍 Ubicación: Tarma, Junín, Perú
-## 📰 Noticias
-
-- `noticias.html` es el archivo permanente: cada noticia es un `<article class="article" id="...">` con foto, etiqueta, fecha, texto completo y fuente.
-- La portada (`index.html#noticias`) muestra las 3 más recientes; su botón «Leer noticia →» enlaza a `noticias.html#id-de-la-noticia`.
-- Para agregar una noticia: añádela arriba en `noticias.html` (y en el índice), y reemplaza la tarjeta más antigua de la portada.
