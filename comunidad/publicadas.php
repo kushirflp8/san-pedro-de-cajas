@@ -3,7 +3,7 @@ define('SPC_COMUNIDAD', 1);
 require __DIR__ . '/lib.php';
 
 header('Content-Type: application/json; charset=utf-8');
-header('Cache-Control: public, max-age=60');
+header('Cache-Control: no-store');
 $out = [];
 foreach (spc_publicadas() as $n) {
     $out[] = [
@@ -16,4 +16,4 @@ foreach (spc_publicadas() as $n) {
         'foto' => $n['foto'] ? 'comunidad/fotos/' . $n['id'] . '.jpg' : null,
     ];
 }
-echo json_encode($out, JSON_UNESCAPED_UNICODE);
+echo json_encode(['token' => spc_form_token(), 'items' => $out], JSON_UNESCAPED_UNICODE);

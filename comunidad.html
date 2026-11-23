@@ -163,12 +163,11 @@
 <script>
     (function () {
         var t = document.getElementById('form-t');
-        if (t) t.value = Date.now();
         var estado = document.getElementById('enviar-estado');
         var q = new URLSearchParams(location.search);
         var errores = {
             datos: 'Revisa los datos: todos los campos son obligatorios y la noticia debe tener al menos 40 caracteres.',
-            rapido: 'El formulario se envió demasiado rápido. Inténtalo de nuevo.',
+            rapido: 'El formulario se envió demasiado rápido o caducó. Recarga la página e inténtalo de nuevo.',
             limite: 'Ya enviaste varias noticias. Inténtalo más tarde.',
             foto: 'La foto no es válida. Usa una imagen JPG, PNG o WebP de máximo 8 MB.',
             metodo: 'No se pudo enviar el formulario.'
@@ -181,7 +180,9 @@
         }
         var lista = document.getElementById('comunidad-lista');
         function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
-        fetch('comunidad/publicadas.php', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (items) {
+        fetch('comunidad/publicadas.php', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (data) {
+            t.value = data.token;
+            var items = data.items;
             lista.innerHTML = '';
             if (!items.length) { lista.appendChild(el('p', 'community-empty', 'Todavía no hay noticias de la comunidad. ¡Sé el primero en enviar una!')); return; }
             items.forEach(function (n) {

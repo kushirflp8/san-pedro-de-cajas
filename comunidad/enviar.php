@@ -11,8 +11,8 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') { volver('error=metodo'); }
 
 // Honeypot and minimum fill time to stop bots.
 if (!empty($_POST['sitio_web'])) { volver('enviado=1'); }
-$t = (int) ($_POST['t'] ?? 0);
-if ($t <= 0 || time() - (int) ($t / 1000) < 5) { volver('error=rapido'); }
+$age = spc_form_age($_POST['t'] ?? '');
+if ($age < 5 || $age > 86400) { volver('error=rapido'); }
 
 $nombre = spc_clean($_POST['nombre'] ?? '', 80);
 $contacto = spc_clean($_POST['contacto'] ?? '', 120);

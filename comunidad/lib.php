@@ -96,6 +96,22 @@ function spc_save_image($tmp, $dest) {
     return $ok;
 }
 
+function spc_form_key() {
+    return hash('sha256', 'form|' . (spc_config()['password_hash'] ?? __FILE__));
+}
+
+function spc_form_token() {
+    $t = (string) time();
+    return $t . '.' . hash_hmac('sha256', $t, spc_form_key());
+}
+
+/** Seconds since the server issued the token, or -1 if it is invalid. */
+function spc_form_age($token) {
+    $p = explode('.', (string) $token, 2);
+    if (count($p) !== 2 || !ctype_digit($p[0]) || !hash_equals(hash_hmac('sha256', $p[0], spc_form_key()), $p[1])) { return -1; }
+    return time() - (int) $p[0];
+}
+
 function spc_publicadas() {
     return spc_read_json(spc_dir() . '/publicadas.json');
 }
