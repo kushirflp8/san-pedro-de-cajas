@@ -173,6 +173,21 @@
             guardar: 'No se pudo guardar tu noticia. Inténtalo de nuevo más tarde.',
             metodo: 'No se pudo enviar el formulario.'
         };
+        var form = document.querySelector('.community-form');
+        var campos = ['nombre', 'contacto', 'lugar', 'titulo', 'texto'];
+        form.addEventListener('submit', function () {
+            var borrador = {};
+            campos.forEach(function (c) { borrador[c] = form.elements[c].value; });
+            try { sessionStorage.setItem('spc-borrador', JSON.stringify(borrador)); } catch (e) {}
+        });
+        if (q.get('error')) {
+            try {
+                var guardado = JSON.parse(sessionStorage.getItem('spc-borrador') || '{}');
+                campos.forEach(function (c) { if (guardado[c]) form.elements[c].value = guardado[c]; });
+            } catch (e) {}
+        } else if (q.get('enviado')) {
+            try { sessionStorage.removeItem('spc-borrador'); } catch (e) {}
+        }
         if (q.get('enviado')) {
             estado.innerHTML = '<p class="community-status community-status--ok" role="status">¡Gracias! Recibimos tu noticia. La revisaremos y, si se aprueba, aparecerá en esta página.</p>';
         } else if (q.get('error')) {
