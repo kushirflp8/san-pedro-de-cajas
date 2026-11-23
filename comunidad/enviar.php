@@ -48,7 +48,7 @@ spc_write_json(spc_dir('pendientes') . '/' . $id . '.json', [
 
 $cfg = spc_config();
 if (!empty($cfg['email'])) {
-    $panel = 'https://' . ($_SERVER['HTTP_HOST'] ?? 'sanpedrodecajas.com') . '/comunidad/panel.php';
+    $panel = 'https://sanpedrodecajas.com/comunidad/panel.php';
     $body = "Llegó una noticia nueva para revisar.\n\n"
         . "Título: $titulo\nLugar: $lugar\nEnviada por: $nombre ($contacto)\n"
         . 'Foto: ' . ($foto ? 'sí' : 'no') . "\n\n$texto\n\n"
