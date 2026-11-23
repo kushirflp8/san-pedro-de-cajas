@@ -366,6 +366,7 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
 .music__tag { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--dorado); }
 .music__track { font-size: 1.35rem; margin: 0.2rem 0 0.1rem; color: var(--blanco); }
 .music__artist { color: rgba(255, 255, 255, 0.75); font-size: 0.95rem; }
+.music__producer { color: rgba(255, 255, 255, 0.6); font-size: 0.8rem; margin-top: 0.15rem; }
 .music__player { width: 100%; height: 44px; border-radius: var(--radio-sm); }
 .music__controls { display: flex; gap: 0.7rem; flex-wrap: wrap; }
 .btn--ghost-dark { background: transparent; color: var(--blanco); border: 2px solid rgba(255, 255, 255, 0.5); }
