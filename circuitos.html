@@ -184,8 +184,8 @@
         var toggle = document.getElementById('menu-toggle');
         var menuBtn = document.querySelector('.menu-btn');
         if (toggle && menuBtn) {
-            menuBtn.addEventListener('keydown', function (e) {
-                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle.checked = !toggle.checked; }
+            toggle.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter') { e.preventDefault(); toggle.checked = !toggle.checked; }
             });
             document.querySelectorAll('.nav a').forEach(function (a) {
                 a.addEventListener('click', function () { toggle.checked = false; });
