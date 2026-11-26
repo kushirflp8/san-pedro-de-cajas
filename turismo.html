@@ -16,8 +16,9 @@
     <link rel="manifest" href="site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=20261123c">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Nunito:wght@400;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Nunito:wght@400;600;700&display=swap"></noscript>
+    <link rel="stylesheet" href="styles.css?v=20261126a">
 </head>
 <body>
 
@@ -35,7 +36,7 @@
             </a>
 
             <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
-            <label for="menu-toggle" class="menu-btn" role="button" tabindex="0" aria-label="Abrir menú" aria-controls="nav-principal">
+            <label for="menu-toggle" class="menu-btn" tabindex="0" aria-label="Abrir menú" aria-controls="nav-principal">
                 <span></span><span></span><span></span>
             </label>
 
@@ -79,28 +80,28 @@
                 <h2 id="que-ver" class="visually-hidden">Qué ver y hacer</h2>
                 <div class="grid grid--2">
                     <article class="feature">
-                        <div class="feature__media"><img src="imagenes/hilado-plaza.jpg" alt="Concurso de hilado con puchca en la Plaza de Armas de San Pedro de Cajas" loading="lazy"></div>
+                        <div class="feature__media"><img src="imagenes/hilado-plaza.jpg" srcset="imagenes/hilado-plaza-480.jpg 480w, imagenes/hilado-plaza-960.jpg 960w, imagenes/hilado-plaza.jpg 1400w" sizes="(max-width: 700px) 100vw, 600px" alt="Concurso de hilado con puchca en la Plaza de Armas de San Pedro de Cajas" loading="lazy"></div>
                         <div class="feature__body">
                             <h3>Artesanía textil</h3>
                             <p>Visita a las artesanas, mira el hilado con puchca y el tejido de la manta Huashacata o Catarana, y recorre las exposiciones de tapices. En Semana Santa cada barrio expone lo mejor de su arte en la salida del Cristo Resucitado.</p>
                         </div>
                     </article>
                     <article class="feature">
-                        <div class="feature__media"><img src="imagenes/catarata-pacchacoto.jpg" alt="Catarata de Pacchacoto en San Pedro de Cajas" loading="lazy"></div>
+                        <div class="feature__media"><img src="imagenes/catarata-pacchacoto.jpg" srcset="imagenes/catarata-pacchacoto-480.jpg 480w, imagenes/catarata-pacchacoto-960.jpg 960w, imagenes/catarata-pacchacoto.jpg 1218w" sizes="(max-width: 700px) 100vw, 600px" alt="Catarata de Pacchacoto en San Pedro de Cajas" loading="lazy"></div>
                         <div class="feature__body">
                             <h3>Naturaleza de altura</h3>
                             <p>Catarata de Pacchacoto, laguna de Parpacocha (pesca de trucha y camping), laguna de Chaquicocha o Gallinería con aves migratorias, y el hábitat de vicuñas silvestres.</p>
                         </div>
                     </article>
                     <article class="feature">
-                        <div class="feature__media"><img src="imagenes/bajada-patamarca.jpg" alt="Bajada del cerro Patamarca en la fiesta patronal, con el pueblo al fondo" loading="lazy"></div>
+                        <div class="feature__media"><img src="imagenes/bajada-patamarca.jpg" srcset="imagenes/bajada-patamarca-480.jpg 480w, imagenes/bajada-patamarca.jpg 960w" sizes="(max-width: 700px) 100vw, 600px" alt="Bajada del cerro Patamarca en la fiesta patronal, con el pueblo al fondo" loading="lazy"></div>
                         <div class="feature__body">
                             <h3>Fiestas patronales</h3>
                             <p>Fiesta en homenaje a San Pedro y San Pablo (28 y 29 de junio), a San Antonio de Padua y al Niño Viajero, con danzas tradicionales, bandas y la bajada del cerro Patamarca.</p>
                         </div>
                     </article>
                     <article class="feature">
-                        <div class="feature__media"><img src="imagenes/gorpagaray-plaza.jpg" alt="Señoras sampedranas con sus ollas en el gorpagaray de la Plaza de Armas" loading="lazy"></div>
+                        <div class="feature__media"><img src="imagenes/gorpagaray-plaza.jpg" srcset="imagenes/gorpagaray-plaza-480.jpg 480w, imagenes/gorpagaray-plaza.jpg 960w" sizes="(max-width: 700px) 100vw, 600px" alt="Señoras sampedranas con sus ollas en el gorpagaray de la Plaza de Armas" loading="lazy"></div>
                         <div class="feature__body">
                             <h3>Gastronomía y gorpagaray</h3>
                             <p>Mazamorras de productos naturales, puchero, sopa verde, shajta (carne seca, papa y maíz tostado) y la lapcha de Semana Santa. El gorpagaray es la costumbre de dar de comer gratis al visitante.</p>
@@ -109,12 +110,12 @@
                 </div>
 
                 <div class="gallery" style="margin-top:2.5rem" role="group" aria-label="Postales de San Pedro de Cajas">
-                    <figure class="gallery__item gallery__item--wide"><img src="imagenes/fiesta-burro-mantas.jpg" alt="Burro adornado con mantas tejidas en la fiesta, frente a la Plaza de Armas" loading="lazy"><figcaption>Fiesta en la Plaza de Armas</figcaption></figure>
-                    <figure class="gallery__item"><img src="imagenes/gorpagaray-bendicion.jpg" alt="Bendición de los platos del gorpagaray" loading="lazy"><figcaption>Bendición del gorpagaray</figcaption></figure>
-                    <figure class="gallery__item"><img src="imagenes/tejedor-manta.jpg" alt="Tejedor sampedrano trabajando una manta en el telar" loading="lazy"><figcaption>Tejedor de mantas</figcaption></figure>
-                    <figure class="gallery__item"><img src="imagenes/ciclismo-camino.jpg" alt="Ciclista en un camino rural de San Pedro de Cajas" loading="lazy"><figcaption>Ciclismo de montaña</figcaption></figure>
-                    <figure class="gallery__item"><img src="imagenes/fiesta-procesion.jpg" alt="Comparsa con burro adornado por las calles del pueblo" loading="lazy"><figcaption>Comparsas por las calles</figcaption></figure>
-                    <figure class="gallery__item gallery__item--wide"><img src="imagenes/ciclismo-pueblo.jpg" alt="Ciclista con el pueblo y los cerros al fondo" loading="lazy"><figcaption>Turismo de aventura</figcaption></figure>
+                    <figure class="gallery__item gallery__item--wide"><img src="imagenes/fiesta-burro-mantas.jpg" srcset="imagenes/fiesta-burro-mantas-480.jpg 480w, imagenes/fiesta-burro-mantas-960.jpg 960w, imagenes/fiesta-burro-mantas.jpg 1200w" sizes="(max-width: 700px) 100vw, 600px" alt="Burro adornado con mantas tejidas en la fiesta, frente a la Plaza de Armas" loading="lazy"><figcaption>Fiesta en la Plaza de Armas</figcaption></figure>
+                    <figure class="gallery__item"><img src="imagenes/gorpagaray-bendicion.jpg" srcset="imagenes/gorpagaray-bendicion-480.jpg 480w, imagenes/gorpagaray-bendicion.jpg 720w" sizes="(max-width: 700px) 50vw, 300px" alt="Bendición de los platos del gorpagaray" loading="lazy"><figcaption>Bendición del gorpagaray</figcaption></figure>
+                    <figure class="gallery__item"><img src="imagenes/tejedor-manta.jpg" srcset="imagenes/tejedor-manta-480.jpg 480w, imagenes/tejedor-manta.jpg 960w" sizes="(max-width: 700px) 50vw, 300px" alt="Tejedor sampedrano trabajando una manta en el telar" loading="lazy"><figcaption>Tejedor de mantas</figcaption></figure>
+                    <figure class="gallery__item"><img src="imagenes/ciclismo-camino.jpg" srcset="imagenes/ciclismo-camino-480.jpg 480w, imagenes/ciclismo-camino.jpg 960w" sizes="(max-width: 700px) 50vw, 300px" alt="Ciclista en un camino rural de San Pedro de Cajas" loading="lazy"><figcaption>Ciclismo de montaña</figcaption></figure>
+                    <figure class="gallery__item"><img src="imagenes/fiesta-procesion.jpg" srcset="imagenes/fiesta-procesion-480.jpg 480w, imagenes/fiesta-procesion-960.jpg 960w, imagenes/fiesta-procesion.jpg 1200w" sizes="(max-width: 700px) 50vw, 300px" alt="Comparsa con burro adornado por las calles del pueblo" loading="lazy"><figcaption>Comparsas por las calles</figcaption></figure>
+                    <figure class="gallery__item gallery__item--wide"><img src="imagenes/ciclismo-pueblo.jpg" srcset="imagenes/ciclismo-pueblo-480.jpg 480w, imagenes/ciclismo-pueblo.jpg 960w" sizes="(max-width: 700px) 100vw, 600px" alt="Ciclista con el pueblo y los cerros al fondo" loading="lazy"><figcaption>Turismo de aventura</figcaption></figure>
                 </div>
             </div>
         </section>
@@ -211,7 +212,7 @@
                 <p>Portal de la comunidad sampedrana: cultura, turismo y Radio San Pedro en vivo.</p>
             </div>
             <div>
-                <h4>Secciones</h4>
+                <h3>Secciones</h3>
                 <ul>
                     <li><a href="index.html#noticias">Noticias</a></li>
                     <li><a href="index.html#nosotros">Nosotros</a></li>
@@ -221,7 +222,7 @@
                 </ul>
             </div>
             <div>
-                <h4>Comunidad</h4>
+                <h3>Comunidad</h3>
                 <ul>
                     <li><a href="index.html#paisajes">Paisajes</a></li>
                     <li><a href="gente.html">Nuestra Gente</a></li>
@@ -230,7 +231,7 @@
                 </ul>
             </div>
             <div>
-                <h4>Síguenos</h4>
+                <h3>Síguenos</h3>
                 <ul>
                     <li><a href="https://www.facebook.com/MuniSPC2023" target="_blank" rel="noopener">Facebook Municipalidad</a></li>
                     <li><a href="https://www.facebook.com/sanpedrodecajasperu" target="_blank" rel="noopener">Facebook San Pedro de Cajas</a></li>
