@@ -16,8 +16,9 @@
     <link rel="manifest" href="site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=20261123c">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Nunito:wght@400;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Nunito:wght@400;600;700&display=swap"></noscript>
+    <link rel="stylesheet" href="styles.css?v=20261126b">
 </head>
 <body>
 
@@ -34,8 +35,8 @@
                 </span>
             </a>
 
-            <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
-            <label for="menu-toggle" class="menu-btn" role="button" tabindex="0" aria-label="Abrir menú" aria-controls="nav-principal">
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Abrir menú" aria-controls="nav-principal">
+            <label for="menu-toggle" class="menu-btn" aria-hidden="true">
                 <span></span><span></span><span></span>
             </label>
 
@@ -81,7 +82,7 @@
                 </div>
                 <nav class="news-minis" aria-label="Índice de noticias de la región">
                     <a class="news-mini" href="#emergencia-sismos-2026" data-place="spc">
-                        <img class="news-mini__img" src="imagenes/comunidad-municipio.jpg" alt="" loading="lazy">
+                        <img class="news-mini__img" src="imagenes/comunidad-municipio.jpg" srcset="imagenes/comunidad-municipio-480.jpg 480w, imagenes/comunidad-municipio-720.jpg 720w, imagenes/comunidad-municipio-960.jpg 960w, imagenes/comunidad-municipio.jpg 1600w" sizes="(max-width: 700px) 45vw, 280px" alt="" loading="lazy">
                         <span class="news-mini__body">
                             <span class="news-mini__meta"><span class="news__tag">Emergencia</span> <span class="news-scope">Nacional</span> <time datetime="2026-11-23">23 de noviembre de 2026</time></span>
                             <strong>Declaran estado de emergencia en San Pedro de Cajas y otros 20 distritos por los sismos</strong>
@@ -209,7 +210,7 @@
                         </span>
                     </a>
                     <a class="news-mini" href="#elvia-paucar-internacional" data-place="spc">
-                        <img class="news-mini__img" src="imagenes/hijas-hilanderas.jpg" alt="" loading="lazy">
+                        <img class="news-mini__img" src="imagenes/hijas-hilanderas.jpg" srcset="imagenes/hijas-hilanderas-480.jpg 480w, imagenes/hijas-hilanderas-720.jpg 720w, imagenes/hijas-hilanderas-960.jpg 960w, imagenes/hijas-hilanderas.jpg 1600w" sizes="(max-width: 700px) 45vw, 280px" alt="" loading="lazy">
                         <span class="news-mini__body">
                             <span class="news-mini__meta"><span class="news__tag">Artesanía</span> <span class="news-scope">Internacional</span> <time datetime="2024-09-30">30 de septiembre de 2024</time></span>
                             <strong>Elvia Paucar, la tejedora sampedrana que lleva el tapiz al mundo</strong>
@@ -219,7 +220,7 @@
                 </nav>
                 <h2 class="news-page__sub">Noticias completas</h2>
                 <article id="emergencia-sismos-2026" class="article" data-place="spc">
-                    <img class="article__img" src="imagenes/comunidad-municipio.jpg" alt="Municipalidad de San Pedro de Cajas (foto referencial)" loading="lazy">
+                    <img class="article__img" src="imagenes/comunidad-municipio.jpg" srcset="imagenes/comunidad-municipio-480.jpg 480w, imagenes/comunidad-municipio-720.jpg 720w, imagenes/comunidad-municipio-960.jpg 960w, imagenes/comunidad-municipio.jpg 1600w" sizes="(max-width: 900px) 100vw, 900px" alt="Municipalidad de San Pedro de Cajas (foto referencial)" loading="lazy">
                     <div class="article__body">
                         <div class="news__meta"><span class="news__tag">Emergencia</span> <span class="news-scope">Nacional</span> <time datetime="2026-11-23">23 de noviembre de 2026</time></div>
                         <h2>Declaran estado de emergencia en San Pedro de Cajas y otros 20 distritos por los sismos</h2>
@@ -379,7 +380,7 @@
                     </div>
                 </article>
                 <article id="elvia-paucar-internacional" class="article" data-place="spc">
-                    <img class="article__img" src="imagenes/hijas-hilanderas.jpg" alt="Hilanderas sampedranas (foto referencial)" loading="lazy">
+                    <img class="article__img" src="imagenes/hijas-hilanderas.jpg" srcset="imagenes/hijas-hilanderas-480.jpg 480w, imagenes/hijas-hilanderas-720.jpg 720w, imagenes/hijas-hilanderas-960.jpg 960w, imagenes/hijas-hilanderas.jpg 1600w" sizes="(max-width: 900px) 100vw, 900px" alt="Hilanderas sampedranas (foto referencial)" loading="lazy">
                     <div class="article__body">
                         <div class="news__meta"><span class="news__tag">Artesanía</span> <span class="news-scope">Internacional</span> <time datetime="2024-09-30">30 de septiembre de 2024</time></div>
                         <h2>Elvia Paucar, la tejedora sampedrana que lleva el tapiz al mundo</h2>
@@ -405,7 +406,7 @@
                 <p>Portal de la comunidad sampedrana: cultura, turismo y Radio San Pedro en vivo.</p>
             </div>
             <div>
-                <h4>Secciones</h4>
+                <h3>Secciones</h3>
                 <ul>
                     <li><a href="index.html#noticias">Noticias</a></li>
                     <li><a href="index.html#nosotros">Nosotros</a></li>
@@ -415,7 +416,7 @@
                 </ul>
             </div>
             <div>
-                <h4>Comunidad</h4>
+                <h3>Comunidad</h3>
                 <ul>
                     <li><a href="index.html#paisajes">Paisajes</a></li>
                     <li><a href="gente.html">Nuestra Gente</a></li>
@@ -424,7 +425,7 @@
                 </ul>
             </div>
             <div>
-                <h4>Síguenos</h4>
+                <h3>Síguenos</h3>
                 <ul>
                     <li><a href="https://www.facebook.com/MuniSPC2023" target="_blank" rel="noopener">Facebook Municipalidad</a></li>
                     <li><a href="https://www.facebook.com/sanpedrodecajasperu" target="_blank" rel="noopener">Facebook San Pedro de Cajas</a></li>
@@ -444,8 +445,8 @@
         var toggle = document.getElementById('menu-toggle');
         var menuBtn = document.querySelector('.menu-btn');
         if (toggle && menuBtn) {
-            menuBtn.addEventListener('keydown', function (e) {
-                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle.checked = !toggle.checked; }
+            toggle.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter') { e.preventDefault(); toggle.checked = !toggle.checked; }
             });
             document.querySelectorAll('.nav a').forEach(function (a) {
                 a.addEventListener('click', function () { toggle.checked = false; });

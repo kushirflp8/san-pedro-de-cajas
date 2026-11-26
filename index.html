@@ -16,8 +16,10 @@
     <link rel="manifest" href="site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=20261123c">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Nunito:wght@400;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Nunito:wght@400;600;700&display=swap"></noscript>
+    <link rel="preload" as="image" href="imagenes/tejedora-telar-hero.jpg" fetchpriority="high">
+    <link rel="stylesheet" href="styles.css?v=20261126b">
 </head>
 <body>
 
@@ -34,8 +36,8 @@
                 </span>
             </a>
 
-            <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
-            <label for="menu-toggle" class="menu-btn" role="button" tabindex="0" aria-label="Abrir menú" aria-controls="nav-principal">
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Abrir menú" aria-controls="nav-principal">
+            <label for="menu-toggle" class="menu-btn" aria-hidden="true">
                 <span></span><span></span><span></span>
             </label>
 
@@ -81,7 +83,7 @@
                     <div id="radio" class="radio-mini radio-mini--main">
                         <div class="radio-mini__info">
                             <span class="radio__live"><span class="radio__dot" aria-hidden="true"></span> EN VIVO</span>
-                            <h3>Radio San Pedro</h3>
+                            <h2>Radio San Pedro</h2>
                             <p>La voz de nuestra comunidad, las 24 horas.</p>
                         </div>
                         <audio controls preload="none" class="radio__player" src="https://stream.zenolive.com/g9gc78mmn3quv" aria-label="Escuchar Radio San Pedro en vivo"></audio>
@@ -89,16 +91,16 @@
                     <div class="radio-mini">
                         <div class="radio-mini__info">
                             <span class="radio__live"><span class="radio__dot" aria-hidden="true"></span> EN VIVO</span>
-                            <h3>Radio Patamarca</h3>
-                            <p>100.7 FM · <a href="https://www.facebook.com/radiopatamarca" target="_blank" rel="noopener">Facebook</a></p>
+                            <h2>Radio Patamarca</h2>
+                            <p>100.7 FM · <a href="https://www.facebook.com/radiopatamarca" target="_blank" rel="noopener" aria-label="Facebook de Radio Patamarca">Facebook</a></p>
                         </div>
                         <audio controls preload="none" class="radio__player" src="https://radio.transmite.pe/9400/stream" aria-label="Escuchar Radio Patamarca en vivo"></audio>
                     </div>
                     <div class="radio-mini">
                         <div class="radio-mini__info">
                             <span class="radio__live"><span class="radio__dot" aria-hidden="true"></span> EN VIVO</span>
-                            <h3>Radio Super Studio</h3>
-                            <p>105.5 FM · <a href="https://www.facebook.com/RadioSuperStudioOficialSPC/" target="_blank" rel="noopener">Facebook</a></p>
+                            <h2>Radio Super Studio</h2>
+                            <p>105.5 FM · <a href="https://www.facebook.com/RadioSuperStudioOficialSPC/" target="_blank" rel="noopener" aria-label="Facebook de Radio Super Studio">Facebook</a></p>
                         </div>
                         <audio controls preload="none" class="radio__player" src="https://conectperu.com/8016/;" aria-label="Escuchar Radio Super Studio en vivo"></audio>
                     </div>
@@ -111,7 +113,6 @@
             <aside class="ad ad--leaderboard" aria-label="Publicidad">
                 <span class="ad__label">Publicidad</span>
                 <div class="ad__slot" data-ad="adsense-top">
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6914749946758407" crossorigin="anonymous"></script>
                     <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px;max-width:100%" data-ad-client="ca-pub-6914749946758407" data-ad-slot="8738071843"></ins>
                     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                 </div>
@@ -129,7 +130,7 @@
 
                 <div class="news-grid">
                     <article class="news news--destacada">
-                        <div class="news__media"><img src="imagenes/panorama-aerea.jpg" alt="Vista panorámica de San Pedro de Cajas (foto referencial)" loading="lazy"></div>
+                        <div class="news__media"><img src="imagenes/panorama-aerea.jpg" srcset="imagenes/panorama-aerea-480.jpg 480w, imagenes/panorama-aerea-720.jpg 720w, imagenes/panorama-aerea-960.jpg 960w, imagenes/panorama-aerea.jpg 1600w" sizes="(max-width: 700px) 100vw, 600px" alt="Vista panorámica de San Pedro de Cajas (foto referencial)" loading="lazy"></div>
                         <div class="news__body">
                             <div class="news__meta">
                                 <span class="news__tag">Emergencia</span>
@@ -141,7 +142,7 @@
                         </div>
                     </article>
                     <article class="news">
-                        <div class="news__media"><img src="imagenes/comunidad-municipio.jpg" alt="Comuneros reunidos en San Pedro de Cajas (foto referencial)" loading="lazy"></div>
+                        <div class="news__media"><img src="imagenes/comunidad-municipio.jpg" srcset="imagenes/comunidad-municipio-480.jpg 480w, imagenes/comunidad-municipio-720.jpg 720w, imagenes/comunidad-municipio-960.jpg 960w, imagenes/comunidad-municipio.jpg 1600w" sizes="(max-width: 700px) 100vw, 600px" alt="Comuneros reunidos en San Pedro de Cajas (foto referencial)" loading="lazy"></div>
                         <div class="news__body">
                             <div class="news__meta">
                                 <span class="news__tag">Comunidad</span>
@@ -153,7 +154,7 @@
                         </div>
                     </article>
                     <article class="news">
-                        <div class="news__media"><img src="imagenes/arrieros.jpg" alt="Camino de altura en San Pedro de Cajas (foto referencial)" loading="lazy"></div>
+                        <div class="news__media"><img src="imagenes/arrieros.jpg" srcset="imagenes/arrieros-480.jpg 480w, imagenes/arrieros-720.jpg 720w, imagenes/arrieros-960.jpg 960w, imagenes/arrieros.jpg 1600w" sizes="(max-width: 700px) 100vw, 600px" alt="Camino de altura en San Pedro de Cajas (foto referencial)" loading="lazy"></div>
                         <div class="news__body">
                             <div class="news__meta">
                                 <span class="news__tag">Obras</span>
@@ -169,14 +170,14 @@
                 <h3 class="news-older__title">Noticias anteriores</h3>
                 <div class="news-minis news-minis--home">
                     <a class="news-mini" href="noticias.html#elecciones-municipales-2026">
-                        <img src="imagenes/comunidad-municipio.jpg" alt="" loading="lazy">
+                        <img src="imagenes/comunidad-municipio.jpg" srcset="imagenes/comunidad-municipio-480.jpg 480w, imagenes/comunidad-municipio-720.jpg 720w, imagenes/comunidad-municipio-960.jpg 960w, imagenes/comunidad-municipio.jpg 1600w" sizes="(max-width: 700px) 45vw, 280px" alt="" loading="lazy">
                         <span class="news-mini__body">
                             <span class="news-mini__meta"><span class="news__tag">Elecciones</span> <time datetime="2026-10-19">19 de octubre de 2026</time></span>
                             <strong>JEE Tarma descarta anular las elecciones municipales en San Pedro de Cajas</strong>
                         </span>
                     </a>
                     <a class="news-mini" href="noticias.html#remodelacion-plaza-principal">
-                        <img src="imagenes/plaza-san-pedro.jpg" alt="" loading="lazy">
+                        <img src="imagenes/plaza-san-pedro.jpg" srcset="imagenes/plaza-san-pedro-480.jpg 480w, imagenes/plaza-san-pedro-720.jpg 720w, imagenes/plaza-san-pedro-960.jpg 960w, imagenes/plaza-san-pedro.jpg 1600w" sizes="(max-width: 700px) 45vw, 280px" alt="" loading="lazy">
                         <span class="news-mini__body">
                             <span class="news-mini__meta"><span class="news__tag">Obras</span> <time datetime="2026-09-04">4 de septiembre de 2026</time></span>
                             <strong>Se remodela la Plaza Principal de San Pedro de Cajas</strong>
@@ -190,7 +191,7 @@
                         </span>
                     </a>
                     <a class="news-mini" href="noticias.html#la-pushka-museo-nacional">
-                        <img src="imagenes/hilandera-sanpedrana.jpg" alt="" loading="lazy">
+                        <img src="imagenes/hilandera-sanpedrana.jpg" srcset="imagenes/hilandera-sanpedrana-480.jpg 480w, imagenes/hilandera-sanpedrana-720.jpg 720w, imagenes/hilandera-sanpedrana-960.jpg 960w, imagenes/hilandera-sanpedrana.jpg 1280w" sizes="(max-width: 700px) 45vw, 280px" alt="" loading="lazy">
                         <span class="news-mini__body">
                             <span class="news-mini__meta"><span class="news__tag">Cultura</span> <time datetime="2026-09-01">1 de septiembre de 2026</time></span>
                             <strong>«La Pushka»: el hilado sampedrano llega al Museo Nacional en Lima</strong>
@@ -211,21 +212,21 @@
                         </span>
                     </a>
                     <a class="news-mini" href="noticias.html#festival-pachamanca-telarmachay-2026">
-                        <img src="imagenes/cordillera.jpg" alt="" loading="lazy">
+                        <img src="imagenes/cordillera.jpg" srcset="imagenes/cordillera-480.jpg 480w, imagenes/cordillera-720.jpg 720w, imagenes/cordillera-960.jpg 960w, imagenes/cordillera.jpg 1600w" sizes="(max-width: 700px) 45vw, 280px" alt="" loading="lazy">
                         <span class="news-mini__body">
                             <span class="news-mini__meta"><span class="news__tag">Gastronomía</span> <time datetime="2026-01-29">29 de enero de 2026</time></span>
                             <strong>San Pedro de Cajas anuncia el Festival de la Pachamanca Telarmachay 2026</strong>
                         </span>
                     </a>
                     <a class="news-mini" href="noticias.html#reservorios-agro-rural-2025">
-                        <img src="imagenes/ovejas.jpg" alt="" loading="lazy">
+                        <img src="imagenes/ovejas.jpg" srcset="imagenes/ovejas-480.jpg 480w, imagenes/ovejas-720.jpg 720w, imagenes/ovejas-960.jpg 960w, imagenes/ovejas.jpg 1600w" sizes="(max-width: 700px) 45vw, 280px" alt="" loading="lazy">
                         <span class="news-mini__body">
                             <span class="news-mini__meta"><span class="news__tag">Agro</span> <time datetime="2025-01-27">27 de enero de 2025</time></span>
                             <strong>Entregan dos reservorios de agua a 300 familias de San Pedro de Cajas</strong>
                         </span>
                     </a>
                     <a class="news-mini" href="noticias.html#away-wasy-tapices-2023">
-                        <img src="imagenes/tejedora-telar.jpg" alt="" loading="lazy">
+                        <img src="imagenes/tejedora-telar.jpg" srcset="imagenes/tejedora-telar-480.jpg 480w, imagenes/tejedora-telar-720.jpg 720w, imagenes/tejedora-telar-960.jpg 960w, imagenes/tejedora-telar.jpg 1140w" sizes="(max-width: 700px) 45vw, 280px" alt="" loading="lazy">
                         <span class="news-mini__body">
                             <span class="news-mini__meta"><span class="news__tag">Artesanía</span> <time datetime="2023-09-06">6 de septiembre de 2023</time></span>
                             <strong>Away Wasy: la familia Ulloa mantiene vivo el teñido natural y el tejido a mano</strong>
@@ -233,7 +234,7 @@
                     </a>
                 </div>
 
-                <p class="note"><a href="noticias.html"><strong>Ver todas las noticias →</strong></a> · <a href="region.html"><strong>Noticias de la región →</strong></a> · <a href="comunidad.html#enviar"><strong>Envía tu noticia →</strong></a> · Páginas oficiales: <a href="https://www.facebook.com/MuniSPC2023" target="_blank" rel="noopener">Municipalidad Distrital</a> · <a href="https://www.facebook.com/sanpedrodecajasperu" target="_blank" rel="noopener">San Pedro de Cajas</a></p>
+                <p class="note"><a href="noticias.html"><strong>Ver todas las noticias →</strong></a> · <a href="region.html"><strong>Noticias de la región →</strong></a> · <a href="comunidad.html#enviar"><strong>Envía tu noticia →</strong></a> · Páginas oficiales: <a href="https://www.facebook.com/MuniSPC2023" target="_blank" rel="noopener">Facebook Municipalidad</a> · <a href="https://www.facebook.com/sanpedrodecajasperu" target="_blank" rel="noopener">Facebook San Pedro de Cajas</a></p>
             </div>
         </section>
 
@@ -288,21 +289,21 @@
 
                 <div class="grid grid--2">
                     <article class="feature">
-                        <div class="feature__media"><img src="imagenes/hilanderas.jpg" alt="Artesanas sampedranas hilando lana" loading="lazy"></div>
+                        <div class="feature__media"><img src="imagenes/hilanderas.jpg" srcset="imagenes/hilanderas-480.jpg 480w, imagenes/hilanderas-720.jpg 720w, imagenes/hilanderas-960.jpg 960w, imagenes/hilanderas.jpg 1600w" sizes="(max-width: 520px) 100vw, 200px" alt="Artesanas sampedranas hilando lana" loading="lazy"></div>
                         <div class="feature__body">
                             <h3>Artesanía textil</h3>
                             <p>Visita a las artesanas y su concurso de hilado con puchca, el tejido de la manta Huashacata o Catarana y la exposición de artesanía textil sampedrana. En Semana Santa cada barrio expone lo mejor de su arte en la salida del Cristo Resucitado.</p>
                         </div>
                     </article>
                     <article class="feature">
-                        <div class="feature__media"><img src="imagenes/catarata-pacchacoto.jpg" alt="Catarata de Pacchacoto en San Pedro de Cajas" loading="lazy"></div>
+                        <div class="feature__media"><img src="imagenes/catarata-pacchacoto.jpg" srcset="imagenes/catarata-pacchacoto-480.jpg 480w, imagenes/catarata-pacchacoto-720.jpg 720w, imagenes/catarata-pacchacoto-960.jpg 960w, imagenes/catarata-pacchacoto.jpg 1218w" sizes="(max-width: 520px) 100vw, 200px" alt="Catarata de Pacchacoto en San Pedro de Cajas" loading="lazy"></div>
                         <div class="feature__body">
                             <h3>Naturaleza de altura</h3>
                             <p>Catarata de Pacchacoto, laguna de Parpacocha (pesca de trucha y camping), laguna de Chaquicocha o Gallinería con aves migratorias, y el hábitat de vicuñas silvestres.</p>
                         </div>
                     </article>
                     <article class="feature">
-                        <div class="feature__media"><img src="imagenes/chutos.jpg" alt="Danza tradicional de las fiestas patronales" loading="lazy"></div>
+                        <div class="feature__media"><img src="imagenes/chutos.jpg" srcset="imagenes/chutos-480.jpg 480w, imagenes/chutos-720.jpg 720w, imagenes/chutos-960.jpg 960w, imagenes/chutos.jpg 1200w" sizes="(max-width: 520px) 100vw, 200px" alt="Danza tradicional de las fiestas patronales" loading="lazy"></div>
                         <div class="feature__body">
                             <h3>Fiestas patronales</h3>
                             <p>Fiesta en homenaje a San Pedro y San Pablo (28 y 29 de junio), a San Antonio de Padua y al Niño Viajero, con danzas tradicionales, bandas y la bajada del cerro Patamarca.</p>
@@ -410,13 +411,13 @@
                 </header>
 
                 <div class="gallery">
-                    <figure class="gallery__item gallery__item--wide"><img src="imagenes/hilanderas.jpg" alt="Hilanderas sampedranas" loading="lazy"><figcaption>Hilanderas sampedranas</figcaption></figure>
-                    <figure class="gallery__item"><img src="imagenes/hijas-hilanderas.jpg" alt="Hijas hilanderas" loading="lazy"><figcaption>Hijas hilanderas</figcaption></figure>
-                    <figure class="gallery__item"><img src="imagenes/tejedora-telar.jpg" alt="Tejedora en el telar" loading="lazy"><figcaption>Tejedora en el telar</figcaption></figure>
+                    <figure class="gallery__item gallery__item--wide"><img src="imagenes/hilanderas.jpg" srcset="imagenes/hilanderas-480.jpg 480w, imagenes/hilanderas-720.jpg 720w, imagenes/hilanderas-960.jpg 960w, imagenes/hilanderas.jpg 1600w" sizes="(max-width: 700px) 100vw, 600px" alt="Hilanderas sampedranas" loading="lazy"><figcaption>Hilanderas sampedranas</figcaption></figure>
+                    <figure class="gallery__item"><img src="imagenes/hijas-hilanderas.jpg" srcset="imagenes/hijas-hilanderas-480.jpg 480w, imagenes/hijas-hilanderas-720.jpg 720w, imagenes/hijas-hilanderas-960.jpg 960w, imagenes/hijas-hilanderas.jpg 1600w" sizes="(max-width: 520px) 100vw, (max-width: 700px) 50vw, 300px" alt="Hijas hilanderas" loading="lazy"><figcaption>Hijas hilanderas</figcaption></figure>
+                    <figure class="gallery__item"><img src="imagenes/tejedora-telar.jpg" srcset="imagenes/tejedora-telar-480.jpg 480w, imagenes/tejedora-telar-720.jpg 720w, imagenes/tejedora-telar-960.jpg 960w, imagenes/tejedora-telar.jpg 1140w" sizes="(max-width: 520px) 100vw, (max-width: 700px) 50vw, 300px" alt="Tejedora en el telar" loading="lazy"><figcaption>Tejedora en el telar</figcaption></figure>
                     <figure class="gallery__item"><img src="imagenes/tapiz-diseno.jpg" alt="Diseño de tapiz" loading="lazy"><figcaption>Diseño de tapiz</figcaption></figure>
-                    <figure class="gallery__item"><img src="imagenes/concurso-hilanderas.jpg" alt="Concurso de hilanderas" loading="lazy"><figcaption>Concurso de hilanderas</figcaption></figure>
-                    <figure class="gallery__item gallery__item--wide"><img src="imagenes/limpia-de-sal.jpg" alt="Limpia de sal en Cachipuquio" loading="lazy"><figcaption>Limpia de sal en Cachipuquio</figcaption></figure>
-                    <figure class="gallery__item gallery__item--wide"><img src="imagenes/manta-sampedrana.jpg" alt="Manta sampedrana de franjas crema y negras con estrellas de colores" loading="lazy"><figcaption>Manta sampedrana</figcaption></figure>
+                    <figure class="gallery__item"><img src="imagenes/concurso-hilanderas.jpg" srcset="imagenes/concurso-hilanderas-480.jpg 480w, imagenes/concurso-hilanderas-720.jpg 720w, imagenes/concurso-hilanderas-960.jpg 960w, imagenes/concurso-hilanderas.jpg 1600w" sizes="(max-width: 520px) 100vw, (max-width: 700px) 50vw, 300px" alt="Concurso de hilanderas" loading="lazy"><figcaption>Concurso de hilanderas</figcaption></figure>
+                    <figure class="gallery__item gallery__item--wide"><img src="imagenes/limpia-de-sal.jpg" srcset="imagenes/limpia-de-sal-480.jpg 480w, imagenes/limpia-de-sal-720.jpg 720w, imagenes/limpia-de-sal-960.jpg 960w, imagenes/limpia-de-sal.jpg 1280w" sizes="(max-width: 700px) 100vw, 600px" alt="Limpia de sal en Cachipuquio" loading="lazy"><figcaption>Limpia de sal en Cachipuquio</figcaption></figure>
+                    <figure class="gallery__item gallery__item--wide"><img src="imagenes/manta-sampedrana.jpg" srcset="imagenes/manta-sampedrana-480.jpg 480w, imagenes/manta-sampedrana.jpg 563w" sizes="(max-width: 700px) 100vw, 600px" alt="Manta sampedrana de franjas crema y negras con estrellas de colores" loading="lazy"><figcaption>Manta sampedrana</figcaption></figure>
                     <figure class="gallery__item gallery__item--wide"><img src="imagenes/manta-estrellas.jpg" alt="Manta tejida con franjas y estrellas de ocho puntas" loading="lazy"><figcaption>Manta de franjas con estrellas</figcaption></figure>
                 </div>
 
@@ -551,22 +552,22 @@
 
                 <div class="grid grid--2">
                     <article class="landscape">
-                        <div class="landscape__media"><img src="imagenes/paisaje-cachipozo.jpg" alt="Valle de Cachipozo" loading="lazy"></div>
+                        <div class="landscape__media"><img src="imagenes/paisaje-cachipozo.jpg" srcset="imagenes/paisaje-cachipozo-480.jpg 480w, imagenes/paisaje-cachipozo-720.jpg 720w, imagenes/paisaje-cachipozo-960.jpg 960w, imagenes/paisaje-cachipozo.jpg 1600w" sizes="(max-width: 700px) 100vw, 600px" alt="Valle de Cachipozo" loading="lazy"></div>
                         <h3>Valle de Cachipozo</h3>
                         <p>Praderas y cerros que rodean el pueblo, tierra de peñas y pedregales que le dio su nombre.</p>
                     </article>
                     <article class="landscape">
-                        <div class="landscape__media"><img src="imagenes/cordillera.jpg" alt="Cordillera de la puna tarmeña" loading="lazy"></div>
+                        <div class="landscape__media"><img src="imagenes/cordillera.jpg" srcset="imagenes/cordillera-480.jpg 480w, imagenes/cordillera-720.jpg 720w, imagenes/cordillera-960.jpg 960w, imagenes/cordillera.jpg 1600w" sizes="(max-width: 700px) 100vw, 600px" alt="Cordillera de la puna tarmeña" loading="lazy"></div>
                         <h3>Cordillera</h3>
                         <p>Cumbres y quebradas de la puna tarmeña, camino a las lagunas y cataratas.</p>
                     </article>
                     <article class="landscape">
-                        <div class="landscape__media"><img src="imagenes/pastora.jpg" alt="Pastora de altura" loading="lazy"></div>
+                        <div class="landscape__media"><img src="imagenes/pastora.jpg" srcset="imagenes/pastora-480.jpg 480w, imagenes/pastora-720.jpg 720w, imagenes/pastora-960.jpg 960w, imagenes/pastora.jpg 1600w" sizes="(max-width: 700px) 100vw, 600px" alt="Pastora de altura" loading="lazy"></div>
                         <h3>Pastoras de altura</h3>
                         <p>El pastoreo de ovejas y alpacas provee la lana que da vida a los tapices.</p>
                     </article>
                     <article class="landscape">
-                        <div class="landscape__media"><img src="imagenes/ovejas.jpg" alt="Rebaño de ovejas entre muros de piedra" loading="lazy"></div>
+                        <div class="landscape__media"><img src="imagenes/ovejas.jpg" srcset="imagenes/ovejas-480.jpg 480w, imagenes/ovejas-720.jpg 720w, imagenes/ovejas-960.jpg 960w, imagenes/ovejas.jpg 1600w" sizes="(max-width: 700px) 100vw, 600px" alt="Rebaño de ovejas entre muros de piedra" loading="lazy"></div>
                         <h3>Rebaños</h3>
                         <p>Ovejas pastando entre los muros de piedra del pueblo.</p>
                     </article>
@@ -585,22 +586,22 @@
 
                 <div class="grid grid--4">
                     <article class="person">
-                        <div class="person__avatar"><img src="imagenes/hilandera-sanpedrana.jpg" alt="Artesanas sampedranas" loading="lazy"></div>
+                        <div class="person__avatar"><img src="imagenes/hilandera-sanpedrana.jpg" srcset="imagenes/hilandera-sanpedrana-480.jpg 480w, imagenes/hilandera-sanpedrana-720.jpg 720w, imagenes/hilandera-sanpedrana-960.jpg 960w, imagenes/hilandera-sanpedrana.jpg 1280w" sizes="72px" alt="Artesanas sampedranas" loading="lazy"></div>
                         <h3>Artesanas</h3>
                         <p>Maestras del hilado y el telar que convierten la lana en obras reconocidas en el mundo.</p>
                     </article>
                     <article class="person">
-                        <div class="person__avatar"><img src="imagenes/arrieros.jpg" alt="Ganaderos y agricultores sampedranos" loading="lazy"></div>
+                        <div class="person__avatar"><img src="imagenes/arrieros.jpg" srcset="imagenes/arrieros-480.jpg 480w, imagenes/arrieros-720.jpg 720w, imagenes/arrieros-960.jpg 960w, imagenes/arrieros.jpg 1600w" sizes="72px" alt="Ganaderos y agricultores sampedranos" loading="lazy"></div>
                         <h3>Ganaderos y agricultores</h3>
                         <p>Cuidan la tierra, los rebaños y la papa y la maca que sostienen la economía del distrito.</p>
                     </article>
                     <article class="person">
-                        <div class="person__avatar"><img src="imagenes/comunidad-municipio.jpg" alt="Comunidad reunida en el municipio" loading="lazy"></div>
+                        <div class="person__avatar"><img src="imagenes/comunidad-municipio.jpg" srcset="imagenes/comunidad-municipio-480.jpg 480w, imagenes/comunidad-municipio-720.jpg 720w, imagenes/comunidad-municipio-960.jpg 960w, imagenes/comunidad-municipio.jpg 1600w" sizes="72px" alt="Comunidad reunida en el municipio" loading="lazy"></div>
                         <h3>Comunidad</h3>
                         <p>Vecinos, barrios y autoridades que se reúnen en la plaza en cada fiesta y asamblea.</p>
                     </article>
                     <article class="person">
-                        <div class="person__avatar"><img src="imagenes/coro-escolar.jpg" alt="Niños y jóvenes del coro escolar" loading="lazy"></div>
+                        <div class="person__avatar"><img src="imagenes/coro-escolar.jpg" srcset="imagenes/coro-escolar-480.jpg 480w, imagenes/coro-escolar-720.jpg 720w, imagenes/coro-escolar-960.jpg 960w, imagenes/coro-escolar.jpg 1600w" sizes="72px" alt="Niños y jóvenes del coro escolar" loading="lazy"></div>
                         <h3>Niños y jóvenes</h3>
                         <p>Nuevas generaciones que aprenden la tradición en la escuela, aquí y desde el extranjero.</p>
                     </article>
@@ -702,14 +703,14 @@
         <div class="footer__pattern" aria-hidden="true"></div>
         <div class="container footer__grid">
             <div>
-                <a href="#inicio" class="logo logo--footer">
+                <a href="#inicio" class="logo logo--footer" aria-label="San Pedro de Cajas - Inicio">
                     <span class="logo__mark" aria-hidden="true"></span>
                     <span class="logo__text"><strong>San Pedro de Cajas</strong><small>Tierra de Artesanos</small></span>
                 </a>
                 <p>Portal de la comunidad sampedrana: cultura, turismo y Radio San Pedro en vivo.</p>
             </div>
             <div>
-                <h4>Secciones</h4>
+                <h3>Secciones</h3>
                 <ul>
                     <li><a href="#noticias">Noticias</a></li>
                     <li><a href="#nosotros">Nosotros</a></li>
@@ -719,7 +720,7 @@
                 </ul>
             </div>
             <div>
-                <h4>Comunidad</h4>
+                <h3>Comunidad</h3>
                 <ul>
                     <li><a href="#paisajes">Paisajes</a></li>
                     <li><a href="gente.html">Nuestra Gente</a></li>
@@ -728,7 +729,7 @@
                 </ul>
             </div>
             <div>
-                <h4>Síguenos</h4>
+                <h3>Síguenos</h3>
                 <ul>
                     <li><a href="https://www.facebook.com/MuniSPC2023" target="_blank" rel="noopener">Facebook Municipalidad</a></li>
                     <li><a href="https://www.facebook.com/sanpedrodecajasperu" target="_blank" rel="noopener">Facebook San Pedro de Cajas</a></li>
@@ -748,8 +749,8 @@
         var toggle = document.getElementById('menu-toggle');
         var menuBtn = document.querySelector('.menu-btn');
         if (toggle && menuBtn) {
-            menuBtn.addEventListener('keydown', function (e) {
-                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle.checked = !toggle.checked; }
+            toggle.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter') { e.preventDefault(); toggle.checked = !toggle.checked; }
             });
             document.querySelectorAll('.nav a').forEach(function (a) {
                 a.addEventListener('click', function () { toggle.checked = false; });
@@ -902,6 +903,16 @@
             })
             .catch(function () { boton.disabled = true; });
     })();
+</script>
+<script>
+    window.addEventListener('load', function () {
+        setTimeout(function () {
+            var s = document.createElement('script');
+            s.async = true; s.crossOrigin = 'anonymous';
+            s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6914749946758407';
+            document.head.appendChild(s);
+        }, 1500);
+    });
 </script>
 </body>
 </html>
