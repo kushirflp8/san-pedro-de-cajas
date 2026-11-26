@@ -45,8 +45,36 @@ function spc_with_lock($name, callable $fn) {
     try { return $fn(); } finally { flock($fp, LOCK_UN); fclose($fp); }
 }
 
+const SPC_CLOUDFLARE = [
+    '173.245.48.0/20', '103.21.244.0/22', '103.22.200.0/22', '103.31.4.0/22', '141.101.64.0/18',
+    '108.162.192.0/18', '190.93.240.0/20', '188.114.96.0/20', '197.234.240.0/22', '198.41.128.0/17',
+    '162.158.0.0/15', '104.16.0.0/13', '104.24.0.0/14', '172.64.0.0/13', '131.0.72.0/22',
+    '2400:cb00::/32', '2606:4700::/32', '2803:f800::/32', '2405:b500::/32', '2405:8100::/32',
+    '2a06:98c0::/29', '2c0f:f248::/32',
+];
+
+function spc_ip_in_cidr($ip, $cidr) {
+    [$net, $bits] = explode('/', $cidr);
+    $a = @inet_pton($ip); $b = @inet_pton($net);
+    if ($a === false || $b === false || strlen($a) !== strlen($b)) return false;
+    $bits = (int) $bits;
+    $bytes = intdiv($bits, 8); $rest = $bits % 8;
+    if (strncmp($a, $b, $bytes) !== 0) return false;
+    if ($rest === 0) return true;
+    $mask = chr((0xFF << (8 - $rest)) & 0xFF);
+    return ($a[$bytes] & $mask) === ($b[$bytes] & $mask);
+}
+
+/** Visitor IP; behind Cloudflare, trusts CF-Connecting-IP only when the request comes from Cloudflare. */
 function spc_ip() {
-    return $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0';
+    $remote = $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0';
+    $cf = $_SERVER['HTTP_CF_CONNECTING_IP'] ?? '';
+    if ($cf !== '' && filter_var($cf, FILTER_VALIDATE_IP)) {
+        foreach (SPC_CLOUDFLARE as $cidr) {
+            if (spc_ip_in_cidr($remote, $cidr)) return $cf;
+        }
+    }
+    return $remote;
 }
 
 /** Returns true if the action is allowed, recording the hit. */
