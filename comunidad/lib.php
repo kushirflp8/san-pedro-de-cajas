@@ -56,6 +56,7 @@ const SPC_CLOUDFLARE = [
 function spc_ip_in_cidr($ip, $cidr) {
     [$net, $bits] = explode('/', $cidr);
     $a = @inet_pton($ip); $b = @inet_pton($net);
+    if ($a !== false && strlen($a) === 16 && substr($a, 0, 12) === str_repeat("\0", 10) . "\xff\xff") $a = substr($a, 12);
     if ($a === false || $b === false || strlen($a) !== strlen($b)) return false;
     $bits = (int) $bits;
     $bytes = intdiv($bits, 8); $rest = $bits % 8;
