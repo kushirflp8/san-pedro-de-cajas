@@ -150,7 +150,7 @@ Incluye:
 
 3. **Personalizar contenido**
    - Edita los textos en `index.html`
-   - Modifica los colores en las variables CSS en `styles.css`
+   - Modifica los colores en las variables CSS en `styles.css` y luego ejecuta `python inline_css.py` (la portada lleva una copia de los estilos dentro de `index.html`)
    - Las fotografías reales se encuentran en `imagenes/`
 
 4. **Integrar publicidad**
@@ -177,6 +177,8 @@ Edita las variables CSS en `styles.css`:
     /* ... más colores */
 }
 ```
+
+Después de cualquier cambio en `styles.css`, ejecuta `python inline_css.py` para actualizar la copia de los estilos que va dentro de `index.html` (así la portada carga sin esperar el archivo CSS).
 
 ### Cambiar Textos
 Modifica el contenido en `index.html`:
