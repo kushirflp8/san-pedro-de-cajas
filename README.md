@@ -154,13 +154,13 @@ Incluye:
    - Las fotografías reales se encuentran en `imagenes/`
 
 4. **Integrar publicidad**
-   - El bloque superior de Google AdSense está integrado con el publisher del sitio antiguo (`ca-pub-6914749946758407`)
-   - El bloque inferior queda reservado para publicidad responsive
+   - Google AdSense (`ca-pub-6914749946758407`) carga en todas las páginas para los anuncios automáticos; actívalos en AdSense → Anuncios → Por sitio → sanpedrodecajas.com → «Anuncios automáticos»
+   - Los bloques superior e inferior de la portada usan la unidad adaptable `data-ad-slot="8738071843"`
    - Coloca banners de patrocinadores en los bloques `data-ad="private-1..3"` (300×250)
 
 ## 📊 Secciones de Publicidad
 
-- `data-ad="adsense-top"`: leaderboard 728×90 / responsive debajo del hero
+- `data-ad="adsense-top"`: bloque AdSense adaptable debajo del hero
 - `data-ad="adsense-bottom"`: bloque responsive antes del pie de página
 - `data-ad="private-1"`, `private-2`, `private-3`: anuncios privados de patrocinadores locales
 
