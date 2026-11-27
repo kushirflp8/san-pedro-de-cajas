@@ -241,6 +241,7 @@ code { background: var(--crema-oscuro); padding: 0.1em 0.4em; border-radius: 4px
     overflow: hidden; max-width: 100%;
 }
 .ad__slot > ins, .ad__slot iframe { max-width: 100%; }
+.ad__slot > ins { width: 100%; }
 .ad--leaderboard .ad__slot { max-width: 970px; margin-inline: auto; }
 .ad__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
 .ad__slot--private { min-height: 250px; border-color: var(--dorado); background-color: #FBF1DC; background-image: var(--trama); }
